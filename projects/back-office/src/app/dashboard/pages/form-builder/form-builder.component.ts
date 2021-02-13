@@ -5,6 +5,7 @@ import { Apollo } from 'apollo-angular';
 import { Form, WhoSnackBarService } from '@who-ems/builder';
 import { EditFormMutationResponse, EDIT_FORM_NAME, EDIT_FORM_PERMISSIONS, EDIT_FORM_STATUS, EDIT_FORM_STRUCTURE } from '../../../graphql/mutations';
 import { GetFormByIdQueryResponse, GET_FORM_BY_ID } from '../../../graphql/queries';
+import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/tasks/completion";
 
 @Component({
   selector: 'app-form-builder',
@@ -94,6 +95,17 @@ export class FormBuilderComponent implements OnInit {
   /* Save the form
   */
   public onSave(structure: any): void {
+    const structureObject = JSON.parse(structure);
+    structureObject.pages.map((page, index) => {
+      if (page.elements) {
+        page.elements.map(element => {
+          if (!element.valueName.includes(`page${index + 1}`)) {
+            element.valueName = `page${index + 1}_${element.valueName}`;
+          }
+        });
+      }
+    });
+
     if (!this.form.id) {
       alert('not valid');
     } else {
@@ -101,7 +113,7 @@ export class FormBuilderComponent implements OnInit {
         mutation: EDIT_FORM_STRUCTURE,
         variables: {
           id: this.form.id,
-          structure
+          structure: JSON.stringify(structureObject)
         }
       }).subscribe(res => {
         if (res.errors) {
