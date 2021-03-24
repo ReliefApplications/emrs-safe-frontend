@@ -1,15 +1,14 @@
 import { Apollo } from 'apollo-angular';
-import { CompositeFilterDescriptor, filterBy, orderBy, SortDescriptor } from '@progress/kendo-data-query';
+import { CompositeFilterDescriptor, filterBy, orderBy, process, SortDescriptor } from '@progress/kendo-data-query';
 import {
-  GridComponent as KendoGridComponent,
-  GridDataResult, PageChangeEvent, SelectableSettings, SelectionEvent, PagerSettings
+  ExcelExportEvent, GridComponent as KendoGridComponent, GridDataResult, PageChangeEvent, PagerSettings, SelectableSettings,
+  SelectionEvent
 } from '@progress/kendo-angular-grid';
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
-  CONVERT_RECORD,
-  ConvertRecordMutationResponse, DELETE_RECORD, DeleteRecordMutationResponse, EDIT_RECORD, EditRecordMutationResponse,
-  PUBLISH, PUBLISH_NOTIFICATION, PublishMutationResponse, PublishNotificationMutationResponse
+  CONVERT_RECORD, ConvertRecordMutationResponse, DELETE_RECORD, DeleteRecordMutationResponse, EDIT_RECORD,
+  EditRecordMutationResponse, PUBLISH, PUBLISH_NOTIFICATION, PublishMutationResponse, PublishNotificationMutationResponse
 } from '../../../graphql/mutations';
 import { WhoFormModalComponent } from '../../form-modal/form-modal.component';
 import { Subscription } from 'rxjs';
@@ -791,6 +790,64 @@ export class WhoGridComponent implements OnInit, OnChanges, OnDestroy {
       }).toPromise());
     }
     return promises;
+  }
+
+  /* Export the grid data in Excel file.
+  */
+  public onExcelExport(grid: ExcelExportEvent): void {
+    const data = this.gridData.data;
+    const rows = grid.workbook.sheets[0].rows;
+    console.log(rows);
+    const matrixData = [];
+    let rowIndex = 0;
+    let i = 0;
+    // We need to save manually matrix and matrix dropdown records to export on excel
+    rows.forEach(row => {
+      if (row.type === 'header') {
+        row.cells.forEach(cell => {
+          this.fields.forEach((field, index) => {
+            if (field.name === cell.value && field.type === 'JSON') {
+              console.log('json');
+              data.forEach((record, dataIndex) => {
+                if (field.meta.type === 'matrix') {
+                  const entries = Object.entries(record[field.name]);
+                  field.meta.columns.map((col, j) => {
+                    const value = entries.filter(e => e.includes(col.name));
+                    if (value.length > 0) {
+                      const values = [];
+                      value.forEach(v => values.push(v[0]));
+                      matrixData.push({ row: dataIndex, position: index + j + i, value: values.toString() });
+                    }
+                  });
+                } else if (field.meta.type === 'matrixdropdown') {
+                  const keys = Object.keys(record[field.name]);
+                  field.meta.columns.map((col, j) => {
+                    let str = '';
+                    keys.forEach(k => {
+                      if (Object.keys(record[field.name][k]).includes(col.name) && !!record[field.name][k][col.name]) {
+                        str += `${k} (${record[field.name][k][col.name]}) `;
+                      }
+                    });
+                    if (str.trim().length > 0) {
+                      matrixData.push({ row: dataIndex, position: index + j + i, value: str });
+                    }
+                  });
+                }
+              });
+              i += field.meta.columns.length - 1;
+            }
+          });
+        });
+      }
+      else if (row.type === 'data' && matrixData.length > 0) {
+        matrixData.map((matrixCell, cellIndex) => {
+          if (matrixCell.row === rowIndex) {
+            row.cells[matrixCell.position].value = matrixCell.value;
+          }
+        });
+        rowIndex++;
+      }
+    });
   }
 
   ngOnDestroy(): void {

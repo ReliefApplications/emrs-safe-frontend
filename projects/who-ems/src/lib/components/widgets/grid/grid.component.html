@@ -9,11 +9,10 @@
   </div>
   <!-- GRID HEADER -->
   <kendo-grid id="customGrid" class="widget-content" [autoSize]="false" [data]="gridData" [pageSize]="pageSize"
-    [skip]="skip" [loading]="loading" [columnMenu]="true" [reorderable]="true" [sortable]="true"
-    [pageable]="pagerSettings" [sort]="sort" [selectable]="selectableSettings"
-    (selectionChange)="selectionChange($event)" (sortChange)="sortChange($event)" (pageChange)="pageChange($event)"
-    filterable="menu" [filter]="filter" (filterChange)="filterChange($event)" (cellClick)="cellClickHandler($event)"
-    [resizable]="true">
+    [skip]="skip" [loading]="loading" [columnMenu]="true" [reorderable]="true" [sortable]="true" [pageable]="pagerSettings"
+    [sort]="sort" [selectable]="selectableSettings" (selectionChange)="selectionChange($event)"
+    (sortChange)="sortChange($event)" (pageChange)="pageChange($event)" filterable="menu" [filter]="filter"
+    (filterChange)="filterChange($event)" (cellClick)="cellClickHandler($event)" [resizable]="true" (excelExport)="onExcelExport($event)">
     <ng-template kendoGridToolbarTemplate position="top">
       <!-- <button (click)="onAdd()" class="k-button" *ngIf="canEdit && settings.canAdd && settings.addTemplate">Add</button> -->
       <button type="button" kendoGridExcelCommand class="k-button">Export</button>
@@ -45,7 +44,7 @@
           [format]="field.format" [editor]="field.editor" [editable]="field.editor && !field.disabled"
           [filter]="field.filter" [filterable]="field.filter" [width]="field.title.length * 7 + 50"
           [minResizableWidth]="50">
-          <!-- EDITION ( text / color / comment - resource - dropdown ) -->
+          <!-- EDITION ( text / color / comment - resource - dropdown - radiogroup ) -->
           <ng-template kendoGridEditTemplate let-dataItem="dataItem" let-formGroup="formGroup"
             *ngIf="field.editor === 'text'">
             <!-- EDITION ( text / comment ) -->
@@ -59,7 +58,7 @@
                 (open)="editionActive = true" (close)="editionActive = false"></kendo-colorpicker>
             </ng-container>
             <!-- EDITION ( dropdown ) -->
-            <ng-container *ngIf="field.meta.type === 'dropdown'">
+            <ng-container *ngIf="['dropdown', 'radiogroup'].includes(field.meta.type)">
               <kendo-dropdownlist [data]="field.meta.choices"
                 [textField]="field.meta.choicesByUrl ? field.meta.choicesByUrl.text : field.meta.choices.text ? 'text' : null"
                 [valueField]="field.meta.choicesByUrl ? field.meta.choicesByUrl.value : field.meta.choices.value ? 'value' : null"
@@ -130,12 +129,14 @@
                 <!-- DISPLAY ( matrix / matrixdropdown / matrixdynamic ) -->
                 <ng-container *ngIf="field.meta.type !== 'multipletext'">
                   <ul class="matrix-cell">
+                    <!-- DISPLAY ( matrix ) -->
                     <ng-container *ngIf="field.meta.type === 'matrix'">
                       <li *ngFor="let row of field.meta.rows">
                         <input type="radio" kendoRadioButton
                           [checked]="dataItem[field.name] && dataItem[field.name][row.name] === column.name" disabled />
                       </li>
                     </ng-container>
+                    <!-- DISPLAY ( matrixdropdown ) -->
                     <ng-container *ngIf="field.meta.type === 'matrixdropdown'">
                       <li *ngFor="let row of field.meta.rows">
                         <ng-container
@@ -144,6 +145,7 @@
                         </ng-container>
                       </li>
                     </ng-container>
+                    <!-- DISPLAY ( matrixdynamic ) -->
                     <ng-container *ngIf="field.meta.type === 'matrixdynamic'">
                       <li *ngFor="let row of dataItem[field.name]">
                         <ng-container *ngIf="row[column.name] || row[column.name] === false">

@@ -15,6 +15,7 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { HttpClientModule } from '@angular/common/http';
 import { WhoRecordModalModule } from '../../record-modal/record-modal.module';
+import { ExcelExportModule } from '@progress/kendo-angular-excel-export';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { WhoRecordModalModule } from '../../record-modal/record-modal.module';
     FormsModule,
     ReactiveFormsModule,
     ExcelModule,
+    ExcelExportModule,
     WhoFormModalModule,
     MatTableModule,
     MatButtonModule,
