@@ -14,6 +14,7 @@ export class WhoEditUserComponent implements OnInit {
   // === REACTIVE FORM ===
   userForm: FormGroup;
 
+
   get positionAttributes(): FormArray {
     return this.userForm.get('positionAttributes') ? this.userForm.get('positionAttributes') as FormArray : null;
   }
@@ -42,8 +43,11 @@ export class WhoEditUserComponent implements OnInit {
         ...this.data.positionAttributeCategories &&
         {
           positionAttributes: this.formBuilder.array(this.data.positionAttributeCategories.map(x => {
+            const attributeValue = this.data.user.positionAttributes.find(element => {
+              return x.id === (Object(element.category).id);
+            });
             return this.formBuilder.group({
-              value: [''],
+              value: [attributeValue ? attributeValue.value : ''],
               category: [x.id, Validators.required]
             });
           }))

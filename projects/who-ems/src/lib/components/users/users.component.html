@@ -89,6 +89,28 @@
     </td>
   </ng-container>
 
+  <ng-container matColumnDef="attributes" *ngIf="applicationService">
+    <th mat-header-cell *matHeaderCellDef>
+      <span class="headerTitle" mat-sort-header>
+        Attributes
+      </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <span *ngFor="let attribute of element.positionAttributes"> {{attribute.value}},</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="attributes" *ngIf="!applicationService">
+    <th mat-header-cell *matHeaderCellDef>
+      <span class="headerTitle" mat-sort-header>
+        Attributes
+      </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <span *ngFor="let attribute of element.positionAttributes"> {{attribute.value}},</span>
+    </td>
+  </ng-container>
+
   <ng-container matColumnDef="oid">
     <th mat-header-cell *matHeaderCellDef>
       <span class="headerTitle" mat-sort-header>

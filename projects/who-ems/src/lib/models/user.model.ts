@@ -31,7 +31,9 @@ export interface User {
     permissions?: Permission[];
     oid?: string;
     applications?: Application[];
+    positionAttributes?: PositionAttribute[];
 }
+
 
 /*  Enum of admin permissions.
 */
@@ -100,4 +102,12 @@ export class PermissionsManagement {
         }
         return value[type];
     }
+}
+
+/*  Model for Position Attributes Object.
+*/
+export interface PositionAttribute {
+    id?: string;
+    value?: string;
+    category?: string;
 }

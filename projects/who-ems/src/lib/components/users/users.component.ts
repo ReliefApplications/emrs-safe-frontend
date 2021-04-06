@@ -33,7 +33,7 @@ export class WhoUsersComponent implements OnInit, AfterViewInit {
   @Input() applicationService: any;
 
   // === DISPLAYED COLUMNS ===
-  public displayedColumns = ['select', 'username', 'name', 'oid', 'roles', 'actions'];
+  public displayedColumns = ['select', 'username', 'name', 'oid', 'attributes', 'roles', 'actions'];
 
   // === SORTING ===
   @ViewChild(MatSort) sort: MatSort;
@@ -116,10 +116,11 @@ export class WhoUsersComponent implements OnInit, AfterViewInit {
             mutation: EDIT_USER,
             variables: {
               id: user.id,
-              roles: value.roles
+              roles: value.roles,
+              ...value.positionAttributes && { positionAttributes: value.positionAttributes }
             }
           }).subscribe(res => {
-            this.snackBar.openSnackBar(`${user.username} roles updated.`);
+            this.snackBar.openSnackBar(`${user.username} updated.`);
             this.users.data = this.users.data.map(x => {
               if (x.id === user.id) {
                 x.roles = res.data.editUser.roles.filter(role => !role.application);
