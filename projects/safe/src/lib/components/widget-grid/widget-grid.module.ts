@@ -17,7 +17,10 @@ import { SafeFloatingOptionsComponent } from './floating-options/floating-option
 import { SafeTileDataComponent } from './floating-options/menu/tile-data/tile-data.component';
 import { SafeTileDisplayComponent } from './floating-options/menu/tile-display/tile-display.component';
 import { SafeExpandedWidgetComponent } from './expanded-widget/expanded-widget.component';
-import { SafeDashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
+import { SafeDashboardMenuComponent} from './dashboard-menu/dashboard-menu.component';
+import { KtdGridModule } from '@katoid/angular-grid-layout';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 @NgModule({
@@ -44,7 +47,10 @@ import { SafeDashboardMenuComponent } from './dashboard-menu/dashboard-menu.comp
     MatTooltipModule,
     MatDialogModule,
     MatMenuModule,
-    DragDropModule
+    DragDropModule,
+    KtdGridModule,
+    MatCheckboxModule,
+    MatChipsModule
   ],
   exports: [SafeWidgetGridComponent]
 })

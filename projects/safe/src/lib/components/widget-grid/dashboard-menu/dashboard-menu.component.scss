@@ -1,16 +1,16 @@
-
 .dashboard-menu {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  
-  mat-icon {
-    font-weight: bold;
-  }
-  
-  span {
-    margin-left: 12px;
-    font-weight: 700;
-    font-size: 14px;
-  }
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: fit-content;
+    margin: auto;
+    margin-top: 12px;
+    mat-icon {
+        font-weight: bold;
+    }
+    span {
+        margin-left: 12px;
+        font-weight: 700;
+        font-size: 14px;
+    }
 }

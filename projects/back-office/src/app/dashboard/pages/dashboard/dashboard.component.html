@@ -2,8 +2,9 @@
 <ng-container *ngIf="!loading && dashboard">
     <div *ngIf="!formActive" class="dashboard-name-container">
         <h1 class="dashboard-name" (click)="toggleFormActive()">{{dashboard.name}}</h1>
-        <safe-access [access]="dashboard.permissions" [application]="applicationId"
-                     (save)="saveAccess($event)" *ngIf="dashboard.page ? dashboard.page.canUpdate : dashboard.step ? dashboard.step.canUpdate : false"></safe-access>
+        <safe-access [access]="dashboard.permissions" [application]="applicationId" (save)="saveAccess($event)"
+            *ngIf="dashboard.page ? dashboard.page.canUpdate : dashboard.step ? dashboard.step.canUpdate : false">
+        </safe-access>
         <button mat-icon-button class="share-button" (click)="onShare()">
             <mat-icon matTooltipPosition="above" matTooltip="Share Dashboard">share</mat-icon>
         </button>
@@ -22,6 +23,7 @@
             </button>
         </form>
     </ng-container>
-    <safe-widget-grid [widgets]="tiles" [canUpdate]="dashboard.canUpdate || false" (move)="onMove()" (edit)="onEditTile($event)"
-                      (delete)="onDeleteTile($event)" (goToNextStep)="goToNextStep.emit($event)" (addNewWidget)="onAdd($event)"></safe-widget-grid>
+    <safe-widget-grid [widgets]="tiles" [canUpdate]="dashboard.canUpdate || false" (move)="onMove()"
+        (edit)="onEditTile($event)" (delete)="onDeleteTile($event)" (goToNextStep)="goToNextStep.emit($event)"
+        (update)="onUpdate($event)" (addNewWidget)="onAdd($event)"></safe-widget-grid>
 </ng-container>

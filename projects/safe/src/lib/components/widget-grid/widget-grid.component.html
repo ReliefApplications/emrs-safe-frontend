@@ -1,28 +1,17 @@
 <div class="grid-container">
-    <mat-grid-list [cols]="colsNumber" rowHeight="1:1" gutterSize="8px">
-        <mat-grid-tile *ngFor="let widget of widgets; let i = index;"
-            [colspan]="( widget.defaultCols > colsNumber || (!canUpdate && widgets.length === 1) ) ? colsNumber : widget.defaultCols"
-            [rowspan]="(!canUpdate && widgets.length === 1) ? 4 : ( widget.defaultRows > colsNumber) ? colsNumber : widget.defaultRows">
-            <cdk-drop-list [cdkDropListConnectedTo]="drops" [cdkDropListData]="i">
-                <div cdkDrag [cdkDragDisabled] = "!this.canUpdate" (cdkDragEntered)="onMove($event)" [cdkDragData]="i" class="grid-widget"
-                    cdkDragBoundary=".grid-container">
-                    <safe-floating-options class="widget-options" [widget]="widget" (edit)="onEditWidget($event)"
-                                           (delete)="onDeleteWidget($event)" (expand)="onExpandWidget($event)" *ngIf="canUpdate"></safe-floating-options>
-                    <safe-widget [widget]="widget" (goToNextStep)="goToNextStep.emit($event)"></safe-widget>
-                    <button class="widget-handle" mat-icon-button cdkDragHandle *ngIf="canUpdate">
+    <ktd-grid [cols]="cols" [rowHeight]="rowHeight" [layout]="layout" [compactType]="compactType" (layoutUpdated)="onLayoutUpdated($event)">
+        <ktd-grid-item *ngFor="let item of layout; trackBy:trackById" [id]="item.id" [transition]="currentTransition" [dragStartThreshold]="dragStartThreshold" [draggable]="!disableDrag" [resizable]="!disableResize">
+            <div class="grid-widget">
+                <safe-floating-options class="widget-options" [widget]="item" (edit)="onEditWidget($event)" (delete)="onDeleteWidget($event)" (expand)="onExpandWidget($event)" *ngIf="canModify"></safe-floating-options>
+                <safe-widget [widget]="item"></safe-widget>
+                <button (mousedown)="onDisableDragChange(false)" (mouseup)="onDisableDragChange(true)" class="widget-handle" *ngIf="canModify && !phoneView" mat-icon-button cdkDragHandle>
                         <mat-icon>drag_indicator</mat-icon>
                     </button>
-                    <button class="widget-expand" mat-icon-button *ngIf="!canUpdate" (click)="onExpandWidget(widget)">
+                <button class="widget-expand" mat-icon-button (click)="onExpandWidget(item)" *ngIf="!canModify">
                         <mat-icon>open_in_full</mat-icon>
                     </button>
-                </div>
-            </cdk-drop-list>
-
-        </mat-grid-tile>
-
-        <mat-grid-tile colspan="1" [rowspan]="dashboardMenuRowSpan">
-          <safe-dashboard-menu (add)="addNewWidget.emit($event)" *ngIf="canUpdate"></safe-dashboard-menu>
-        </mat-grid-tile>
-
-    </mat-grid-list>
+            </div>
+        </ktd-grid-item>
+    </ktd-grid>
+    <safe-dashboard-menu (add)="addItemToLayout($event)" *ngIf="canModify"></safe-dashboard-menu>
 </div>
