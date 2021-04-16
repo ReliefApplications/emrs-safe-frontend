@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 // Apollo
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { Apollo, APOLLO_OPTIONS } from 'apollo-angular';
+import { APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache, ApolloLink, split } from '@apollo/client/core';
 import { getMainDefinition } from '@apollo/client/utilities';
@@ -19,11 +21,16 @@ import { setContext } from '@apollo/client/link/context';
 import { environment } from '../environments/environment';
 
 // MSAL
-import { MsalModule, MsalInterceptor } from '@azure/msal-angular';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MsalModule, MsalInterceptor, MSAL_INSTANCE, MsalInterceptorConfiguration,
+  MSAL_INTERCEPTOR_CONFIG, MsalService, MsalGuard, MsalBroadcastService, MsalGuardConfiguration, MSAL_GUARD_CONFIG } from '@azure/msal-angular';
+import { BehaviorSubject } from 'rxjs';
+import { BrowserCacheLocation, InteractionType, IPublicClientApplication, LogLevel, PublicClientApplication } from '@azure/msal-browser';
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
+
+localStorage.setItem('loaded', 'false');
+
+const REFRESH = new BehaviorSubject<boolean>(false);
 
 /*  Configuration of the Apollo client.
 */
@@ -34,6 +41,7 @@ export function provideApollo(httpLink: HttpLink): any {
     }
   }));
 
+
   const auth = setContext((operation, context) => {
     // Get the authentication token from local storage if it exists
     const token = localStorage.getItem('msal.idtoken');
@@ -43,6 +51,7 @@ export function provideApollo(httpLink: HttpLink): any {
       }
     };
   });
+
   const http = httpLink.create({ uri: `${environment.API_URL}/graphql` });
 
   const ws = new WebSocketLink({
@@ -51,6 +60,14 @@ export function provideApollo(httpLink: HttpLink): any {
       reconnect: true,
       connectionParams: {
         authToken: localStorage.getItem('msal.idtoken')
+      },
+      connectionCallback: (error) => {
+        if (localStorage.getItem('loaded') === 'true') {
+          // location.reload();
+          REFRESH.next(true);
+          localStorage.setItem('loaded', 'false');
+        }
+        localStorage.setItem('loaded', 'true');
       }
     }
   });
@@ -68,6 +85,7 @@ export function provideApollo(httpLink: HttpLink): any {
     ws,
     http,
   )]);
+
   // Cache is not currently used, due to fetchPolicy values
   const cache = new InMemoryCache();
 
@@ -92,6 +110,55 @@ export function provideApollo(httpLink: HttpLink): any {
   };
 }
 
+export function loggerCallback(logLevel: LogLevel, message: string): any {
+  console.log(message);
+}
+
+/*  Configurtion of the MSAL instance.
+  Check that the scope are actually enabled by Azure AD on Azure portal.
+*/
+export function provideMsal(): IPublicClientApplication {
+  return new PublicClientApplication({
+    auth: {
+      clientId: environment.clientId,
+      authority: environment.authority,
+      redirectUri: environment.redirectUrl,
+      postLogoutRedirectUri: environment.postLogoutRedirectUri
+    },
+    cache: {
+      cacheLocation: BrowserCacheLocation.LocalStorage,
+      storeAuthStateInCookie: isIE, // Set to true for Internet Explorer 11
+    },
+    system: {
+      loggerOptions: {
+        loggerCallback,
+        logLevel: LogLevel.Info,
+        piiLoggingEnabled: false
+      }
+    }
+  });
+}
+
+export function provideMsalInterceptorConfig(): MsalInterceptorConfiguration {
+  const protectedResourceMap = new Map<string, Array<string>>();
+  protectedResourceMap.set('https://graph.microsoft.com/v1.0/me', ['user.read']);
+
+  return {
+    interactionType: InteractionType.Redirect,
+    protectedResourceMap
+  };
+}
+
+export function provideMsalGuardConfig(): MsalGuardConfiguration {
+  return {
+    interactionType: InteractionType.Redirect,
+    authRequest: {
+      scopes: ['user.read']
+    },
+    loginFailedRoute: '/auth'
+  };
+}
+
 @NgModule({
   declarations: [
     AppComponent
@@ -104,34 +171,7 @@ export function provideApollo(httpLink: HttpLink): any {
     ReactiveFormsModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
-    // Configuration of the Msal module. Check that the scope are actually enabled by Azure AD on Azure portal.
-    MsalModule.forRoot({
-      auth: {
-        clientId: environment.clientId,
-        authority: environment.authority,
-        redirectUri: environment.redirectUrl,
-        postLogoutRedirectUri: environment.postLogoutRedirectUri
-      },
-      cache: {
-        cacheLocation: 'localStorage',
-        storeAuthStateInCookie: isIE, // Set to true for Internet Explorer 11
-      },
-      framework: {
-        isAngular: true
-      }
-    },
-    {
-      popUp: false,
-      consentScopes: [
-        'user.read',
-        'openid',
-        'profile',
-      ],
-      protectedResourceMap: [
-        ['https://graph.microsoft.com/v1.0/me', ['user.read']]
-      ],
-      extraQueryParameters: {}
-    }),
+    MsalModule,
     MatDatepickerModule,
     MatNativeDateModule
   ],
@@ -150,8 +190,25 @@ export function provideApollo(httpLink: HttpLink): any {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
       multi: true
-    }
+    },
+    {
+      provide: MSAL_INSTANCE,
+      useFactory: provideMsal
+    },
+    {
+      provide: MSAL_GUARD_CONFIG,
+      useFactory: provideMsalGuardConfig
+    },
+    {
+      provide: MSAL_INTERCEPTOR_CONFIG,
+      useFactory: provideMsalInterceptorConfig
+    },
+    MsalService,
+    MsalGuard,
+    MsalBroadcastService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {}
+}

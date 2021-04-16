@@ -33,7 +33,10 @@ const routes: Routes = [
         ]
       }
     ],
-    canActivate: [MsalGuard, AccessGuard]
+    canActivate: [
+      MsalGuard,
+      AccessGuard
+    ]
   },
   {
     path: 'auth',

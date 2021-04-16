@@ -2,7 +2,6 @@ import { Component, ComponentRef, EventEmitter, HostListener, Input, OnChanges, 
   OnInit, Output, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { SafeAuthService } from '../../services/auth.service';
 import { LayoutService } from '../../services/layout.service';
-import { Account } from 'msal';
 import { PermissionsManagement, PermissionType } from '../../models/user.model';
 import { Application } from '../../models/application.model';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
@@ -12,6 +11,7 @@ import { Subscription } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { SafeNotificationService } from '../../services/notification.service';
 import { SafeConfirmModalComponent } from '../confirm-modal/confirm-modal.component';
+import { AccountInfo } from '@azure/msal-common';
 
 @Component({
   selector: 'safe-layout',
@@ -43,7 +43,7 @@ export class SafeLayoutComponent implements OnInit, OnChanges, OnDestroy {
   notificationsSubscription?: Subscription;
 
   // === AZURE ACCOUNT ===
-  account: Account | null;
+  account: AccountInfo | null;
 
   // === DISPLAY ===
   public largeDevice: boolean;
