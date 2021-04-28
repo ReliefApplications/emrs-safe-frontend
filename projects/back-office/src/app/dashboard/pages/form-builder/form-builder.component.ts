@@ -155,6 +155,7 @@ export class FormBuilderComponent implements OnInit {
           this.form = res.data?.editForm;
           this.structure = structure; // Update current form to
           this.hasChanges = false;
+          this.loading = false;
           this.authService.canLogout.next(true);
         }
         statusModal.close();
