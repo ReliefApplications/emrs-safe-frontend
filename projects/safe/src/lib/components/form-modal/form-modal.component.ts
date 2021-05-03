@@ -10,11 +10,14 @@ import {
 } from '../../graphql/queries';
 import { Form } from '../../models/form.model';
 import * as Survey from 'survey-angular';
-import { EditRecordMutationResponse, EDIT_RECORD, AddRecordMutationResponse, ADD_RECORD } from '../../graphql/mutations';
+import { EditRecordMutationResponse, EDIT_RECORD,
+  AddRecordMutationResponse, ADD_RECORD,
+  EditFormMutationResponse, EDIT_FORM_STRUCTURE } from '../../graphql/mutations';
 import { v4 as uuidv4 } from 'uuid';
 import { SafeConfirmModalComponent } from '../confirm-modal/confirm-modal.component';
 import addCustomFunctions from '../../utils/custom-functions';
 import { SafeSnackBarService } from '../../services/snackbar.service';
+import addChoice from '../../utils/add-choice';
 
 @Component({
   selector: 'safe-form-modal',
@@ -108,10 +111,30 @@ export class SafeFormModalComponent implements OnInit {
     */
     const questions = survey.getAllQuestions();
     const data = survey.data;
-    for (const field in questions) {
-      if (questions[field]) {
-        const key = questions[field].getValueName();
-        if (!data[key] && questions[field].getType() !== 'boolean') { data[key] = null; }
+    for (const question of questions) {
+      const key = question.getValueName();
+      if (!data[key] && question.getType() !== 'boolean') { data[key] = null; }
+      if (question.getType() === 'dropdown' && question.otherPopulate) {
+        if (!question.choices.some((x: any) => typeof x === 'object' ? x.value === data[key] : x === data[key])) {
+          const structure = JSON.parse(this.form?.structure || '');
+          for (const page of structure.pages) {
+            addChoice(page, key, data[key]);
+          }
+          this.apollo.mutate<EditFormMutationResponse>({
+            mutation: EDIT_FORM_STRUCTURE,
+            variables: {
+              id: this.form?.id,
+              structure: JSON.stringify(structure)
+            }
+          }).subscribe((res: any) => {
+            if (res.errors) {
+              this.snackBar.openSnackBar(res.errors[0].message, { error: true });
+            } else {
+              survey = new Survey.Model(JSON.stringify(structure));
+              survey.data = data;
+            }
+          });
+        }
       }
     }
     survey.data = data;

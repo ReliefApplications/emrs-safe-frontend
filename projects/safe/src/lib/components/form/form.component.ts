@@ -3,7 +3,7 @@ import {Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angul
 import { MatDialog } from '@angular/material/dialog';
 
 import * as Survey from 'survey-angular';
-import { AddRecordMutationResponse, ADD_RECORD, EditRecordMutationResponse, EDIT_RECORD } from '../../graphql/mutations';
+import { AddRecordMutationResponse, ADD_RECORD, EditRecordMutationResponse, EDIT_RECORD, EditFormMutationResponse, EDIT_FORM_STRUCTURE} from '../../graphql/mutations';
 import { Form } from '../../models/form.model';
 import { Record } from '../../models/record.model';
 import { SafeSnackBarService } from '../../services/snackbar.service';
@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 import { SafeWorkflowService } from '../../services/workflow.service';
 import addCustomFunctions from '../../utils/custom-functions';
 import { NOTIFICATIONS } from '../../const/notifications';
+import addChoice from '../../utils/add-choice';
 
 @Component({
   selector: 'safe-form',
@@ -174,10 +175,30 @@ export class SafeFormComponent implements OnInit, OnDestroy {
     this.surveyActive = false;
     const data = this.survey.data;
     const questions = this.survey.getAllQuestions();
-    for (const field in questions) {
-      if (questions[field]) {
-        const key = questions[field].getValueName();
-        if (!data[key] && questions[field].getType() !== 'boolean') { data[key] = null; }
+    for (const question of questions) {
+      const key = question.getValueName();
+      if (!data[key] && question.getType() !== 'boolean') { data[key] = null; }
+      if (question.getType() === 'dropdown' && question.otherPopulate) {
+        if (!question.choices.some((x: any) => typeof x === 'object' ? x.value === data[key] : x === data[key])) {
+          const structure = JSON.parse(this.form.structure || '');
+          for (const page of structure.pages) {
+            addChoice(page, key, data[key]);
+          }
+          this.apollo.mutate<EditFormMutationResponse>({
+            mutation: EDIT_FORM_STRUCTURE,
+            variables: {
+              id: this.form.id,
+              structure: JSON.stringify(structure)
+            }
+          }).subscribe((res: any) => {
+            if (res.errors) {
+              this.snackBar.openSnackBar(res.errors[0].message, { error: true });
+            } else {
+              this.survey = new Survey.Model(JSON.stringify(structure));
+              this.survey.data = data;
+            }
+          });
+        }
       }
     }
     this.survey.data = data;

@@ -32,6 +32,22 @@ export function init(Survey: any, domService: DomService, dialog: MatDialog): vo
                 category: 'general',
                 required: true,
             });
+            Survey.Serializer.addProperty('dropdown', {
+                name: 'otherPopulate:boolean',
+                displayName: 'Other item populate choices',
+                type: 'boolean',
+                category: 'choices',
+                dependsOn: 'hasOther',
+                visibleIndex: 4,
+                nextToProperty: 'hasOther',
+                visibleIf: (obj: any) => {
+                    if (!obj || !obj.hasOther) {
+                        return false;
+                      } else {
+                        return true;
+                      }
+                }
+            });
         },
         isDefaultRender: true,
         afterRender(question: any, el: any): void {
@@ -177,6 +193,10 @@ export function init(Survey: any, domService: DomService, dialog: MatDialog): vo
                             });
                     }
                 }
+            }
+            // Pass other value in the question if the property is activated
+            if (question.getType() === 'dropdown' && question.otherPopulate) {
+                question.storeOthersAsComment = false;
             }
         }
     };
