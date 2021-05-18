@@ -21,9 +21,13 @@ import { ChoseRoleComponent } from './components/chose-role/chose-role.component
 import { DuplicateApplicationModule } from '../../../components/duplicate-application/duplicate-application.module';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { TableVirtualScrollModule } from 'ng-table-virtual-scroll';
+import { ApplicationsTableComponent } from './components/applications-table/applications-table.component';
+import { InfiniteScrollWrapperModule } from '../../../components/infinite-scroll-wrapper/infinite-scroll-wrapper.module';
 
 @NgModule({
-  declarations: [ApplicationsComponent, AddApplicationComponent, ChoseRoleComponent],
+  declarations: [ApplicationsComponent, AddApplicationComponent, ChoseRoleComponent, ApplicationsTableComponent],
   imports: [
     CommonModule,
     ApplicationsRoutingModule,
@@ -44,8 +48,12 @@ import { MatNativeDateModule } from '@angular/material/core';
     SafeAccessModule,
     DuplicateApplicationModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    ScrollingModule,
+    TableVirtualScrollModule,
+    InfiniteScrollWrapperModule,
   ],
   exports: [ApplicationsComponent]
 })
-export class ApplicationsModule { }
+export class ApplicationsModule {
+}

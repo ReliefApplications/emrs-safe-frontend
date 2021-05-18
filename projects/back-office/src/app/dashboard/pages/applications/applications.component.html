@@ -1,53 +1,15 @@
-<mat-spinner diameter="45" class="page-loader" *ngIf="loading"></mat-spinner>
 <ng-container>
   <div>
-
-    <div class="searchbar" *ngIf="!loading">
+    <div class="searchbar">
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>search</mat-icon>
-        <input id="custom-search" matInput [ngModel]="searchText" (keyup)="applyFilter('', $event)" type="search"
-               placeholder="Search...">
+        <input id="custom-search" matInput [formControl]="name" type="search" placeholder="Search by name...">
       </mat-form-field>
       <button mat-stroked-button color="primary" (click)="showFilters = !showFilters" class="filters-toggle">
         <mat-icon>filter_list</mat-icon>
         Filter
       </button>
     </div>
-    <div class="filters" [style.display]="!showFilters ? 'none' : ''">
-      <mat-form-field appearance="outline">
-        <mat-label>Date Range</mat-label>
-        <mat-date-range-input (click)="rangePicker.open()" [rangePicker]="rangePicker">
-          <input #startDate (dateInput)="filtersDate['startDate'] = $event.value" matStartDate readonly>
-          <input #endDate (dateInput)="filtersDate['endDate'] = $event.value" matEndDate readonly>
-        </mat-date-range-input>
-        <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
-        <mat-date-range-picker #rangePicker>
-          <mat-date-range-picker-actions>
-            <button mat-button matDateRangePickerCancel (click)="clearDateFilter()">Clear range</button>
-            <button mat-raised-button color="primary" matDateRangePickerApply (click)="applyFilter('createdAt', null)">
-              Apply
-            </button>
-          </mat-date-range-picker-actions>
-        </mat-date-range-picker>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Status</mat-label>
-        <mat-select [ngModel]="statusFilter" (selectionChange)="applyFilter('status', $event)">
-          <mat-option>-</mat-option>
-          <mat-option value="active">
-            Active
-          </mat-option>
-          <mat-option value="pending">
-            Pending
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <button mat-button color="warn" (click)="clearAllFilters()">Clear Filters</button>
-    </div>
-  </div>
-
-  <div>
     <div class="actions">
       <button mat-flat-button color="primary" (click)="onAdd()" *ngIf="canAdd">
         <mat-icon>add</mat-icon>
@@ -55,82 +17,43 @@
       </button>
     </div>
   </div>
-  <table mat-table [dataSource]="applications" matSort>
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="headerTitle" mat-sort-header>
-          Name
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="createdAt">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="headerTitle" mat-sort-header>
-          Created on
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element">{{ element.createdAt | date }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="headerTitle" mat-sort-header>
-          Status
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element">
-        <mat-chip-list>
-          <mat-chip class="success-chip" disabled *ngIf="element.status === 'active'">
-            {{ element.status | titlecase }}
-          </mat-chip>
-          <mat-chip class="accent-chip" disabled color="accent" *ngIf="element.status === 'pending'">
-            {{ element.status | titlecase }}
-          </mat-chip>
-          <mat-chip class="warn-chip" disabled color="warn" *ngIf="element.status === 'archived'">
-            {{ element.status | titlecase }}
-          </mat-chip>
-        </mat-chip-list>
-      </td>
-    </ng-container>
-
-    <ng-container matColumnDef="usersCount">
-      <th mat-header-cell *matHeaderCellDef>
-        <span class="headerTitle" mat-sort-header>
-          Users
-        </span>
-      </th>
-      <td mat-cell *matCellDef="let element">{{ element.usersCount }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef></th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="onPreview(element)">
-            <mat-icon>preview</mat-icon>
-            Preview
+  <div class="filters" [style.display]="!showFilters ? 'none' : ''">
+    <mat-form-field appearance="outline">
+      <mat-label>Date Range</mat-label>
+      <mat-date-range-input (click)="rangePicker.open()" [rangePicker]="rangePicker">
+        <input #startDate (dateInput)="filtersDate['startDate'] = $event.value" matStartDate readonly>
+        <input #endDate (dateInput)="filtersDate['endDate'] = $event.value" matEndDate readonly>
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+      <mat-date-range-picker #rangePicker>
+        <mat-date-range-picker-actions>
+          <button mat-button matDateRangePickerCancel (click)="clearDateFilter()">Clear range</button>
+          <button mat-raised-button color="primary" matDateRangePickerApply (click)="search()">
+            Apply
           </button>
-          <safe-access [menuItem]="true" [access]="element.permissions" (save)="saveAccess($event, element)"
-                       *ngIf="element.canUpdate"></safe-access>
-          <button mat-menu-item (click)="onDuplicate(element)" *ngIf="element.canDelete">
-            <mat-icon>file_copy</mat-icon>
-            Duplicate
-          </button>
-          <button mat-menu-item (click)="onDelete(element, $event)" *ngIf="element.canDelete">
-            <mat-icon>delete</mat-icon>
-            Delete
-          </button>
-        </mat-menu>
-      </td>
-    </ng-container>
+        </mat-date-range-picker-actions>
+      </mat-date-range-picker>
+    </mat-form-field>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr class="clickable" mat-row *matRowDef="let row; columns: displayedColumns"
-        [routerLink]="['/applications', row.id]"></tr>
-  </table>
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select [formControl]="statusFilter">
+        <mat-option>-</mat-option>
+        <mat-option value="active">
+          Active
+        </mat-option>
+        <mat-option value="pending">
+          Pending
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-button color="warn" (click)="clearAllFilters()">Clear Filters</button>
+  </div>
+  <app-infinite-scroll-wrapper (checkScroll)="onCheckScroll()">
+    <app-applications-table infinite-scroll-child [dataSource]="applications" [loading]="loading"
+      [loadMoreData]="loadMoreData" [noMoreData]="noMoreData" (sortTable)="sortData($event)"
+      (preview)="onPreview($event)" (duplicate)="onDuplicate($event)"
+      (save)="saveAccess($event.permission, $event.application)" (delete)="onDelete($event)">
+    </app-applications-table>
+  </app-infinite-scroll-wrapper>
 </ng-container>

@@ -1,45 +1,57 @@
-import {Apollo} from 'apollo-angular';
-import { Component, OnInit, OnDestroy, ViewChild, AfterViewInit } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-
 import { Subscription } from 'rxjs';
-import { Application, PermissionsManagement, PermissionType,
-  SafeAuthService, SafeConfirmModalComponent, SafeSnackBarService, SafeApplicationService, NOTIFICATIONS } from '@safe/builder';
+import {
+  Application, PermissionsManagement, PermissionType,
+  SafeAuthService, SafeConfirmModalComponent, SafeSnackBarService, SafeApplicationService, NOTIFICATIONS
+} from '@safe/builder';
 import { GetApplicationsQueryResponse, GET_APPLICATIONS } from '../../../graphql/queries';
-import { DeleteApplicationMutationResponse, DELETE_APPLICATION, AddApplicationMutationResponse,
-  ADD_APPLICATION, EditApplicationMutationResponse, EDIT_APPLICATION } from '../../../graphql/mutations';
+import {
+  DeleteApplicationMutationResponse, DELETE_APPLICATION, AddApplicationMutationResponse,
+  ADD_APPLICATION, EditApplicationMutationResponse, EDIT_APPLICATION
+} from '../../../graphql/mutations';
 import { AddApplicationComponent } from './components/add-application/add-application.component';
 import { ChoseRoleComponent } from './components/chose-role/chose-role.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
+import { Sort } from '@angular/material/sort';
 import { PreviewService } from '../../../services/preview.service';
 import { DuplicateApplicationComponent } from '../../../components/duplicate-application/duplicate-application.component';
 import { MatEndDate, MatStartDate } from '@angular/material/datepicker';
+import { throttle as _throttle } from 'lodash-es';
+import { FormControl } from '@angular/forms';
+import { delay, take } from 'rxjs/operators';
+
+const PER_PAGE = 5;
 
 @Component({
   selector: 'app-applications',
   templateUrl: './applications.component.html',
   styleUrls: ['./applications.component.scss']
 })
-export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ApplicationsComponent implements OnInit, OnDestroy {
 
   // === DATA ===
   public loading = true;
-  public applications = new MatTableDataSource<Application>([]);
+  public loadMoreData = false;
+  public noMoreData = false;
+  public applications: MatTableDataSource<Application> = new MatTableDataSource<Application>([]);
   public displayedColumns = ['name', 'createdAt', 'status', 'usersCount', 'actions'];
+  private page = 0;
 
   // === SORTING ===
-  @ViewChild(MatSort) sort?: MatSort;
+  sortActive = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   // === FILTERS ===
-  public filtersDate = {startDate: '', endDate: ''};
-  public searchText = '';
-  public statusFilter = '';
+  public filtersDate = { startDate: '', endDate: '' };
   public showFilters = false;
+  public name = new FormControl('');
+  public statusFilter = new FormControl('');
 
-  @ViewChild('startDate', { read: MatStartDate}) startDate!: MatStartDate<string>;
-  @ViewChild('endDate', { read: MatEndDate}) endDate!: MatEndDate<string>;
+  @ViewChild('startDate', { read: MatStartDate }) startDate!: MatStartDate<string>;
+  @ViewChild('endDate', { read: MatEndDate }) endDate!: MatEndDate<string>;
 
   // === PERMISSIONS ===
   canAdd = false;
@@ -53,35 +65,19 @@ export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
     private authService: SafeAuthService,
     private applicationService: SafeApplicationService,
     private previewService: PreviewService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
-    this.apollo.watchQuery<GetApplicationsQueryResponse>({
-      query: GET_APPLICATIONS
-    }).valueChanges.subscribe(res => {
-      this.applications.data = res.data.applications;
-      this.loading = res.loading;
-      this.filterPredicate();
+    this.name.valueChanges.pipe(delay(500)).subscribe(value => {
+      if (this.name.value === value) {
+        this.search();
+      }
     });
-    this.authSubscription = this.authService.user.subscribe(() => {
-      this.canAdd = this.authService.userHasClaim(PermissionsManagement.getRightFromPath(this.router.url, PermissionType.create));
+    this.statusFilter.valueChanges.subscribe(value => {
+      this.search();
     });
-  }
-
-  private filterPredicate(): void {
-    this.applications.filterPredicate = (data: any) => {
-      const endDate = new Date(this.filtersDate.endDate).getTime();
-      const startDate = new Date(this.filtersDate.startDate).getTime();
-      return (((this.searchText.trim().length === 0 ||
-          (this.searchText.trim().length > 0 && data.name.toLowerCase().includes(this.searchText.trim()))) &&
-        (this.statusFilter.trim().length === 0 ||
-          (this.statusFilter.trim().length > 0 && data.status.toLowerCase().includes(this.statusFilter.trim()))) &&
-        (!startDate || !endDate || data.createdAt >= startDate && data.createdAt <= endDate)));
-    };
-  }
-
-  ngAfterViewInit(): void {
-    this.applications.sort = this.sort || null;
+    this.search();
   }
 
   ngOnDestroy(): void {
@@ -92,8 +88,7 @@ export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   /*  Delete an application if authorized.
   */
-  onDelete(element: any, e: any): void {
-    e.stopPropagation();
+  onDelete(element: any): void {
     const dialogRef = this.dialog.open(SafeConfirmModalComponent, {
       data: {
         title: 'Delete application',
@@ -202,27 +197,92 @@ export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  applyFilter(column: string, event: any): void {
-    if (column === 'status') {
-      this.statusFilter = !!event.value ? event.value.trim().toLowerCase() : '';
-    } else {
-      this.searchText = !!event ? event.target.value.trim().toLowerCase() : this.searchText;
-    }
-    this.applications.filter = '##';
-  }
-
   clearDateFilter(): void {
     this.filtersDate.startDate = '';
     this.filtersDate.endDate = '';
     // ignore that error
     this.startDate.value = '';
     this.endDate.value = '';
-    this.applyFilter('createdAt', '');
   }
 
   clearAllFilters(): void {
-    this.searchText = '';
-    this.statusFilter = '';
+    this.name.setValue('', { emitEvent: false });
+    this.statusFilter.setValue('', { emitEvent: false });
     this.clearDateFilter();
+    this.search();
+  }
+
+  public onCheckScroll(): void {
+    this.loadMoreData = true;
+    this.getApplications(this.page).subscribe((res: any) => {
+      if (res.data.applications.length > 0) {
+        this.applications.data = this.applications.data.concat(res.data.applications);
+        this.loadMoreData = res.loading;
+        this.setPaginationData(res.data.applications.length);
+      } else {
+        this.noMoreData = true;
+        this.loadMoreData = false;
+      }
+    });
+  }
+
+  search(): void {
+    this.loading = true;
+    this.noMoreData = false;
+    this.loadMoreData = false;
+    this.page = 0;
+    this.getApplications().subscribe((res: any) => {
+      this.applications.data = res.data.applications;
+      this.loading = res.loading;
+      this.setPaginationData(res.data.applications.length);
+    });
+    this.authSubscription = this.authService.user.subscribe(() => {
+      this.canAdd = this.authService.userHasClaim(PermissionsManagement.getRightFromPath(this.router.url, PermissionType.create));
+    });
+  }
+
+  private setPaginationData(applicationsLength: number): void {
+    this.page++;
+    if (applicationsLength !== PER_PAGE) {
+      this.noMoreData = true;
+    }
+  }
+
+  private getApplications(page = 0): any {
+    return this.apollo.watchQuery<GetApplicationsQueryResponse>({
+      query: GET_APPLICATIONS,
+      variables: {
+        page,
+        perPage: PER_PAGE,
+        filters: this.buildFilters(),
+        sort: this.buildSort()
+      }
+    }).valueChanges.pipe(take(1));
+  }
+
+  private buildFilters(): object {
+    return {
+      name: this.name.value,
+      dateRange: {
+        start: this.filtersDate.startDate,
+        end: this.filtersDate.endDate
+      },
+      status: this.statusFilter.value
+    };
+  }
+
+  sortData(event: Sort): void {
+    this.sortDirection = event.direction === 'asc' && event.direction !== this.sortDirection ? 'asc' : 'desc';
+    this.sortActive = event.active;
+    this.search();
+  }
+
+  buildSort(): object {
+    const field = this.sortActive;
+    const direction = this.sortDirection === 'desc' ? -1 : 1;
+    if (field.trim().length === 0) {
+      return { createdAt: 1 };
+    }
+    return JSON.parse(`{"${field}": "${direction}"}`);
   }
 }

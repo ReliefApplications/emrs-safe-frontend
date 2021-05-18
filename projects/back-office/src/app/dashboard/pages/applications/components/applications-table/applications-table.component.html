@@ -1,0 +1,87 @@
+<mat-spinner diameter="45" class="page-loader" *ngIf="loading"></mat-spinner>
+<table *ngIf="!loading" mat-table [dataSource]="dataSource" matSort [matSortActive]="sortActive"
+       [matSortDirection]="sortDirection"
+       (matSortChange)="sortTable.emit($event)">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>
+          <span class="headerTitle" mat-sort-header>
+            Name
+          </span>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+    <th mat-header-cell *matHeaderCellDef>
+          <span class="headerTitle" mat-sort-header>
+            Created on
+          </span>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.createdAt | date }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef>
+          <span class="headerTitle" mat-sort-header>
+            Status
+          </span>
+    </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-chip-list>
+        <mat-chip class="success-chip" disabled *ngIf="element.status === 'active'">
+          {{ element.status | titlecase }}
+        </mat-chip>
+        <mat-chip class="accent-chip" disabled color="accent" *ngIf="element.status === 'pending'">
+          {{ element.status | titlecase }}
+        </mat-chip>
+        <mat-chip class="warn-chip" disabled color="warn" *ngIf="element.status === 'archived'">
+          {{ element.status | titlecase }}
+        </mat-chip>
+      </mat-chip-list>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="usersCount">
+    <th mat-header-cell *matHeaderCellDef>
+          <span class="headerTitle" mat-sort-header>
+            Users
+          </span>
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.usersCount }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="preview.emit(element)">
+          <mat-icon>preview</mat-icon>
+          Preview
+        </button>
+        <safe-access [menuItem]="true" [access]="element.permissions"
+                     (save)="save.emit({permission: $event, application: element})"
+                     *ngIf="element.canUpdate">
+        </safe-access>
+        <button mat-menu-item (click)="duplicate.emit(element)" *ngIf="element.canDelete">
+          <mat-icon>file_copy</mat-icon>
+          Duplicate
+        </button>
+        <button mat-menu-item (click)="delete.emit(element)" *ngIf="element.canDelete">
+          <mat-icon>delete</mat-icon>
+          Delete
+        </button>
+      </mat-menu>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr class="clickable" mat-row *matRowDef="let row; columns: displayedColumns"
+      [routerLink]="['/applications', row.id]"></tr>
+</table>
+<div [style.visibility]="!loading && !noMoreData && loadMoreData ? 'visible' : 'hidden'"
+     style="display: flex; justify-content: center; align-items: center; background: white; margin-top: 5px">
+  <mat-spinner diameter="35" class="page-loader"></mat-spinner>
+</div>
