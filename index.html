@@ -1,0 +1,166 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="safe-front-end">SAFE Front-end</h1>
+<p><a href="https://img.shields.io/github/v/release/ReliefApplications/emrs-safe-frontend"><img src="https://img.shields.io/github/v/release/ReliefApplications/emrs-safe-frontend" alt="GitHub version" class="img-responsive"></a></p>
+<p>This front-end was made using <a href="https://angular.io/">Angular</a>. It uses multiple external packages, but the relevant ones are:</p>
+<ul>
+<li><a href="https://material.angular.io/">Material Angular</a>, for the UI</li>
+<li><a href="https://www.telerik.com/kendo-angular-ui">KendoUI Angular</a>, for the widgets of the dashboards</li>
+<li><a href="https://surveyjs.io/">SurveyJS</a>, for the form builder</li>
+<li><a href="https://www.apollographql.com/docs/angular/">Apollo Angular</a>, as a GraphQL client, to interact with the back-end</li>
+</ul>
+<p>It was made for a Proof of Concept of a UI Builder for SAFE.</p>
+<p>To read more about the project, and how to setup the back-end, please refer to the <a href="https://gitlab.com/who-ems/ui-doc">documentation of the project</a>.</p>
+<ul>
+<li><a href="https://gitlab.com/who-ems/ui-doc#how-to-setup">Setup</a></li>
+<li><a href="https://gitlab.com/who-ems/ui-doc#how-to-deploy">Deployment</a></li>
+</ul>
+<h1 id="general">General</h1>
+<p>The project is seperated into three sub-projects:</p>
+<ul>
+<li>back-office, an application accessible to administrators</li>
+<li>front-office, an application that would depend on the logged user</li>
+<li>safe, a library shared by both other projects</li>
+<li>web-element, an application to genereate the web components</li>
+</ul>
+<p>Every change made to the shared library will require a new build of the library, please refer to the commands section to see the command to execute.</p>
+<h1 id="azure-configuration">Azure configuration</h1>
+<p>If you want to deploy on Azure, start building the shared library:</p>
+<div><pre class="line-numbers"><code class="language-none">ng build safe</code></pre></div><p>Then, build the back-office with Azure environment file:</p>
+<div><pre class="line-numbers"><code class="language-none">ng build --configuration azure</code></pre></div><p>The compiled code can be found there in ./dist/back-office folder.</p>
+<h1 id="bundle-analysis">Bundle Analysis</h1>
+<p>First, install globally the bundle analyzer:</p>
+<div><pre class="line-numbers"><code class="language-none">npm install -g webpack-bundle-analyzer</code></pre></div><p>You can then run, for both back, front office and web element projects:</p>
+<div><pre class="line-numbers"><code class="language-none">ng build --stats-json</code></pre></div><p>This will create an additional find stats.json in your ./dist folder of each project.</p>
+<p>Finally, run:</p>
+<div><pre class="line-numbers"><code class="language-none">webpack-bundle-analyzer ./dist/&lt;project-name&gt;/stats.json</code></pre></div><p>and your browser will pop up the page at localhost:8888.</p>
+<h1 id="useful-commands">Useful commands</h1>
+<h2 id="development-server">Development server</h2>
+<p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
+<p>It is needed to use the <code>--project</code> flag in order to serve a specific project.</p>
+<p>For example, in order to serve the <em>back-office</em> application, the command is:</p>
+<div><pre class="line-numbers"><code class="language-none">ng serve --project=safe</code></pre></div><h2 id="code-scaffolding">Code scaffolding</h2>
+<p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
+<h2 id="build">Build</h2>
+<p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>--prod</code> flag for a production build.</p>
+<p>It is needed to use the <code>--project</code> flag in order to build a specific project.</p>
+<p>For example, in order to build the <em>safe</em> library, the command is:</p>
+<div><pre class="line-numbers"><code class="language-none">ng build --project=safe</code></pre></div><p>If you&#39;re working on the library, you can see the changes in direct time using this command:</p>
+<div><pre class="line-numbers"><code class="language-none">ng build --watch --project=safe</code></pre></div><h2 id="deploy-the-package">Deploy the package</h2>
+<p>Deployment of the npm @safe/builder package is a 3-steps process:</p>
+<ul>
+<li><p>check that the current package version isn&#39;t already deployed. Increase it if a version exists.</p>
+</li>
+<li><p>Build the package:</p>
+<div><pre class="line-numbers"><code class="language-none">ng build --project=safe</code></pre></div></li>
+<li><p>Deploy the package ( subsequent command can be executed if you&#39;re at the root of the project. Otherwise, change the path ):</p>
+<div><pre class="line-numbers"><code class="language-none">npm publish ./projects/safe</code></pre></div></li>
+</ul>
+<h2 id="build-the-web-components">Build the web components</h2>
+<p>We first need to generate the elements, using this command:</p>
+<div><pre class="line-numbers"><code class="language-none">npm run build:elem</code></pre></div><p>Then, a bundle can be generated from the files using this command:</p>
+<div><pre class="line-numbers"><code class="language-none">npm run bundle:elem</code></pre></div><h2 id="running-unit-tests">Running unit tests</h2>
+<p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
+<h2 id="running-end-to-end-tests">Running end-to-end tests</h2>
+<p>Run <code>ng e2e</code> to execute the end-to-end tests via <a href="http://www.protractortest.org/">Protractor</a>.</p>
+<h2 id="further-help">Further help</h2>
+<p>To get more help on the Angular CLI use <code>ng help</code> or go check out the <a href="https://github.com/angular/angular-cli/blob/master/README.md">Angular CLI README</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

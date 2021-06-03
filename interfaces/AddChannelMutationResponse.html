@@ -1,0 +1,811 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>AddChannelMutationResponse</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/safe/src/lib/graphql/mutations.ts</code>
+        </p>
+
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#addChannel">addChannel</a>
+                                </li>
+                                <li>
+                                        <a href="#loading">loading</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="addChannel"></a>
+                                        <span class="name"><b>addChannel</b><a href="#addChannel"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>addChannel:         <code><a href="../interfaces/Channel.html" target="_self" >Channel</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/Channel.html" target="_self" >Channel</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="loading"></a>
+                                        <span class="name"><b>loading</b><a href="#loading"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>loading:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {gql} from &#x27;apollo-angular&#x27;;
+
+import { Form } from &#x27;../models/form.model&#x27;;
+import { Notification } from &#x27;../models/notification.model&#x27;;
+import { Record } from &#x27;../models/record.model&#x27;;
+import { User, Role } from &#x27;../models/user.model&#x27;;
+import { Page } from &#x27;../models/page.model&#x27;;
+import { Application } from &#x27;../models/application.model&#x27;;
+import { Channel } from &#x27;../models/channel.model&#x27;;
+import { Subscription } from &#x27;../models/subscription.model&#x27;;
+import { PositionAttributeCategory } from &#x27;../models/position-attribute-category.model&#x27;;
+import { Step } from &#x27;../models/step.model&#x27;;
+
+// &#x3D;&#x3D;&#x3D; EDIT RECORD &#x3D;&#x3D;&#x3D;
+export const EDIT_RECORD &#x3D; gql&#x60;
+mutation editRecord($id: ID!, $data: JSON, $version: ID, $display: Boolean) {
+  editRecord(id: $id, data: $data, version: $version) {
+    id
+    data(display: $display)
+    createdAt
+    modifiedAt
+  }
+}&#x60;;
+
+export interface EditRecordMutationResponse {
+  loading: boolean;
+  editRecord: Record;
+}
+
+// &#x3D;&#x3D;&#x3D; CONVERT RECORD &#x3D;&#x3D;&#x3D;
+export const CONVERT_RECORD &#x3D; gql&#x60;
+mutation convertRecord($id: ID!, $form: ID!, $copyRecord: Boolean!) {
+  convertRecord(id: $id, form: $form, copyRecord: $copyRecord) {
+    id
+    createdAt
+    modifiedAt
+  }
+}&#x60;;
+
+export interface ConvertRecordMutationResponse {
+  loading: boolean;
+  convertRecord: Record;
+}
+
+// &#x3D;&#x3D;&#x3D; ADD RECORD &#x3D;&#x3D;&#x3D;
+export const ADD_RECORD &#x3D; gql&#x60;
+mutation addRecord($form: ID!, $data: JSON!, $display: Boolean) {
+  addRecord(form: $form, data: $data) {
+    id
+    createdAt
+    modifiedAt
+    data(display: $display)
+    form {
+      uniqueRecord {
+        id
+        modifiedAt
+        data
+      }
+    }
+  }
+}&#x60;;
+
+export interface AddRecordMutationResponse {
+  loading: boolean;
+  addRecord: Record;
+}
+
+// &#x3D;&#x3D;&#x3D; UPLOAD FILE &#x3D;&#x3D;&#x3D;
+export const UPLOAD_FILE &#x3D; gql&#x60;
+mutation uploadFile($file: Upload!, $form: ID!) {
+  uploadFile(file: $file, form: $form)
+}&#x60;;
+
+export interface UploadFileMutationResponse {
+  loading: boolean;
+  uploadFile: string;
+}
+
+// &#x3D;&#x3D;&#x3D; EDIT FORM &#x3D;&#x3D;&#x3D;
+export const EDIT_FORM_STRUCTURE &#x3D; gql&#x60;
+mutation editForm($id: ID!, $structure: JSON!) {
+  editForm(id: $id, structure: $structure) {
+    id
+    name
+    createdAt
+    status
+    versions {
+      id
+      createdAt
+      data
+    }
+    permissions {
+      canSee {
+        id
+        title
+      }
+      canCreate {
+        id
+        title
+      }
+      canUpdate {
+        id
+        title
+      }
+      canDelete {
+        id
+        title
+      }
+    }
+    canUpdate
+  }
+}&#x60;;
+
+export interface EditFormMutationResponse {
+  loading: boolean;
+  editForm: Form;
+}
+
+// &#x3D;&#x3D;&#x3D; EDIT USER &#x3D;&#x3D;&#x3D;
+export const EDIT_USER &#x3D; gql&#x60;
+mutation editUser($id: ID!, $roles: [ID]!, $application: ID) {
+  editUser(id: $id, roles: $roles, application: $application) {
+    id
+    username
+    name
+    roles {
+      id
+      title
+      application {
+        id
+      }
+    }
+    oid
+  }
+}&#x60;;
+
+export interface EditUserMutationResponse {
+  loading: boolean;
+  editUser: User;
+}
+
+// &#x3D;&#x3D;&#x3D; EDIT USER PROFILE &#x3D;&#x3D;&#x3D;
+export const EDIT_USER_PROFILE &#x3D; gql&#x60;
+mutation editUserProfile($profile: UserProfileInputType!) {
+  editUserProfile(profile: $profile) {
+    id
+    username
+    name
+    roles {
+      id
+      title
+      application {
+        id
+      }
+    }
+    oid
+    favoriteApp
+  }
+}&#x60;;
+
+export interface EditUserProfileMutationResponse {
+  loading: boolean;
+  editUserProfile: User;
+}
+
+// &#x3D;&#x3D;&#x3D; ADD PAGE &#x3D;&#x3D;&#x3D;
+export const ADD_PAGE &#x3D; gql&#x60;
+mutation addPage($name: String, $type: String!, $content: ID, $application: ID!) {
+  addPage(name: $name, type: $type, content: $content, application: $application){
+    id
+    name
+    type
+    content
+    createdAt
+    canSee
+    canUpdate
+    canDelete
+  }
+}&#x60;;
+
+export interface AddPageMutationResponse {
+  loading: boolean;
+  addPage: Page;
+}
+
+// &#x3D;&#x3D;&#x3D; ADD ROLE &#x3D;&#x3D;&#x3D;
+export const ADD_ROLE &#x3D; gql&#x60;
+mutation addRole($title: String!, $application: ID) {
+  addRole(title: $title, application: $application) {
+    id
+    title
+    permissions {
+      id
+      type
+    }
+    usersCount
+  }
+}&#x60;;
+
+export interface AddRoleMutationResponse {
+  loading: boolean;
+  addRole: Role;
+}
+
+export const ADD_ROLE_TO_USERS &#x3D; gql&#x60;
+mutation addRoleToUsers($usernames: [String]!, $role: ID!, $positionAttributes: [PositionAttributeInputType]) {
+  addRoleToUsers(usernames: $usernames, role: $role, positionAttributes: $positionAttributes) {
+    id
+    username
+    name
+    roles {
+      id
+      title
+    }
+    oid
+  }
+}&#x60;;
+
+export interface AddRoleToUsersMutationResponse {
+  loading: boolean;
+  addRoleToUsers: User[];
+}
+
+// &#x3D;&#x3D;&#x3D; EDIT ROLE &#x3D;&#x3D;&#x3D;
+export const EDIT_ROLE &#x3D; gql&#x60;
+mutation editRole($id: ID!, $permissions: [ID], $channels: [ID], $title: String) {
+  editRole(id: $id, permissions: $permissions, channels: $channels, title: $title) {
+    id
+    title
+    permissions {
+      id
+      type
+    }
+    usersCount
+    channels {
+      id
+      title
+      application {
+        id
+        name
+      }
+    }
+  }
+}&#x60;;
+
+export interface EditRoleMutationResponse {
+  loading: boolean;
+  editRole: Role;
+}
+
+// &#x3D;&#x3D;&#x3D; DELETE ROLE &#x3D;&#x3D;&#x3D;
+export const DELETE_ROLE &#x3D; gql&#x60;
+mutation deleteRole($id: ID!) {
+  deleteRole(id: $id) {
+    id
+  }
+}&#x60;;
+
+export interface DeleteRoleMutationResponse {
+  loading: boolean;
+  deleteRole: Role;
+}
+
+// &#x3D;&#x3D;&#x3D; DELETE USER &#x3D;&#x3D;&#x3D;
+export const DELETE_USERS &#x3D; gql&#x60;
+  mutation deleteUsers($ids: [ID]!) {
+    deleteUsers(ids: $ids)
+  }&#x60;;
+
+
+export interface DeleteUsersMutationResponse {
+  loading: boolean;
+  deleteUsers: number;
+}
+
+// &#x3D;&#x3D;&#x3D; DELETE USER FROM APPLICATION &#x3D;&#x3D;&#x3D;
+export const DELETE_USERS_FROM_APPLICATION &#x3D; gql&#x60;
+mutation deleteUsersFromApplication($ids: [ID]!, $application: ID!) {
+  deleteUsersFromApplication(ids: $ids, application: $application) {
+    id
+    username
+    name
+    roles {
+      id
+      title
+    }
+    oid
+  }
+}&#x60;;
+
+export interface DeleteUsersFromApplicationMutationResponse {
+  loading: boolean;
+  deleteUsersFromApplication: User[];
+}
+
+// &#x3D;&#x3D;&#x3D; ADD POSITION &#x3D;&#x3D;&#x3D;
+export const ADD_POSITION_ATTRIBUTE_CATEGORY &#x3D; gql&#x60;
+mutation addPositionAttributeCategory($title: String!, $application: ID!) {
+  addPositionAttributeCategory(title: $title, application: $application) {
+    id
+    title
+  }
+}&#x60;;
+
+export interface AddPositionAttributeCategoryMutationResponse {
+  loading: boolean;
+  addPositionAttributeCategory: PositionAttributeCategory;
+}
+
+// &#x3D;&#x3D;&#x3D; DELETE POSITION &#x3D;&#x3D;&#x3D;
+export const DELETE_POSITION_ATTRIBUTE_CATEGORY &#x3D; gql&#x60;
+mutation deletePositionAttributeCategory($id: ID!, $application: ID!) {
+  deletePositionAttributeCategory(id: $id, application: $application){
+    id
+  }
+}&#x60;;
+
+
+export interface DeletePositionAttributeCategoryMutationResponse {
+  loading: boolean;
+  deletePositionAttributeCategory: PositionAttributeCategory;
+}
+
+// &#x3D;&#x3D;&#x3D; EDIT POSITION &#x3D;&#x3D;&#x3D;
+export const EDIT_POSITION_ATTRIBUTE_CATEGORY &#x3D; gql&#x60;
+mutation editPositionAttributeCategory($id: ID!, $application: ID!, $title: String!) {
+  editPositionAttributeCategory(id: $id, application: $application, title: $title) {
+    id
+    title
+  }
+}&#x60;;
+
+export interface EditPositionAttributeCategoryMutationResponse {
+  loading: boolean;
+  editPositionAttributeCategory: PositionAttributeCategory;
+}
+// &#x3D;&#x3D;&#x3D; DELETE PAGE &#x3D;&#x3D;&#x3D;
+export const DELETE_PAGE &#x3D; gql&#x60;
+mutation deletePage($id: ID!) {
+  deletePage(id: $id){
+    id
+  }
+}&#x60;;
+
+export interface DeletePageMutationResponse {
+  loading: boolean;
+  deletePage: Page;
+}
+
+export const EDIT_APPLICATION &#x3D; gql&#x60;
+mutation editApplication($id: ID!, $name: String, $status: String, $pages: [ID], $permissions: JSON, $description: String) {
+  editApplication(id: $id, name: $name, status: $status, pages: $pages, permissions: $permissions, description: $description) {
+    id
+    description
+    name
+    createdAt
+    modifiedAt
+    status
+    pages {
+      id
+      name
+      createdAt
+      type
+      content
+    }
+    settings
+    permissions {
+      canSee {
+        id
+        title
+      }
+      canUpdate {
+        id
+        title
+      }
+      canDelete {
+        id
+        title
+      }
+    }
+    canSee
+    canUpdate
+    canDelete
+  }
+}&#x60;;
+
+export interface EditApplicationMutationResponse {
+  loading: boolean;
+  editApplication: Application;
+}
+
+// &#x3D;&#x3D;&#x3D; SEE NOTIFICATION &#x3D;&#x3D;&#x3D;
+export const SEE_NOTIFICATION &#x3D; gql&#x60;
+mutation seeNotification($id: ID!) {
+  seeNotification(id: $id) {
+    id
+    action
+    content
+    createdAt
+    channel {
+      id
+      title
+      application {
+        id
+      }
+    }
+    seenBy {
+      id
+      name
+    }
+  }
+}&#x60;;
+
+export interface SeeNotificationMutationResponse {
+  loading: boolean;
+  seeNotification: Notification;
+}
+
+// &#x3D;&#x3D;&#x3D; SEE ALL NOTIFICATION &#x3D;&#x3D;&#x3D;
+export const SEE_NOTIFICATIONS &#x3D; gql&#x60;
+mutation seeNotifications($ids: [ID]!) {
+  seeNotifications(ids: $ids)
+}&#x60;;
+
+export interface SeeNotificationsMutationResponse {
+  loading: boolean;
+  seeNotifications: boolean;
+}
+
+// &#x3D;&#x3D;&#x3D; ADD CHANNEL &#x3D;&#x3D;&#x3D;
+export const ADD_CHANNEL &#x3D; gql&#x60;
+mutation addChannel($title: String!, $application: ID!) {
+  addChannel(title: $title, application: $application){
+    id
+    title
+    application {
+      id
+      name
+    }
+    subscribedRoles {
+      id
+      title
+      usersCount
+    }
+  }
+}&#x60;;
+
+export interface AddChannelMutationResponse {
+  loading: boolean;
+  addChannel: Channel;
+}
+
+// &#x3D;&#x3D;&#x3D; DELETE CHANNEL &#x3D;&#x3D;&#x3D;
+export const DELETE_CHANNEL &#x3D; gql&#x60;
+mutation deleteChannel($id: ID!) {
+  deleteChannel(id: $id){
+    id
+    title
+  }
+}&#x60;;
+
+export interface DeleteChannelMutationResponse {
+  loading: boolean;
+  deleteChannel: Channel;
+}
+
+// &#x3D;&#x3D;&#x3D; PUBLISH NOTIFICATION &#x3D;&#x3D;&#x3D;
+export const PUBLISH_NOTIFICATION &#x3D; gql&#x60;
+mutation publishNotification($action: String!, $content: JSON!, $channel: ID!) {
+  publishNotification(action: $action, content: $content, channel: $channel){
+    id
+    action
+    content
+    createdAt
+    channel {
+      id
+      title
+      application {
+        id
+        name
+      }
+    }
+    seenBy {
+      id
+      username
+    }
+  }
+}&#x60;;
+
+export interface PublishNotificationMutationResponse {
+  loading: boolean;
+  publishNotification: Notification;
+}
+
+// &#x3D;&#x3D;&#x3D; PUBLISH RECORDS &#x3D;&#x3D;&#x3D;
+export const PUBLISH &#x3D; gql&#x60;
+mutation publish($ids: [ID]!, $channel: ID!) {
+  publish(ids: $ids, channel: $channel)
+}&#x60;;
+
+export interface PublishMutationResponse {
+  loading: boolean;
+  publish: boolean;
+}
+
+// &#x3D;&#x3D;&#x3D; DELETE RECORD &#x3D;&#x3D;&#x3D;
+export const DELETE_RECORD &#x3D; gql&#x60;
+mutation deleteRecord($id: ID!) {
+  deleteRecord(id: $id) {
+    id
+  }
+}&#x60;;
+
+export interface DeleteRecordMutationResponse {
+  loading: boolean;
+  deleteRecord: Record;
+}
+
+// &#x3D;&#x3D;&#x3D; ADD SUBSCRIPTION &#x3D;&#x3D;&#x3D;
+export const ADD_SUBSCRIPTION &#x3D; gql&#x60;
+mutation addSubscription($application: ID!, $routingKey: String!, $title: String!, $convertTo: ID, $channel: ID) {
+  addSubscription(application: $application, routingKey: $routingKey, title: $title, convertTo: $convertTo, channel: $channel) {
+    routingKey
+    title
+    convertTo {
+      id
+      name
+    }
+    channel {
+      id
+      title
+    }
+  }
+}&#x60;;
+
+export interface AddSubscriptionMutationResponse {
+  loading: boolean;
+  addSubscription: Subscription;
+}
+
+// &#x3D;&#x3D;&#x3D; EDIT SUBSCRIPTION &#x3D;&#x3D;&#x3D;
+export const EDIT_SUBSCRIPTION &#x3D; gql&#x60;
+mutation editSubscription($applicationId: ID!, $routingKey: String!, $title: String!, $convertTo: String!, $channel: String!,  $previousSubscription: String!, ) {
+  editSubscription(applicationId: $applicationId, routingKey: $routingKey, title: $title, convertTo: $convertTo, channel: $channel, previousSubscription: $previousSubscription) {
+    routingKey
+    title
+    convertTo {
+      id
+      name
+    }
+    channel {
+      id
+      title
+    }
+  }
+}&#x60;;
+
+export interface EditSubscriptionMutationResponse {
+  loading: boolean;
+  editSubscription: Subscription;
+}
+
+// &#x3D;&#x3D;&#x3D; DELETE SUBSCRIPTION &#x3D;&#x3D;&#x3D;
+export const DELETE_SUBSCRIPTION &#x3D; gql&#x60;
+mutation deleteSubscription($applicationId: ID!, $routingKey: String!) {
+  deleteSubscription(applicationId: $applicationId, routingKey: $routingKey) {
+    id
+  }
+}&#x60;;
+
+export interface DeleteSubscriptionMutationResponse {
+  loading: boolean;
+  deleteSubscription: Subscription;
+}
+
+// &#x3D;&#x3D;&#x3D; ADD STEP &#x3D;&#x3D;&#x3D;
+export const ADD_STEP &#x3D; gql&#x60;
+mutation addStep($name: String, $type: String!, $content: ID, $workflow: ID!) {
+  addStep(name: $name, type: $type, content: $content, workflow: $workflow){
+    id
+    name
+    type
+    content
+    createdAt
+  }
+}&#x60;;
+
+export interface AddStepMutationResponse {
+  loading: boolean;
+  addStep: Step;
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddChannelMutationResponse.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

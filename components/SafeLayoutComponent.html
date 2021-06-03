@@ -1,0 +1,2101 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SafeLayoutComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/safe/src/lib/components/layout/layout.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>safe-layout</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./layout.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./layout.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#account">account</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#environment">environment</a>
+                            </li>
+                            <li>
+                                <a href="#filteredNavGroups">filteredNavGroups</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#largeDevice">largeDevice</a>
+                            </li>
+                            <li>
+                                <a href="#notifications">notifications</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#notificationsSubscription">notificationsSubscription</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#otherOffice">otherOffice</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#rightSidenav">rightSidenav</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showSidenav">showSidenav</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#drop">drop</a>
+                            </li>
+                            <li>
+                                <a href="#goBack">goBack</a>
+                            </li>
+                            <li>
+                                <a href="#logout">logout</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onClick">onClick</a>
+                            </li>
+                            <li>
+                                <a href="#onMarkAllNotificationsAsRead">onMarkAllNotificationsAsRead</a>
+                            </li>
+                            <li>
+                                <a href="#onNotificationClick">onNotificationClick</a>
+                            </li>
+                            <li>
+                                <a href="#onOpenApplication">onOpenApplication</a>
+                            </li>
+                            <li>
+                                <a href="#onOpenProfile">onOpenProfile</a>
+                            </li>
+                            <li>
+                                <a href="#onSwitchOffice">onSwitchOffice</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#applications">applications</a>
+                            </li>
+                            <li>
+                                <a href="#navGroups">navGroups</a>
+                            </li>
+                            <li>
+                                <a href="#route">route</a>
+                            </li>
+                            <li>
+                                <a href="#title">title</a>
+                            </li>
+                            <li>
+                                <a href="#toolbar">toolbar</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#openApplication">openApplication</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:resize">window:resize</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(environment: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, authService: <a href="../injectables/SafeAuthService.html">SafeAuthService</a>, notificationService: <a href="../injectables/SafeNotificationService.html">SafeNotificationService</a>, layoutService: <a href="../injectables/SafeLayoutService.html">SafeLayoutService</a>, dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>environment</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SafeAuthService.html" target="_self" >SafeAuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>notificationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SafeNotificationService.html" target="_self" >SafeNotificationService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>layoutService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SafeLayoutService.html" target="_self" >SafeLayoutService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="applications"></a>
+                        <b>applications</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Application.html" target="_self" >Application[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:28</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="navGroups"></a>
+                        <b>navGroups</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="route"></a>
+                        <b>route</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:30</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="title"></a>
+                        <b>title</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="toolbar"></a>
+                        <b>toolbar</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>TemplateRef&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:32</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="openApplication"></a>
+                        <b>openApplication</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Application.html" target="_self" >EventEmitter&lt;Application&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:36</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:resize"></a>
+                    <span class="name">
+                        <b>
+                            window:resize
+                        </b>
+                        <a href="#window:resize"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:resize(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="161"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:161</a></div>
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drop"></a>
+                    <span class="name">
+                        <b>
+                            drop
+                        </b>
+                        <a href="#drop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>drop(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, group: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="177"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:177</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>group</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="goBack"></a>
+                    <span class="name">
+                        <b>
+                            goBack
+                        </b>
+                        <a href="#goBack"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>goBack()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:154</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <b>
+                            logout
+                        </b>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="184"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:184</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <b>
+                            ngOnChanges
+                        </b>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="126"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:126</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="146"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:146</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onClick"></a>
+                    <span class="name">
+                        <b>
+                            onClick
+                        </b>
+                        <a href="#onClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onClick(callback: () => void, event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>callback</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/function" target="_blank" >function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onMarkAllNotificationsAsRead"></a>
+                    <span class="name">
+                        <b>
+                            onMarkAllNotificationsAsRead
+                        </b>
+                        <a href="#onMarkAllNotificationsAsRead"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onMarkAllNotificationsAsRead()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="218"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:218</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onNotificationClick"></a>
+                    <span class="name">
+                        <b>
+                            onNotificationClick
+                        </b>
+                        <a href="#onNotificationClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onNotificationClick(notification: <a href="../interfaces/Notification.html">Notification</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="222"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:222</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>notification</td>
+                                    <td>
+                                                <code><a href="../interfaces/Notification.html" target="_self" >Notification</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOpenApplication"></a>
+                    <span class="name">
+                        <b>
+                            onOpenApplication
+                        </b>
+                        <a href="#onOpenApplication"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOpenApplication(application: <a href="../interfaces/Application.html">Application</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:167</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>application</td>
+                                    <td>
+                                                <code><a href="../interfaces/Application.html" target="_self" >Application</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOpenProfile"></a>
+                    <span class="name">
+                        <b>
+                            onOpenProfile
+                        </b>
+                        <a href="#onOpenProfile"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOpenProfile()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="206"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:206</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSwitchOffice"></a>
+                    <span class="name">
+                        <b>
+                            onSwitchOffice
+                        </b>
+                        <a href="#onSwitchOffice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSwitchOffice()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="account"></a>
+                        <span class="name">
+                            <b>
+                            account</b>
+                            <a href="#account"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Account | null</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:46</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:63</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filteredNavGroups"></a>
+                        <span class="name">
+                            <b>
+                            filteredNavGroups</b>
+                            <a href="#filteredNavGroups"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="largeDevice"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            largeDevice</b>
+                            <a href="#largeDevice"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notifications"></a>
+                        <span class="name">
+                            <b>
+                            notifications</b>
+                            <a href="#notifications"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Notification.html" target="_self" >Notification[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="notificationsSubscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Optional</span>
+                            notificationsSubscription</b>
+                            <a href="#notificationsSubscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Subscription.html" target="_self" >Subscription</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:43</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="otherOffice"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            otherOffice</b>
+                            <a href="#otherOffice"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:54</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="rightSidenav"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Optional</span>
+                            rightSidenav</b>
+                            <a href="#rightSidenav"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ViewContainerRef" target="_blank" >ViewContainerRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;rightSidenav&#x27;, {read: ViewContainerRef})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showSidenav"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            showSidenav</b>
+                            <a href="#showSidenav"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="user"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            user</b>
+                            <a href="#user"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">projects/safe/src/lib/components/layout/layout.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ComponentRef, EventEmitter, HostListener, Inject, Input, OnChanges, OnDestroy,
+  OnInit, Output, TemplateRef, ViewChild, ViewContainerRef } from &#x27;@angular/core&#x27;;
+import { SafeAuthService } from &#x27;../../services/auth.service&#x27;;
+import { SafeLayoutService } from &#x27;../../services/layout.service&#x27;;
+import { Account } from &#x27;msal&#x27;;
+import { PermissionsManagement, PermissionType } from &#x27;../../models/user.model&#x27;;
+import { Application } from &#x27;../../models/application.model&#x27;;
+import { moveItemInArray } from &#x27;@angular/cdk/drag-drop&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { Notification } from &#x27;../../models/notification.model&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { SafeNotificationService } from &#x27;../../services/notification.service&#x27;;
+import { SafeConfirmModalComponent } from &#x27;../confirm-modal/confirm-modal.component&#x27;;
+
+@Component({
+  selector: &#x27;safe-layout&#x27;,
+  templateUrl: &#x27;./layout.component.html&#x27;,
+  styleUrls: [&#x27;./layout.component.scss&#x27;]
+})
+export class SafeLayoutComponent implements OnInit, OnChanges, OnDestroy {
+
+  // &#x3D;&#x3D;&#x3D; HEADER TITLE &#x3D;&#x3D;&#x3D;
+  @Input() title &#x3D; &#x27;&#x27;;
+
+  @Input() navGroups: any[] &#x3D; [];
+
+  @Input() applications: Application[] &#x3D; [];
+
+  @Input() route?: ActivatedRoute;
+
+  @Input() toolbar?: TemplateRef&lt;any&gt;;
+
+  @ViewChild(&#x27;rightSidenav&#x27;, { read: ViewContainerRef }) rightSidenav?: ViewContainerRef;
+
+  @Output() openApplication: EventEmitter&lt;Application&gt; &#x3D; new EventEmitter();
+
+
+  filteredNavGroups: any[] &#x3D; [];
+
+  // &#x3D;&#x3D;&#x3D; NOTIFICATIONS &#x3D;&#x3D;&#x3D;
+  notifications: Notification[] &#x3D; [];
+  notificationsSubscription?: Subscription;
+
+  // &#x3D;&#x3D;&#x3D; AZURE ACCOUNT &#x3D;&#x3D;&#x3D;
+  account: Account | null;
+
+  // &#x3D;&#x3D;&#x3D; DISPLAY &#x3D;&#x3D;&#x3D;
+  public largeDevice: boolean;
+
+  public showSidenav &#x3D; false;
+
+  public user: any;
+  public otherOffice &#x3D; &#x27;&#x27;;
+  private environment: any;
+
+  constructor(
+    @Inject(&#x27;environment&#x27;) environment: any,
+    private router: Router,
+    private authService: SafeAuthService,
+    private notificationService: SafeNotificationService,
+    private layoutService: SafeLayoutService,
+    public dialog: MatDialog,
+  ) {
+    this.largeDevice &#x3D; (window.innerWidth &gt; 1024);
+    this.account &#x3D; this.authService.account;
+    this.environment &#x3D; environment;
+  }
+
+  ngOnInit(): void {
+    this.authService.user.subscribe((user) &#x3D;&gt; {
+      if (user) {
+        this.user &#x3D; { ...user};
+        if (this.environment.module &#x3D;&#x3D;&#x3D; &#x27;backoffice&#x27;) {
+          this.otherOffice &#x3D; &#x27;front office&#x27;;
+        } else {
+          this.otherOffice &#x3D; &#x27;back office&#x27;;
+        }
+      }
+      this.filteredNavGroups &#x3D; [];
+      for (const group of this.navGroups) {
+        const navItems &#x3D; group.navItems.filter((item: any) &#x3D;&gt; {
+          const permission &#x3D; PermissionsManagement.getRightFromPath(item.path, PermissionType.access);
+          return this.authService.userHasClaim(permission);
+        });
+        if (navItems.length &gt; 0) {
+          const filteredGroup &#x3D; {
+            name: group.name,
+            navItems
+          };
+          this.filteredNavGroups.push(filteredGroup);
+        }
+      }
+    });
+    this.notificationService.initNotifications();
+    this.notificationsSubscription &#x3D; this.notificationService.notifications.subscribe((notifications: Notification[]) &#x3D;&gt; {
+      if (notifications) {
+        this.notifications &#x3D; notifications;
+      } else {
+        this.notifications &#x3D; [];
+      }
+    });
+
+    this.layoutService.rightSidenav.subscribe(view &#x3D;&gt; {
+      if (view &amp;&amp; this.rightSidenav) {
+        // this is necessary to prevent have more than one history component at the same time.
+        this.layoutService.setRightSidenav(null);
+        this.showSidenav &#x3D; true;
+        const componentRef: ComponentRef&lt;any&gt; &#x3D; this.rightSidenav.createComponent(view.factory);
+        for (const [key, value] of Object.entries(view.inputs)) {
+          componentRef.instance[key] &#x3D; value;
+        }
+        componentRef.instance.cancel.subscribe(() &#x3D;&gt; {
+          componentRef.destroy();
+          this.layoutService.setRightSidenav(null);
+        });
+      } else {
+        this.showSidenav &#x3D; false;
+        if (this.rightSidenav) {
+          this.rightSidenav.clear();
+        }
+      }
+    });
+  }
+
+  ngOnChanges(): void {
+    this.authService.user.subscribe(() &#x3D;&gt; {
+      this.filteredNavGroups &#x3D; [];
+      for (const group of this.navGroups) {
+        const navItems &#x3D; group.navItems.filter((item: any) &#x3D;&gt; {
+          const permission &#x3D; PermissionsManagement.getRightFromPath(item.path, PermissionType.access);
+          return this.authService.userHasClaim(permission);
+        });
+        if (navItems.length &gt; 0) {
+          const filteredGroup &#x3D; {
+            name: group.name,
+            callback: group.callback,
+            navItems
+          };
+          this.filteredNavGroups.push(filteredGroup);
+        }
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.notificationsSubscription) {
+      this.notificationsSubscription.unsubscribe();
+    }
+  }
+
+  /*  Go back to previous view
+  */
+  goBack(): void {
+    this.router.navigate([&#x27;../../&#x27;], { relativeTo: this.route });
+  }
+
+  /*  Change the display depending on windows size.
+  */
+  @HostListener(&#x27;window:resize&#x27;, [&#x27;$event&#x27;])
+  onResize(event: any): void {
+    this.largeDevice &#x3D; (event.target.innerWidth &gt; 1024);
+  }
+
+  /* Emit the application to open
+  */
+  onOpenApplication(application: Application): void {
+    this.openApplication.emit(application);
+  }
+
+  onClick(callback: () &#x3D;&gt; any, event: any): void {
+    callback();
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  drop(event: any, group: any): void {
+    moveItemInArray(group.navItems, event.previousIndex, event.currentIndex);
+    group.callback(group.navItems);
+  }
+
+  /*  Call logout method of authService.
+    */
+  logout(): void {
+    if (!this.authService.canLogout.value) {
+      const dialogRef &#x3D; this.dialog.open(SafeConfirmModalComponent, {
+        data: {
+          title: &#x60;Exit without saving changes&#x60;,
+          content: &#x60;There are unsaved changes on your form. Are you sure you want to logout?&#x60;,
+          confirmText: &#x27;Confirm&#x27;,
+          confirmColor: &#x27;primary&#x27;
+        }
+      });
+      dialogRef.afterClosed().subscribe(value &#x3D;&gt; {
+        if (value) {
+          this.authService.canLogout.next(true);
+          localStorage.clear();
+          this.authService.logout();
+        }
+      });
+    } else {
+      this.authService.logout();
+    }
+  }
+
+  onOpenProfile(): void {
+    this.router.navigate([&#x27;/profile&#x27;]);
+  }
+
+  onSwitchOffice(): void {
+    if (this.environment.module &#x3D;&#x3D;&#x3D; &#x27;backoffice&#x27;) {
+      window.location.href &#x3D; this.environment.frontOfficeUri;
+    } else {
+      window.location.href &#x3D; this.environment.backOfficeUri;
+    }
+  }
+
+  onMarkAllNotificationsAsRead(): void {
+    this.notificationService.markAllAsSeen();
+  }
+
+  onNotificationClick(notification: Notification): void {
+    this.notificationService.markAsSeen(notification);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-toolbar color&#x3D;&quot;primary&quot;&gt;
+  &lt;button mat-icon-button (click)&#x3D;&quot;nav.toggle()&quot; *ngIf&#x3D;&quot;!largeDevice&quot;&gt;
+    &lt;mat-icon&gt;menu&lt;/mat-icon&gt;
+  &lt;/button&gt;
+  &lt;button mat-icon-button (click)&#x3D;&quot;goBack()&quot; *ngIf&#x3D;&quot;largeDevice &amp;&amp; route&quot;&gt;
+    &lt;mat-icon&gt;keyboard_backspace&lt;/mat-icon&gt;
+  &lt;/button&gt;
+  &lt;ng-container *ngIf&#x3D;&quot;!applications || applications.length &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+    &lt;h1 class&#x3D;&quot;application-title&quot;&gt;{{title}}&lt;/h1&gt;
+  &lt;/ng-container&gt;
+  &lt;ng-container *ngIf&#x3D;&quot;applications &amp;&amp; applications.length &gt; 0&quot;&gt;
+    &lt;button mat-button [matMenuTriggerFor]&#x3D;&quot;applicationMenu&quot;&gt;
+      {{title}}
+      &lt;mat-icon&gt;arrow_drop_down&lt;/mat-icon&gt;
+    &lt;/button&gt;
+    &lt;mat-menu #applicationMenu&#x3D;&quot;matMenu&quot;&gt;
+      &lt;button mat-menu-item *ngFor&#x3D;&quot;let application of applications&quot;
+        (click)&#x3D;&quot;onOpenApplication(application)&quot;&gt;{{application.name}}&lt;/button&gt;
+    &lt;/mat-menu&gt;
+  &lt;/ng-container&gt;
+  &lt;div class&#x3D;&quot;account-container&quot;&gt;
+    &lt;div class&#x3D;&quot;account-property&quot;&gt;{{account ? account.name : &#x27;&#x27;}}&lt;/div&gt;
+    &lt;div class&#x3D;&quot;account-property&quot;&gt;{{account ? account.userName : &#x27;&#x27;}}&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;accountMenu&quot;&gt;
+    &lt;mat-icon&gt;account_circle&lt;/mat-icon&gt;
+  &lt;/button&gt;
+  &lt;button mat-icon-button [matMenuTriggerFor]&#x3D;&quot;notificationMenu&quot; [disabled]&#x3D;&quot;notifications.length &#x3D;&#x3D; 0&quot;&gt;
+    &lt;mat-icon [matBadge]&#x3D;&quot;notifications.length&quot; matBadgeSize&#x3D;&quot;small&quot; matBadgeColor&#x3D;&quot;warn&quot;
+      [matBadgeHidden]&#x3D;&quot;notifications.length &#x3D;&#x3D; 0&quot;&gt;
+      notifications&lt;/mat-icon&gt;
+  &lt;/button&gt;
+  &lt;mat-menu #accountMenu&#x3D;&quot;matMenu&quot;&gt;
+    &lt;button mat-menu-item (click)&#x3D;&quot;onOpenProfile()&quot;&gt;Profile&lt;/button&gt;
+    &lt;ng-container *ngIf&#x3D;&quot;user &amp;&amp; user.isAdmin&quot;&gt;
+      &lt;mat-divider&gt;&lt;/mat-divider&gt;
+      &lt;button mat-menu-item (click)&#x3D;&quot;onSwitchOffice()&quot;&gt;Switch to {{ otherOffice }}&lt;/button&gt;
+    &lt;/ng-container&gt;
+    &lt;mat-divider&gt;&lt;/mat-divider&gt;
+    &lt;button mat-menu-item (click)&#x3D;&quot;logout()&quot; class&#x3D;&quot;warn&quot;&gt;Logout&lt;/button&gt;
+  &lt;/mat-menu&gt;
+  &lt;mat-menu #notificationMenu&#x3D;&quot;matMenu&quot;&gt;
+    &lt;div class&#x3D;&quot;notification-menu&quot;&gt;
+      &lt;a (click)&#x3D;&quot;onMarkAllNotificationsAsRead()&quot;&gt;Mark all as read&lt;mat-icon [inline]&#x3D;&quot;true&quot;&gt;check_circle_outline
+        &lt;/mat-icon&gt;&lt;/a&gt;
+      &lt;button mat-menu-item (click)&#x3D;&quot;onNotificationClick(notification)&quot; *ngFor&#x3D;&quot;let notification of notifications&quot;&gt;{{
+        notification.action }} -
+        {{ notification.createdAt | date }}&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/mat-menu&gt;
+&lt;/mat-toolbar&gt;
+
+&lt;ng-container *ngIf&#x3D;&quot;toolbar&quot;&gt;
+  &lt;ng-container *ngTemplateOutlet&#x3D;&quot;toolbar&quot;&gt;&lt;/ng-container&gt;
+&lt;/ng-container&gt;
+
+&lt;mat-sidenav-container class&#x3D;&quot;sidenav-container&quot;&gt;
+  &lt;mat-sidenav #nav [mode]&#x3D;&quot;largeDevice ? &#x27;side&#x27; : &#x27;over&#x27;&quot; [opened]&#x3D;&quot;largeDevice&quot;&gt;
+    &lt;mat-nav-list&gt;
+      &lt;ng-container *ngFor&#x3D;&quot;let group of filteredNavGroups; let i &#x3D; index&quot;&gt;
+        &lt;div mat-subheader&gt;{{ group.name }}&lt;/div&gt;
+        &lt;div cdkDropList (cdkDropListDropped)&#x3D;&quot;drop($event, group)&quot; class&#x3D;&quot;nav-items-list&quot;&gt;
+          &lt;ng-container *ngFor&#x3D;&quot;let item of group.navItems&quot;&gt;
+            &lt;div cdkDrag [cdkDragDisabled]&#x3D;&quot;!item.orderable&quot;&gt;
+              &lt;mat-list-item class&#x3D;&quot;nav-item&quot;&gt;
+                &lt;a [routerLink]&#x3D;&quot;item.path&quot; routerLinkActive&#x3D;&quot;active-link&quot;
+                  (click)&#x3D;&quot;largeDevice ? null : nav.toggle()&quot; [class]&#x3D;&quot;item.class ? item.class : &#x27;&#x27;&quot;&gt;
+                  &lt;ng-container *ngIf&#x3D;&quot;item.isAddPage&quot;&gt;
+                    &lt;button mat-stroked-button class&#x3D;&quot;add-page-button&quot; color&#x3D;&quot;primary&quot;
+                      [class]&#x3D;&quot;item.class ? item.class : &#x27;&#x27;&quot;&gt;
+                      &lt;mat-icon&gt;add&lt;/mat-icon&gt;
+                      Add a Page
+                    &lt;/button&gt;
+                  &lt;/ng-container&gt;
+                  &lt;ng-container *ngIf&#x3D;&quot;!item.isAddPage&quot;&gt;
+                    &lt;mat-icon mat-list-icon class&#x3D;&quot;nav-icon&quot;&gt;
+                      {{ item.icon }}
+                    &lt;/mat-icon&gt;
+                    &lt;div mat-line&gt;{{ item.name }}&lt;/div&gt;
+                  &lt;/ng-container&gt;
+                &lt;/a&gt;
+                &lt;div class&#x3D;&quot;nav-actions&quot; *ngIf&#x3D;&quot;item.action || item.orderable&quot;&gt;
+                    &lt;button mat-icon-button class&#x3D;&quot;nav-action&quot; *ngIf&#x3D;&quot;item.action&quot; 
+                    (click)&#x3D;&quot;onClick(item.action.callback, $event)&quot;&gt;
+                    &lt;mat-icon matTooltip&#x3D;&quot;{{item.action.toolTip}}&quot;&gt;{{ item.action.icon }}&lt;/mat-icon&gt;
+                  &lt;/button&gt;
+                  &lt;button mat-icon-button cdkDragHandle class&#x3D;&quot;nav-item-handle&quot; *ngIf&#x3D;&quot;item.orderable&quot;&gt;
+                    &lt;mat-icon&gt;drag_indicator&lt;/mat-icon&gt;
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/mat-list-item&gt;
+              &lt;mat-list *cdkDragPreview&gt;
+                &lt;a mat-list-item class&#x3D;&quot;nav-item&quot; [class]&#x3D;&quot;item.class ? item.class : &#x27;&#x27;&quot;&gt;
+                  &lt;mat-icon mat-list-icon class&#x3D;&quot;nav-icon&quot;&gt;
+                    {{ item.icon }}
+                  &lt;/mat-icon&gt;
+                  &lt;div mat-line&gt;{{ item.name }}&lt;/div&gt;
+                &lt;/a&gt;
+              &lt;/mat-list&gt;
+            &lt;/div&gt;
+          &lt;/ng-container&gt;
+        &lt;/div&gt;
+        &lt;mat-divider *ngIf&#x3D;&quot;i &lt; filteredNavGroups.length - 1&quot;&gt;&lt;/mat-divider&gt;
+      &lt;/ng-container&gt;
+    &lt;/mat-nav-list&gt;
+  &lt;/mat-sidenav&gt;
+
+  &lt;mat-sidenav-content&gt;
+    &lt;div class&#x3D;&quot;sidenav-content&quot;&gt;
+      &lt;router-outlet&gt;&lt;/router-outlet&gt;
+    &lt;/div&gt;
+  &lt;/mat-sidenav-content&gt;
+
+  &lt;mat-sidenav mode&#x3D;&quot;side&quot; position&#x3D;&quot;end&quot; [(opened)]&#x3D;&quot;showSidenav&quot;&gt;
+    &lt;ng-template #rightSidenav&gt;&lt;/ng-template&gt;
+  &lt;/mat-sidenav&gt;
+&lt;/mat-sidenav-container&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./layout.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav-container {
+    flex: 1;
+}
+
+.sidenav-content {
+    min-height: calc(100% - 64px);
+    padding: 32px 24px;
+}
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: center;
+    font-size: 12px;
+    margin-left: auto;
+
+    .account-property {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: normal;
+        @media only screen and (max-width: 600px) {
+            display: none;
+        }
+    }
+}
+
+.nav-items-list {
+    overflow: hidden;
+}
+
+.nav-item-add {
+    margin: auto;
+}
+
+.nav-item {
+    a {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        height: 100%;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+
+    .nav-action, .nav-item-handle {
+        color: transparent;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+    }
+    &amp;:hover {
+        .nav-action, .nav-item-handle {
+            color: #aeaeaf;
+        }
+    }
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.nav-items-list.cdk-drop-list-dragging .nav-item:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.nav-item-handle {
+    cursor: move;
+}
+
+.add-page-button {
+  margin: 0 auto;
+}
+
+.notification-menu {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    a {
+        display: inline-flex;
+        padding-right: 8px;
+        cursor: pointer;
+        mat-icon {
+            padding-left: 10px;
+        }
+    }
+}
+
+.application-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-toolbar color="primary">  <button mat-icon-button (click)="nav.toggle()" *ngIf="!largeDevice">    <mat-icon>menu</mat-icon>  </button>  <button mat-icon-button (click)="goBack()" *ngIf="largeDevice && route">    <mat-icon>keyboard_backspace</mat-icon>  </button>  <ng-container *ngIf="!applications || applications.length === 0">    <h1 class="application-title">{{title}}</h1>  </ng-container>  <ng-container *ngIf="applications && applications.length > 0">    <button mat-button [matMenuTriggerFor]="applicationMenu">      {{title}}      <mat-icon>arrow_drop_down</mat-icon>    </button>    <mat-menu #applicationMenu="matMenu">      <button mat-menu-item *ngFor="let application of applications"        (click)="onOpenApplication(application)">{{application.name}}</button>    </mat-menu>  </ng-container>  <div class="account-container">    <div class="account-property">{{account ? account.name : \'\'}}</div>    <div class="account-property">{{account ? account.userName : \'\'}}</div>  </div>  <button mat-icon-button [matMenuTriggerFor]="accountMenu">    <mat-icon>account_circle</mat-icon>  </button>  <button mat-icon-button [matMenuTriggerFor]="notificationMenu" [disabled]="notifications.length == 0">    <mat-icon [matBadge]="notifications.length" matBadgeSize="small" matBadgeColor="warn"      [matBadgeHidden]="notifications.length == 0">      notifications</mat-icon>  </button>  <mat-menu #accountMenu="matMenu">    <button mat-menu-item (click)="onOpenProfile()">Profile</button>    <ng-container *ngIf="user && user.isAdmin">      <mat-divider></mat-divider>      <button mat-menu-item (click)="onSwitchOffice()">Switch to {{ otherOffice }}</button>    </ng-container>    <mat-divider></mat-divider>    <button mat-menu-item (click)="logout()" class="warn">Logout</button>  </mat-menu>  <mat-menu #notificationMenu="matMenu">    <div class="notification-menu">      <a (click)="onMarkAllNotificationsAsRead()">Mark all as read<mat-icon [inline]="true">check_circle_outline        </mat-icon></a>      <button mat-menu-item (click)="onNotificationClick(notification)" *ngFor="let notification of notifications">{{        notification.action }} -        {{ notification.createdAt | date }}</button>    </div>  </mat-menu></mat-toolbar><ng-container *ngIf="toolbar">  <ng-container *ngTemplateOutlet="toolbar"></ng-container></ng-container><mat-sidenav-container class="sidenav-container">  <mat-sidenav #nav [mode]="largeDevice ? \'side\' : \'over\'" [opened]="largeDevice">    <mat-nav-list>      <ng-container *ngFor="let group of filteredNavGroups; let i = index">        <div mat-subheader>{{ group.name }}</div>        <div cdkDropList (cdkDropListDropped)="drop($event, group)" class="nav-items-list">          <ng-container *ngFor="let item of group.navItems">            <div cdkDrag [cdkDragDisabled]="!item.orderable">              <mat-list-item class="nav-item">                <a [routerLink]="item.path" routerLinkActive="active-link"                  (click)="largeDevice ? null : nav.toggle()" [class]="item.class ? item.class : \'\'">                  <ng-container *ngIf="item.isAddPage">                    <button mat-stroked-button class="add-page-button" color="primary"                      [class]="item.class ? item.class : \'\'">                      <mat-icon>add</mat-icon>                      Add a Page                    </button>                  </ng-container>                  <ng-container *ngIf="!item.isAddPage">                    <mat-icon mat-list-icon class="nav-icon">                      {{ item.icon }}                    </mat-icon>                    <div mat-line>{{ item.name }}</div>                  </ng-container>                </a>                <div class="nav-actions" *ngIf="item.action || item.orderable">                    <button mat-icon-button class="nav-action" *ngIf="item.action"                     (click)="onClick(item.action.callback, $event)">                    <mat-icon matTooltip="{{item.action.toolTip}}">{{ item.action.icon }}</mat-icon>                  </button>                  <button mat-icon-button cdkDragHandle class="nav-item-handle" *ngIf="item.orderable">                    <mat-icon>drag_indicator</mat-icon>                  </button>                </div>              </mat-list-item>              <mat-list *cdkDragPreview>                <a mat-list-item class="nav-item" [class]="item.class ? item.class : \'\'">                  <mat-icon mat-list-icon class="nav-icon">                    {{ item.icon }}                  </mat-icon>                  <div mat-line>{{ item.name }}</div>                </a>              </mat-list>            </div>          </ng-container>        </div>        <mat-divider *ngIf="i < filteredNavGroups.length - 1"></mat-divider>      </ng-container>    </mat-nav-list>  </mat-sidenav>  <mat-sidenav-content>    <div class="sidenav-content">      <router-outlet></router-outlet>    </div>  </mat-sidenav-content>  <mat-sidenav mode="side" position="end" [(opened)]="showSidenav">    <ng-template #rightSidenav></ng-template>  </mat-sidenav></mat-sidenav-container></div>'
+    var COMPONENTS = [{'name': 'SafeAccessComponent', 'selector': 'safe-access'},{'name': 'SafeAddRoleComponent', 'selector': 'safe-add-role'},{'name': 'SafeChartComponent', 'selector': 'safe-chart'},{'name': 'SafeChartSettingsComponent', 'selector': 'safe-chart-settings'},{'name': 'SafeChooseRecordModalComponent', 'selector': 'safe-choose-record-modal'},{'name': 'SafeConfirmModalComponent', 'selector': 'safe-confirm-modal'},{'name': 'SafeConvertModalComponent', 'selector': 'safe-convert-modal'},{'name': 'SafeDashboardMenuComponent', 'selector': 'safe-dashboard-menu'},{'name': 'SafeEditAccessComponent', 'selector': 'safe-edit-access'},{'name': 'SafeEditorComponent', 'selector': 'safe-editor'},{'name': 'SafeEditorSettingsComponent', 'selector': 'safe-editor-settings'},{'name': 'SafeEditRoleComponent', 'selector': 'safe-edit-role'},{'name': 'SafeEditUserComponent', 'selector': 'safe-edit-user'},{'name': 'SafeExpandedCommentComponent', 'selector': 'safe-expanded-comment'},{'name': 'SafeExpandedWidgetComponent', 'selector': 'safe-expanded-widget'},{'name': 'SafeFloatingButtonSettingsComponent', 'selector': 'safe-floating-button-settings'},{'name': 'SafeFloatingOptionsComponent', 'selector': 'safe-floating-options'},{'name': 'SafeFormBuilderComponent', 'selector': 'safe-form-builder'},{'name': 'SafeFormComponent', 'selector': 'safe-form'},{'name': 'SafeFormModalComponent', 'selector': 'safe-form-modal'},{'name': 'SafeGridComponent', 'selector': 'safe-grid'},{'name': 'SafeGridSettingsComponent', 'selector': 'safe-grid-settings'},{'name': 'SafeInviteUserComponent', 'selector': 'safe-invite-user'},{'name': 'SafeLayoutComponent', 'selector': 'safe-layout'},{'name': 'SafeMapComponent', 'selector': 'safe-map'},{'name': 'SafeMapSettingsComponent', 'selector': 'safe-map-settings'},{'name': 'SafePreviousButtonComponent', 'selector': 'safe-previous-button'},{'name': 'SafeProfileComponent', 'selector': 'safe-profile'},{'name': 'SafeQueryBuilderComponent', 'selector': 'safe-query-builder'},{'name': 'SafeRecordHistoryComponent', 'selector': 'safe-record-history'},{'name': 'SafeRecordModalComponent', 'selector': 'safe-record-modal'},{'name': 'SafeRolesComponent', 'selector': 'safe-roles'},{'name': 'SafeSchedulerComponent', 'selector': 'safe-scheduler'},{'name': 'SafeSchedulerSettingsComponent', 'selector': 'safe-scheduler-settings'},{'name': 'SafeStatusModalComponent', 'selector': 'safe-status-modal'},{'name': 'SafeSurveyGridComponent', 'selector': 'safe-survey-grid'},{'name': 'SafeTabFieldsComponent', 'selector': 'safe-tab-fields'},{'name': 'SafeTabFilterComponent', 'selector': 'safe-tab-filter'},{'name': 'SafeTabSortComponent', 'selector': 'safe-tab-sort'},{'name': 'SafeTileDataComponent', 'selector': 'safe-tile-data'},{'name': 'SafeTileDisplayComponent', 'selector': 'safe-tile-display'},{'name': 'SafeUsersComponent', 'selector': 'safe-users'},{'name': 'SafeWidgetComponent', 'selector': 'safe-widget'},{'name': 'SafeWidgetGridComponent', 'selector': 'safe-widget-grid'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SafeLayoutComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SafeLayoutComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

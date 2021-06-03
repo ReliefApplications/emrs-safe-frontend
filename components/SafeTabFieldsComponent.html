@@ -1,0 +1,1165 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SafeTabFieldsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>safe-tab-fields</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./tab-fields.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./tab-fields.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#availableFields">availableFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#childTemplate">childTemplate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#fieldForm">fieldForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#selectedFields">selectedFields</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#drop">drop</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnChanges">ngOnChanges</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onCloseField">onCloseField</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#onEdit">onEdit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#prettifyLabel">prettifyLabel</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#factory">factory</a>
+                            </li>
+                            <li>
+                                <a href="#fields">fields</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(queryBuilder: <a href="../injectables/QueryBuilderService.html">QueryBuilderService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>queryBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QueryBuilderService.html" target="_self" >QueryBuilderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="factory"></a>
+                        <b>factory</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ComponentFactory&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fields"></a>
+                        <b>fields</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <b>form</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Form.html" target="_self" >FormArray</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new FormArray([])</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:13</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="drop"></a>
+                    <span class="name">
+                        <b>
+                            drop
+                        </b>
+                        <a href="#drop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>drop(event: CdkDragDrop<string[]>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>CdkDragDrop&lt;string[]&gt;</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnChanges"></a>
+                    <span class="name">
+                        <b>
+                            ngOnChanges
+                        </b>
+                        <a href="#ngOnChanges"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnChanges()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCloseField"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onCloseField
+                        </b>
+                        <a href="#onCloseField"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onCloseField()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onEdit"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            onEdit
+                        </b>
+                        <a href="#onEdit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onEdit(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prettifyLabel"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            prettifyLabel
+                        </b>
+                        <a href="#prettifyLabel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>prettifyLabel(label: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:87</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Prettify grid label</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>label</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="availableFields"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            availableFields</b>
+                            <a href="#availableFields"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="childTemplate"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Optional</span>
+                            childTemplate</b>
+                            <a href="#childTemplate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ViewContainerRef" target="_blank" >ViewContainerRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;childTemplate&#x27;, {read: ViewContainerRef})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fieldForm"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            fieldForm</b>
+                            <a href="#fieldForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Form.html" target="_self" >FormGroup | null</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>null</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedFields"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            selectedFields</b>
+                            <a href="#selectedFields"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">projects/safe/src/lib/components/query-builder/tab-fields/tab-fields.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CdkDragDrop, moveItemInArray, transferArrayItem } from &#x27;@angular/cdk/drag-drop&#x27;;
+import { Component, ComponentFactory, Input, OnChanges, OnInit, ViewChild, ViewContainerRef } from &#x27;@angular/core&#x27;;
+import { FormArray, FormGroup } from &#x27;@angular/forms&#x27;;
+import { QueryBuilderService } from &#x27;../../../services/query-builder.service&#x27;;
+
+@Component({
+  selector: &#x27;safe-tab-fields&#x27;,
+  templateUrl: &#x27;./tab-fields.component.html&#x27;,
+  styleUrls: [&#x27;./tab-fields.component.scss&#x27;]
+})
+export class SafeTabFieldsComponent implements OnInit, OnChanges {
+
+  @Input() form: FormArray &#x3D; new FormArray([]);
+  @Input() fields: any[] &#x3D; [];
+  // &#x3D;&#x3D;&#x3D; TEMPLATE REFERENCE &#x3D;&#x3D;&#x3D;
+  @Input() factory?: ComponentFactory&lt;any&gt;;
+  @ViewChild(&#x27;childTemplate&#x27;, { read: ViewContainerRef }) childTemplate?: ViewContainerRef;
+
+  public availableFields: any[] &#x3D; [];
+  public selectedFields: any[] &#x3D; [];
+  public fieldForm: FormGroup | null &#x3D; null;
+
+  constructor(private queryBuilder: QueryBuilderService) { }
+
+  ngOnInit(): void {
+    const selectedFields: string[] &#x3D; this.form.getRawValue().map(x &#x3D;&gt; x.name);
+    this.availableFields &#x3D; this.fields.slice().filter(x &#x3D;&gt; !selectedFields.includes(x.name));
+    this.selectedFields &#x3D; selectedFields.map(x &#x3D;&gt; this.fields.find(f &#x3D;&gt; f.name &#x3D;&#x3D;&#x3D; x));
+  }
+
+  ngOnChanges(): void {
+    const selectedFields: string[] &#x3D; this.form.getRawValue().map(x &#x3D;&gt; x.name);
+    this.availableFields &#x3D; this.fields.slice().filter(x &#x3D;&gt; !selectedFields.includes(x.name));
+    this.selectedFields &#x3D; selectedFields.map(x &#x3D;&gt; this.fields.find(f &#x3D;&gt; f.name &#x3D;&#x3D;&#x3D; x));
+  }
+
+  drop(event: CdkDragDrop&lt;string[]&gt;): void {
+    if (event.previousContainer &#x3D;&#x3D;&#x3D; event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      if (this.selectedFields &#x3D;&#x3D;&#x3D; event.container.data) {
+        const fieldTomove &#x3D; this.form.at(event.previousIndex);
+        this.form.removeAt(event.previousIndex);
+        this.form.insert(event.currentIndex, fieldTomove);
+      }
+    } else {
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+      if (this.selectedFields &#x3D;&#x3D;&#x3D; event.previousContainer.data) {
+        if (this.fieldForm &#x3D;&#x3D;&#x3D; this.form.at(event.previousIndex) as FormGroup) {
+          this.fieldForm &#x3D; new FormGroup({});
+        }
+        this.form.removeAt(event.previousIndex);
+      } else {
+        this.form.insert(event.currentIndex, this.queryBuilder.addNewField(this.selectedFields[event.currentIndex], true));
+      }
+    }
+  }
+
+  public onCloseField(): void {
+    this.fieldForm &#x3D; null;
+  }
+
+  public onEdit(index: number): void {
+    this.fieldForm &#x3D; this.form.at(index) as FormGroup;
+    if (this.fieldForm.value.kind !&#x3D;&#x3D; &#x27;SCALAR&#x27;) {
+      if (this.childTemplate &amp;&amp; this.factory) {
+        const componentRef &#x3D; this.childTemplate.createComponent(this.factory);
+        componentRef.instance.form &#x3D; this.fieldForm;
+        componentRef.instance.canExpand &#x3D; this.fieldForm.value.kind &#x3D;&#x3D;&#x3D; &#x27;LIST&#x27;;
+        componentRef.instance.closeField.subscribe(() &#x3D;&gt; {
+          this.onCloseField();
+          componentRef.destroy();
+        });
+      }
+    } else {
+      this.fieldForm?.patchValue({
+        label: this.prettifyLabel(this.fieldForm.value.label)
+      });
+    }
+  }
+
+  /**
+   * Prettify grid label
+   */
+  private prettifyLabel(label: string): string {
+    label &#x3D; label.replace(&#x27;_&#x27;, &#x27; &#x27;).replace(/([a-z])([A-Z])/g, &#x27;$1 $2&#x27;);
+    label &#x3D; label.charAt(0).toUpperCase() + label.slice(1);
+    return label;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;info-text&quot;&gt;Select data points below and drag them to &#x27;selected fields&#x27; on the right&lt;/div&gt;
+&lt;div cdkDropListGroup class&#x3D;&quot;field-wrapper&quot;&gt;
+    &lt;div class&#x3D;&quot;field-container&quot; *ngIf&#x3D;&quot;!fieldForm&quot;&gt;
+        &lt;h2&gt;Available fields&lt;/h2&gt;
+
+        &lt;div cdkDropList [cdkDropListData]&#x3D;&quot;availableFields&quot; class&#x3D;&quot;field-list&quot; cdkDropListSortingDisabled
+            (cdkDropListDropped)&#x3D;&quot;drop($event)&quot;&gt;
+            &lt;div class&#x3D;&quot;field-box&quot; *ngFor&#x3D;&quot;let field of availableFields&quot; cdkDrag&gt;{{ field.name }}&lt;span
+                    class&#x3D;&quot;field-type&quot; *ngIf&#x3D;&quot;field.type.kind !&#x3D;&#x3D; &#x27;SCALAR&#x27;&quot;&gt;{{ field.type.kind }}&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;field-container&quot; *ngIf&#x3D;&quot;!fieldForm&quot;&gt;
+        &lt;h2&gt;Selected fields&lt;/h2&gt;
+
+        &lt;div cdkDropList [cdkDropListData]&#x3D;&quot;selectedFields&quot; class&#x3D;&quot;field-list&quot; (cdkDropListDropped)&#x3D;&quot;drop($event)&quot;&gt;
+            &lt;div class&#x3D;&quot;field-box&quot; *ngFor&#x3D;&quot;let field of selectedFields; let index &#x3D; index&quot; cdkDrag&gt;
+                &lt;div&gt;
+                    &lt;span&gt;{{ field.name }}&lt;/span&gt;
+                    &lt;button class&#x3D;&quot;field-error&quot; mat-icon-button (click)&#x3D;&quot;onEdit(index)&quot; *ngIf&#x3D;&quot;form.at(index).invalid&quot;&gt;
+                        &lt;mat-icon&gt;error&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;span class&#x3D;&quot;field-type&quot; *ngIf&#x3D;&quot;field.type.kind !&#x3D;&#x3D; &#x27;SCALAR&#x27;&quot;&gt;{{ field.type.kind }}&lt;/span&gt;
+                    &lt;button mat-icon-button (click)&#x3D;&quot;onEdit(index)&quot;&gt;
+                        &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;field-container&quot; *ngIf&#x3D;&quot;fieldForm&quot;&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;fieldForm.value.kind &#x3D;&#x3D;&#x3D; &#x27;SCALAR&#x27;&quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;fieldForm&quot; class&#x3D;&quot;field-form&quot;&gt;
+                &lt;button mat-icon-button (click)&#x3D;&quot;onCloseField()&quot;&gt;
+                    &lt;mat-icon&gt;arrow_back&lt;/mat-icon&gt;
+                &lt;/button&gt;
+                &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Field name&lt;/mat-label&gt;
+                    &lt;input matInput formControlName&#x3D;&quot;name&quot; type&#x3D;&quot;text&quot; [disabled]&#x3D;&quot;true&quot;/&gt;
+                &lt;/mat-form-field&gt;
+                &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Label&lt;/mat-label&gt;
+                    &lt;input matInput formControlName&#x3D;&quot;label&quot; type&#x3D;&quot;text&quot;/&gt;
+                &lt;/mat-form-field&gt;
+            &lt;/form&gt;
+        &lt;/ng-container&gt;
+        &lt;ng-container *ngIf&#x3D;&quot;fieldForm.value.kind !&#x3D;&#x3D; &#x27;SCALAR&#x27;&quot; [ngTemplateOutlet]&#x3D;&quot;childTemplate&quot;&gt;&lt;/ng-container&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;ng-template #childTemplate&gt;&lt;/ng-template&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./tab-fields.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.field-wrapper {
+  display: flex;
+  margin-top: 16px;
+}
+
+.field-container {
+  min-width: 400px;
+  margin-right: 25px;
+  display: flex;
+  flex-direction: column;
+  vertical-align: top;
+  flex: 1;
+
+  &amp;:last-child {
+    margin-right: 0;
+  }
+  &amp;:only-child {
+    width: 100%;
+  }
+}
+  
+.field-list {
+  border: solid 1px #ccc;
+  min-height: 60px;
+  background: #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  display: block;
+  flex: 1;
+}
+  
+.field-box {
+  padding: 20px 10px;
+  border-bottom: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+}
+  
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+  
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.field-box:last-child {
+  border: none;
+}
+
+.field-list.cdk-drop-list-dragging .field-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.field-type {
+  color: grey;
+}
+
+.field-error {
+  color: red;
+}
+
+.field-form {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #dfe1e5;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="info-text">Select data points below and drag them to \'selected fields\' on the right</div><div cdkDropListGroup class="field-wrapper">    <div class="field-container" *ngIf="!fieldForm">        <h2>Available fields</h2>        <div cdkDropList [cdkDropListData]="availableFields" class="field-list" cdkDropListSortingDisabled            (cdkDropListDropped)="drop($event)">            <div class="field-box" *ngFor="let field of availableFields" cdkDrag>{{ field.name }}<span                    class="field-type" *ngIf="field.type.kind !== \'SCALAR\'">{{ field.type.kind }}</span></div>        </div>    </div>    <div class="field-container" *ngIf="!fieldForm">        <h2>Selected fields</h2>        <div cdkDropList [cdkDropListData]="selectedFields" class="field-list" (cdkDropListDropped)="drop($event)">            <div class="field-box" *ngFor="let field of selectedFields; let index = index" cdkDrag>                <div>                    <span>{{ field.name }}</span>                    <button class="field-error" mat-icon-button (click)="onEdit(index)" *ngIf="form.at(index).invalid">                        <mat-icon>error</mat-icon>                    </button>                </div>                <div>                    <span class="field-type" *ngIf="field.type.kind !== \'SCALAR\'">{{ field.type.kind }}</span>                    <button mat-icon-button (click)="onEdit(index)">                        <mat-icon>edit</mat-icon>                    </button>                </div>            </div>        </div>    </div>    <div class="field-container" *ngIf="fieldForm">        <ng-container *ngIf="fieldForm.value.kind === \'SCALAR\'">            <form [formGroup]="fieldForm" class="field-form">                <button mat-icon-button (click)="onCloseField()">                    <mat-icon>arrow_back</mat-icon>                </button>                <mat-form-field appearance="outline">                    <mat-label>Field name</mat-label>                    <input matInput formControlName="name" type="text" [disabled]="true"/>                </mat-form-field>                <mat-form-field appearance="outline">                    <mat-label>Label</mat-label>                    <input matInput formControlName="label" type="text"/>                </mat-form-field>            </form>        </ng-container>        <ng-container *ngIf="fieldForm.value.kind !== \'SCALAR\'" [ngTemplateOutlet]="childTemplate"></ng-container>    </div></div><ng-template #childTemplate></ng-template></div>'
+    var COMPONENTS = [{'name': 'SafeAccessComponent', 'selector': 'safe-access'},{'name': 'SafeAddRoleComponent', 'selector': 'safe-add-role'},{'name': 'SafeChartComponent', 'selector': 'safe-chart'},{'name': 'SafeChartSettingsComponent', 'selector': 'safe-chart-settings'},{'name': 'SafeChooseRecordModalComponent', 'selector': 'safe-choose-record-modal'},{'name': 'SafeConfirmModalComponent', 'selector': 'safe-confirm-modal'},{'name': 'SafeConvertModalComponent', 'selector': 'safe-convert-modal'},{'name': 'SafeDashboardMenuComponent', 'selector': 'safe-dashboard-menu'},{'name': 'SafeEditAccessComponent', 'selector': 'safe-edit-access'},{'name': 'SafeEditorComponent', 'selector': 'safe-editor'},{'name': 'SafeEditorSettingsComponent', 'selector': 'safe-editor-settings'},{'name': 'SafeEditRoleComponent', 'selector': 'safe-edit-role'},{'name': 'SafeEditUserComponent', 'selector': 'safe-edit-user'},{'name': 'SafeExpandedCommentComponent', 'selector': 'safe-expanded-comment'},{'name': 'SafeExpandedWidgetComponent', 'selector': 'safe-expanded-widget'},{'name': 'SafeFloatingButtonSettingsComponent', 'selector': 'safe-floating-button-settings'},{'name': 'SafeFloatingOptionsComponent', 'selector': 'safe-floating-options'},{'name': 'SafeFormBuilderComponent', 'selector': 'safe-form-builder'},{'name': 'SafeFormComponent', 'selector': 'safe-form'},{'name': 'SafeFormModalComponent', 'selector': 'safe-form-modal'},{'name': 'SafeGridComponent', 'selector': 'safe-grid'},{'name': 'SafeGridSettingsComponent', 'selector': 'safe-grid-settings'},{'name': 'SafeInviteUserComponent', 'selector': 'safe-invite-user'},{'name': 'SafeLayoutComponent', 'selector': 'safe-layout'},{'name': 'SafeMapComponent', 'selector': 'safe-map'},{'name': 'SafeMapSettingsComponent', 'selector': 'safe-map-settings'},{'name': 'SafePreviousButtonComponent', 'selector': 'safe-previous-button'},{'name': 'SafeProfileComponent', 'selector': 'safe-profile'},{'name': 'SafeQueryBuilderComponent', 'selector': 'safe-query-builder'},{'name': 'SafeRecordHistoryComponent', 'selector': 'safe-record-history'},{'name': 'SafeRecordModalComponent', 'selector': 'safe-record-modal'},{'name': 'SafeRolesComponent', 'selector': 'safe-roles'},{'name': 'SafeSchedulerComponent', 'selector': 'safe-scheduler'},{'name': 'SafeSchedulerSettingsComponent', 'selector': 'safe-scheduler-settings'},{'name': 'SafeStatusModalComponent', 'selector': 'safe-status-modal'},{'name': 'SafeSurveyGridComponent', 'selector': 'safe-survey-grid'},{'name': 'SafeTabFieldsComponent', 'selector': 'safe-tab-fields'},{'name': 'SafeTabFilterComponent', 'selector': 'safe-tab-filter'},{'name': 'SafeTabSortComponent', 'selector': 'safe-tab-sort'},{'name': 'SafeTileDataComponent', 'selector': 'safe-tile-data'},{'name': 'SafeTileDisplayComponent', 'selector': 'safe-tile-display'},{'name': 'SafeUsersComponent', 'selector': 'safe-users'},{'name': 'SafeWidgetComponent', 'selector': 'safe-widget'},{'name': 'SafeWidgetGridComponent', 'selector': 'safe-widget-grid'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SafeTabFieldsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SafeTabFieldsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

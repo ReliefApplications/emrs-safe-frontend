@@ -1,0 +1,2457 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>SafeApplicationService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>projects/safe/src/lib/services/application.service.ts</code>
+        </p>
+
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#_application">_application</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addChannel">addChannel</a>
+                            </li>
+                            <li>
+                                <a href="#addPage">addPage</a>
+                            </li>
+                            <li>
+                                <a href="#addPositionAttributeCategory">addPositionAttributeCategory</a>
+                            </li>
+                            <li>
+                                <a href="#addRole">addRole</a>
+                            </li>
+                            <li>
+                                <a href="#addSubscription">addSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#deleteChannel">deleteChannel</a>
+                            </li>
+                            <li>
+                                <a href="#deletePage">deletePage</a>
+                            </li>
+                            <li>
+                                <a href="#deletePositionAttributeCategory">deletePositionAttributeCategory</a>
+                            </li>
+                            <li>
+                                <a href="#deleteRole">deleteRole</a>
+                            </li>
+                            <li>
+                                <a href="#deleteSubscription">deleteSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#deleteUsersFromApplication">deleteUsersFromApplication</a>
+                            </li>
+                            <li>
+                                <a href="#editApplication">editApplication</a>
+                            </li>
+                            <li>
+                                <a href="#editPositionAttributeCategory">editPositionAttributeCategory</a>
+                            </li>
+                            <li>
+                                <a href="#editRole">editRole</a>
+                            </li>
+                            <li>
+                                <a href="#editSubscription">editSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#editUser">editUser</a>
+                            </li>
+                            <li>
+                                <a href="#inviteUser">inviteUser</a>
+                            </li>
+                            <li>
+                                <a href="#loadApplication">loadApplication</a>
+                            </li>
+                            <li>
+                                <a href="#publish">publish</a>
+                            </li>
+                            <li>
+                                <a href="#reorderPages">reorderPages</a>
+                            </li>
+                            <li>
+                                <a href="#updatePageName">updatePageName</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#application">application</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(apollo: Apollo, snackBar: <a href="../injectables/SafeSnackBarService.html">SafeSnackBarService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/safe/src/lib/services/application.service.ts:57</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>apollo</td>
+                                                  
+                                                        <td>
+                                                                    <code>Apollo</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>snackBar</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SafeSnackBarService.html" target="_self" >SafeSnackBarService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addChannel"></a>
+                    <span class="name">
+                        <b>
+                            addChannel
+                        </b>
+                        <a href="#addChannel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addChannel(value: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="440"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:440</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPage"></a>
+                    <span class="name">
+                        <b>
+                            addPage
+                        </b>
+                        <a href="#addPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPage(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:182</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPositionAttributeCategory"></a>
+                    <span class="name">
+                        <b>
+                            addPositionAttributeCategory
+                        </b>
+                        <a href="#addPositionAttributeCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPositionAttributeCategory(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="364"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:364</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addRole"></a>
+                    <span class="name">
+                        <b>
+                            addRole
+                        </b>
+                        <a href="#addRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addRole(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addSubscription"></a>
+                    <span class="name">
+                        <b>
+                            addSubscription
+                        </b>
+                        <a href="#addSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addSubscription(value: literal type)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="482"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:482</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                            <code>literal type</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteChannel"></a>
+                    <span class="name">
+                        <b>
+                            deleteChannel
+                        </b>
+                        <a href="#deleteChannel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteChannel(channel: <a href="../interfaces/Channel.html">Channel</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="461"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:461</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>channel</td>
+                                    <td>
+                                                <code><a href="../interfaces/Channel.html" target="_self" >Channel</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePage"></a>
+                    <span class="name">
+                        <b>
+                            deletePage
+                        </b>
+                        <a href="#deletePage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletePage(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePositionAttributeCategory"></a>
+                    <span class="name">
+                        <b>
+                            deletePositionAttributeCategory
+                        </b>
+                        <a href="#deletePositionAttributeCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deletePositionAttributeCategory(positionCategory: <a href="../interfaces/PositionAttributeCategory.html">PositionAttributeCategory</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="386"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:386</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>positionCategory</td>
+                                    <td>
+                                                <code><a href="../interfaces/PositionAttributeCategory.html" target="_self" >PositionAttributeCategory</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteRole"></a>
+                    <span class="name">
+                        <b>
+                            deleteRole
+                        </b>
+                        <a href="#deleteRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteRole(role: <a href="../interfaces/Role.html">Role</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="272"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:272</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>role</td>
+                                    <td>
+                                                <code><a href="../interfaces/Role.html" target="_self" >Role</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteSubscription"></a>
+                    <span class="name">
+                        <b>
+                            deleteSubscription
+                        </b>
+                        <a href="#deleteSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteSubscription(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="508"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:508</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteUsersFromApplication"></a>
+                    <span class="name">
+                        <b>
+                            deleteUsersFromApplication
+                        </b>
+                        <a href="#deleteUsersFromApplication"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>deleteUsersFromApplication(ids: any[], resolved: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="290"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:290</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ids</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>resolved</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editApplication"></a>
+                    <span class="name">
+                        <b>
+                            editApplication
+                        </b>
+                        <a href="#editApplication"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editApplication(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editPositionAttributeCategory"></a>
+                    <span class="name">
+                        <b>
+                            editPositionAttributeCategory
+                        </b>
+                        <a href="#editPositionAttributeCategory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editPositionAttributeCategory(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, positionCategory: <a href="../interfaces/PositionAttributeCategory.html">PositionAttributeCategory</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="409"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:409</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>positionCategory</td>
+                                    <td>
+                                                <code><a href="../interfaces/PositionAttributeCategory.html" target="_self" >PositionAttributeCategory</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editRole"></a>
+                    <span class="name">
+                        <b>
+                            editRole
+                        </b>
+                        <a href="#editRole"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editRole(role: <a href="../interfaces/Role.html">Role</a>, value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="231"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:231</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>role</td>
+                                    <td>
+                                                <code><a href="../interfaces/Role.html" target="_self" >Role</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editSubscription"></a>
+                    <span class="name">
+                        <b>
+                            editSubscription
+                        </b>
+                        <a href="#editSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editSubscription(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, previousSubscription: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="527"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:527</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>previousSubscription</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editUser"></a>
+                    <span class="name">
+                        <b>
+                            editUser
+                        </b>
+                        <a href="#editUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editUser(user: <a href="../interfaces/User.html">User</a>, value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="339"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:339</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>user</td>
+                                    <td>
+                                                <code><a href="../interfaces/User.html" target="_self" >User</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="inviteUser"></a>
+                    <span class="name">
+                        <b>
+                            inviteUser
+                        </b>
+                        <a href="#inviteUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>inviteUser(value: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="315"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:315</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>value</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadApplication"></a>
+                    <span class="name">
+                        <b>
+                            loadApplication
+                        </b>
+                        <a href="#loadApplication"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadApplication(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, asRole?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="67"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:67</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>asRole</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="publish"></a>
+                    <span class="name">
+                        <b>
+                            publish
+                        </b>
+                        <a href="#publish"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>publish()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="109"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:109</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reorderPages"></a>
+                    <span class="name">
+                        <b>
+                            reorderPages
+                        </b>
+                        <a href="#reorderPages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reorderPages(pages: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:152</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>pages</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updatePageName"></a>
+                    <span class="name">
+                        <b>
+                            updatePageName
+                        </b>
+                        <a href="#updatePageName"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updatePageName(page: <a href="../interfaces/Page.html">Page</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">projects/safe/src/lib/services/application.service.ts:167</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>page</td>
+                                    <td>
+                                                <code><a href="../interfaces/Page.html" target="_self" >Page</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="_application"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            _application</b>
+                            <a href="#_application"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject&lt;Application | null&gt;(null)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">projects/safe/src/lib/services/application.service.ts:57</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="application"></a>
+                        <span class="name"><b>application</b><a href="#application"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>application()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">projects/safe/src/lib/services/application.service.ts:103</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {Apollo} from &#x27;apollo-angular&#x27;;
+import { Injectable, OnDestroy } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+
+import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
+import { User, Role } from &#x27;../models/user.model&#x27;;
+import { Page, ContentType } from &#x27;../models/page.model&#x27;;
+import { Application } from &#x27;../models/application.model&#x27;;
+import { Channel } from &#x27;../models/channel.model&#x27;;
+import { SafeSnackBarService } from &#x27;./snackbar.service&#x27;;
+import {
+  AddPageMutationResponse,
+  ADD_PAGE,
+  AddRoleMutationResponse,
+  ADD_ROLE,
+  AddRoleToUsersMutationResponse,
+  ADD_ROLE_TO_USERS,
+  DeletePageMutationResponse,
+  DELETE_PAGE,
+  DeleteRoleMutationResponse,
+  DELETE_ROLE,
+  EditApplicationMutationResponse,
+  EDIT_APPLICATION,
+  EditUserMutationResponse,
+  EDIT_USER,
+  EditRoleMutationResponse,
+  EDIT_ROLE,
+  AddChannelMutationResponse,
+  ADD_CHANNEL,
+  DeleteChannelMutationResponse,
+  DELETE_CHANNEL,
+  AddSubscriptionMutationResponse,
+  ADD_SUBSCRIPTION,
+  EditSubscriptionMutationResponse,
+  EDIT_SUBSCRIPTION,
+  DeleteSubscriptionMutationResponse,
+  DELETE_SUBSCRIPTION,
+  AddPositionAttributeCategoryMutationResponse,
+  ADD_POSITION_ATTRIBUTE_CATEGORY,
+  DeleteUsersFromApplicationMutationResponse,
+  DELETE_USERS_FROM_APPLICATION,
+  DeletePositionAttributeCategoryMutationResponse,
+  DELETE_POSITION_ATTRIBUTE_CATEGORY,
+  EditPositionAttributeCategoryMutationResponse,
+  EDIT_POSITION_ATTRIBUTE_CATEGORY
+} from &#x27;../graphql/mutations&#x27;;
+import { GetApplicationByIdQueryResponse, GET_APPLICATION_BY_ID } from &#x27;../graphql/queries&#x27;;
+import { PositionAttributeCategory } from &#x27;../models/position-attribute-category.model&#x27;;
+import { NOTIFICATIONS } from &#x27;../const/notifications&#x27;;
+
+@Injectable({
+  providedIn: &#x27;root&#x27;
+})
+export class SafeApplicationService {
+
+  // tslint:disable-next-line: variable-name
+  private _application &#x3D; new BehaviorSubject&lt;Application | null&gt;(null);
+
+  constructor(
+    private apollo: Apollo,
+    private snackBar: SafeSnackBarService,
+    private router: Router
+  ) { }
+
+  /*  Get the application from the database, using GraphQL.
+  */
+  loadApplication(id: string, asRole?: string): void {
+    this.apollo.query&lt;GetApplicationByIdQueryResponse&gt;({
+      query: GET_APPLICATION_BY_ID,
+      variables: {
+        id,
+        asRole
+      }
+    }).subscribe(res &#x3D;&gt; {
+      this._application.next(res.data.application);
+    });
+  }
+
+  /*
+    Edit Application
+  */
+  editApplication(value: any): void {
+    const application &#x3D; this._application.getValue();
+    this.apollo.mutate&lt;EditApplicationMutationResponse&gt;(
+      {
+        mutation: EDIT_APPLICATION,
+        variables: {
+          id: application?.id,
+          name: value.name,
+          description: value.description
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.errors) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectNotUpdated(&#x27;app&#x27;, res.errors[0].message));
+        } else {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectEdited(&#x27;application&#x27;, value.name, ));
+        }
+      });
+  }
+
+  /*  Return the application as an Observable.
+  */
+  get application(): Observable&lt;Application | null&gt; {
+    return this._application.asObservable();
+  }
+
+  /* Change the application&#x27;s status and navigate to the applications list
+  */
+  publish(): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;EditApplicationMutationResponse&gt;({
+        mutation: EDIT_APPLICATION,
+        variables: {
+          id: application.id,
+          status: &#x27;active&#x27;
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.appPublished(res.data.editApplication.name));
+          this.router.navigate([&#x27;/applications&#x27;]);
+        }
+      });
+    } else {
+      this.snackBar.openSnackBar(NOTIFICATIONS.noObjectOpened(&#x27;application&#x27;), { error: true });
+    }
+  }
+
+  /* Delete a page and the associated content.
+  */
+  deletePage(id: string): void {
+    this.apollo.mutate&lt;DeletePageMutationResponse&gt;({
+      mutation: DELETE_PAGE,
+      variables: {
+        id
+      }
+    }).subscribe(res &#x3D;&gt; {
+      if (res.data) {
+        this.snackBar.openSnackBar(NOTIFICATIONS.objectDeleted(&#x27;Page&#x27;));
+        const application &#x3D; this._application.getValue();
+        if (application) {
+          const newApplication &#x3D; { ...application, pages: application.pages?.filter(x &#x3D;&gt; x.id !&#x3D;&#x3D; res.data?.deletePage.id) };
+          this._application.next(newApplication);
+          this.router.navigate([&#x60;./applications/${application.id}&#x60;]);
+        }
+      }
+    });
+  }
+
+  /* Reorder the pages, using material Drag n Drop.
+  */
+  reorderPages(pages: string[]): void {
+    const application &#x3D; this._application.getValue();
+    this.apollo.mutate&lt;EditApplicationMutationResponse&gt;({
+      mutation: EDIT_APPLICATION,
+      variables: {
+        id: application?.id,
+        pages
+      }
+    }).subscribe(res &#x3D;&gt; {
+      this.snackBar.openSnackBar(NOTIFICATIONS.objectReordered(&#x27;Pages&#x27;));
+    });
+  }
+
+  /* Update a specific page name in the opened application.
+  */
+  updatePageName(page: Page): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      const newApplication &#x3D; { ...application, pages: application.pages?.map(x &#x3D;&gt; {
+        if (x.id &#x3D;&#x3D;&#x3D; page.id) {
+          x &#x3D; { ...x, name: page.name };
+        }
+        return x;
+      })};
+      this._application.next(newApplication);
+    }
+  }
+
+  /* Add a new page to the opened application.
+  */
+  addPage(value: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;AddPageMutationResponse&gt;({
+        mutation: ADD_PAGE,
+        variables: {
+          name: value.name,
+          type: value.type,
+          content: value.content,
+          application: application.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectCreated(value.name, &#x27;page&#x27;));
+          const content &#x3D; res.data.addPage.content;
+          const newApplication &#x3D; { ...application, pages: application.pages?.concat([res.data.addPage]) };
+          this._application.next(newApplication);
+          this.router.navigate([(value.type &#x3D;&#x3D;&#x3D; ContentType.form) ? &#x60;/applications/${application.id}/${value.type}/${res.data.addPage.id}&#x60; :
+            &#x60;/applications/${application.id}/${value.type}/${content}&#x60;]);
+        }
+      });
+    } else {
+      this.snackBar.openSnackBar(NOTIFICATIONS.noObjectOpened(&#x27;application&#x27;), { error: true });
+    }
+  }
+
+  /* Add a new role to the opened application.
+  */
+  addRole(value: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;AddRoleMutationResponse&gt;({
+        mutation: ADD_ROLE,
+        variables: {
+          title: value.title,
+          application: application.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectCreated(value.title, &#x27;role&#x27;));
+          const newApplication &#x3D; { ...application, roles: application.roles?.concat([res.data.addRole]) };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+  /* Edit an existing role.
+  */
+  editRole(role: Role, value: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;EditRoleMutationResponse&gt;({
+        mutation: EDIT_ROLE,
+        variables: {
+          id: role.id,
+          permissions: value.permissions,
+          channels: value.channels,
+          title: value.title
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectEdited(&#x27;role&#x27;, role.title));
+          const newApplication: Application &#x3D; { ...application,
+            roles: application.roles?.map(x &#x3D;&gt; {
+              if (x.id &#x3D;&#x3D;&#x3D; role.id) {
+                x &#x3D; { ...x,
+                  permissions: res.data?.editRole.permissions,
+                  channels: res.data?.editRole.channels
+                };
+              }
+              return x;
+            }),
+            channels: application.channels?.map(x &#x3D;&gt; {
+              if (value.channels.includes(x.id)) {
+                x &#x3D; { ...x, subscribedRoles: x.subscribedRoles?.concat([role]) };
+              } else if (x.subscribedRoles?.some(subRole &#x3D;&gt; subRole.id &#x3D;&#x3D;&#x3D; role.id)) {
+                x &#x3D; { ...x, subscribedRoles: x.subscribedRoles.filter(subRole &#x3D;&gt; subRole.id !&#x3D;&#x3D; role.id) };
+              }
+              return x;
+            })
+          };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+  /* Delete an existing role.
+  */
+  deleteRole(role: Role): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;DeleteRoleMutationResponse&gt;({
+        mutation: DELETE_ROLE,
+        variables: {
+          id: role.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        this.snackBar.openSnackBar(NOTIFICATIONS.objectDeleted(role.title));
+        const newApplication &#x3D; { ...application, roles: application.roles?.filter(x &#x3D;&gt; x.id !&#x3D;&#x3D; role.id) };
+        this._application.next(newApplication);
+      });
+    }
+  }
+
+  /* Delete users to the opened application.
+  */
+  deleteUsersFromApplication(ids: any[], resolved: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;DeleteUsersFromApplicationMutationResponse&gt;({
+        mutation: DELETE_USERS_FROM_APPLICATION,
+        variables: {
+          ids,
+          application: application.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          const deletedUsers &#x3D; res.data.deleteUsersFromApplication.map(x &#x3D;&gt; x.id);
+          this.snackBar.openSnackBar(NOTIFICATIONS.usersActions(&#x27;deleted&#x27;, deletedUsers.length), { duration: 3000 });
+          const newApplication &#x3D; { ...application, users: application.users?.filter(u &#x3D;&gt; !deletedUsers.includes(u.id)) };
+          this._application.next(newApplication);
+        } else {
+          this.snackBar.openSnackBar(NOTIFICATIONS.userInvalidActions(&#x27;deleted&#x27;), { error: true });
+        }
+        resolved();
+      });
+    }
+  }
+
+  /* Invite an user to the opened application.
+  */
+  inviteUser(value: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;AddRoleToUsersMutationResponse&gt;({
+        mutation: ADD_ROLE_TO_USERS,
+        variables: {
+          usernames: value.email,
+          role: value.role,
+          ...value.positionAttributes &amp;&amp; { positionAttributes: value.positionAttributes.filter((x: any) &#x3D;&gt; x.value) }
+        }
+      }).subscribe((res: any) &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.usersActions(&#x27;invited&#x27;, res.data.addRoleToUsers.length));
+          const newApplication &#x3D; { ...application, users: application.users?.concat(res.data.addRoleToUsers) };
+          this._application.next(newApplication);
+        } else {
+          this.snackBar.openSnackBar(NOTIFICATIONS.userInvalidActions(&#x27;invited&#x27;), { error: true });
+        }
+      });
+    }
+  }
+
+  /* Edit an user that has access to the application.
+  */
+  editUser(user: User, value: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;EditUserMutationResponse&gt;({
+        mutation: EDIT_USER,
+        variables: {
+          id: user.id,
+          roles: [value.role],
+          application: application.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectEdited(&#x27;roles&#x27;, user.username));
+          const index &#x3D; application.users?.indexOf(user);
+          if (application.users &amp;&amp; index) {
+            application.users[index] &#x3D; res.data.editUser;
+          }
+          this._application.next(application);
+        }
+      });
+    }
+  }
+
+  /* Add a new position to the opened application.
+  */
+  addPositionAttributeCategory(value: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;AddPositionAttributeCategoryMutationResponse&gt;({
+        mutation: ADD_POSITION_ATTRIBUTE_CATEGORY,
+        variables: {
+          title: value.title,
+          application: application.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectCreated(value.title, &#x27;position category&#x27;));
+          const newApplication: Application &#x3D; { ...application,
+            positionAttributeCategories: application.positionAttributeCategories?.concat([res.data.addPositionAttributeCategory]) };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+  /* Remove a position from the opened application
+  */
+  deletePositionAttributeCategory(positionCategory: PositionAttributeCategory): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;DeletePositionAttributeCategoryMutationResponse&gt;({
+        mutation: DELETE_POSITION_ATTRIBUTE_CATEGORY,
+        variables: {
+          id: positionCategory.id,
+          application: application.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectDeleted(positionCategory.title));
+          const newApplication: Application &#x3D; { ...application,
+            positionAttributeCategories: application.positionAttributeCategories?.filter(x &#x3D;&gt;
+              x.id !&#x3D;&#x3D; res.data?.deletePositionAttributeCategory.id) };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+  /* Edit a position&#x27;s name from the opened application
+  */
+  editPositionAttributeCategory(value: any, positionCategory: PositionAttributeCategory): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;EditPositionAttributeCategoryMutationResponse&gt;({
+        mutation: EDIT_POSITION_ATTRIBUTE_CATEGORY,
+        variables: {
+          id: positionCategory.id,
+          application: application.id,
+          title: value.title
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.errors) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectAlreadyExists(&#x27;position category&#x27;, value.title), { error: true });
+        } else {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectEdited(&#x27;position category&#x27;, value.title));
+          const newApplication: Application &#x3D; { ...application,
+            positionAttributeCategories: application.positionAttributeCategories?.map(pos &#x3D;&gt; {
+              if (pos.title &#x3D;&#x3D;&#x3D; positionCategory.title) {
+                pos &#x3D; { ...pos, title: res.data?.editPositionAttributeCategory.title };
+              }
+              return pos;
+            })
+          };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+  /* Add a new channel to the application.
+  */
+  addChannel(value: { title: string }): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;AddChannelMutationResponse&gt;({
+        mutation: ADD_CHANNEL,
+        variables: {
+          title: value.title,
+          application: application.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectCreated(&#x27;channel&#x27;, value.title));
+          const newApplication: Application &#x3D; { ...application, channels: application.channels?.concat([res.data.addChannel]) };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+  /* Remove a channel from the system with all notifications linked to it
+  */
+  deleteChannel(channel: Channel): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;DeleteChannelMutationResponse&gt;({
+        mutation: DELETE_CHANNEL,
+        variables: {
+          id: channel.id
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectDeleted(channel.title));
+          const newApplication: Application &#x3D; { ...application,
+            channels: application.channels?.filter(x &#x3D;&gt; x.id !&#x3D;&#x3D; res.data?.deleteChannel.id) };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+  /* Add a new subscription to the application.
+  */
+  addSubscription(value: { routingKey: string, title: string, convertTo: string, channel: string }): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;AddSubscriptionMutationResponse&gt;({
+        mutation: ADD_SUBSCRIPTION,
+        variables: {
+          application: application.id,
+          routingKey: value.routingKey,
+          title: value.title,
+          convertTo: value.convertTo,
+          channel: value.channel
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectCreated(&#x27;subscription&#x27;, value.title));
+          const newApplication: Application &#x3D; { ...application,
+            subscriptions: application.subscriptions?.concat([res.data.addSubscription]) };
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+
+
+  /* Delete subscription from application.
+  */
+  deleteSubscription(value: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;DeleteSubscriptionMutationResponse&gt;({
+        mutation: DELETE_SUBSCRIPTION,
+        variables: {
+          applicationId: application.id,
+          routingKey: value
+        }
+      }).subscribe(res &#x3D;&gt; {
+        this.snackBar.openSnackBar(NOTIFICATIONS.objectDeleted(&#x27;Subscription&#x27;));
+        const newApplication &#x3D; {...application, subscriptions: application.subscriptions?.filter(sub &#x3D;&gt; sub.routingKey !&#x3D;&#x3D; value)};
+        this._application.next(newApplication);
+      });
+    }
+  }
+
+  /* Edit existing subscription
+  */
+  editSubscription(value: any, previousSubscription: any): void {
+    const application &#x3D; this._application.getValue();
+    if (application) {
+      this.apollo.mutate&lt;EditSubscriptionMutationResponse&gt;({
+        mutation: EDIT_SUBSCRIPTION,
+        variables: {
+          applicationId: application.id,
+          title: value.title,
+          routingKey: value.routingKey,
+          convertTo: value.convertTo,
+          channel: value.channel,
+          previousSubscription,
+        }
+      }).subscribe(res &#x3D;&gt; {
+        if (res.data) {
+          const subscription &#x3D; res.data.editSubscription;
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectEdited(&#x27;subscription&#x27;, value.title));
+          const newApplication &#x3D; {...application, subscriptions: application.subscriptions?.map(sub &#x3D;&gt; {
+            if (sub.routingKey &#x3D;&#x3D;&#x3D; previousSubscription) {
+              sub &#x3D; subscription;
+            }
+            return sub;
+          })};
+          this._application.next(newApplication);
+        }
+      });
+    }
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SafeApplicationService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

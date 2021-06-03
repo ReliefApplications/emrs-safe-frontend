@@ -1,0 +1,1133 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SafeChartSettingsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>safe-chart-settings</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./chart-settings.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./chart-settings.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#chart">chart</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#legendOrientations">legendOrientations</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#legendPositions">legendPositions</a>
+                            </li>
+                            <li>
+                                <a href="#tileForm">tileForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#titlePositions">titlePositions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#type">type</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#types">types</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#flatDeep">flatDeep</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getFields">getFields</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#tile">tile</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#change">change</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#chartForm">chartForm</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="../interfaces/Form.html">FormBuilder</a>, queryBuilder: <a href="../injectables/QueryBuilderService.html">QueryBuilderService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/Form.html" target="_self" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>queryBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QueryBuilderService.html" target="_self" >QueryBuilderService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tile"></a>
+                        <b>tile</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:20</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="change"></a>
+                        <b>change</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;any&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="flatDeep"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            flatDeep
+                        </b>
+                        <a href="#flatDeep"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>flatDeep(arr: any[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="93"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:93</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>arr</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>any[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getFields"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getFields
+                        </b>
+                        <a href="#getFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getFields(fields: any[], prefix?: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>fields</td>
+                                    <td>
+                                            <code>any[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>prefix</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        Yes
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>any[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chart"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                                <span class="modifier">Optional</span>
+                            chart</b>
+                            <a href="#chart"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/Chart.html" target="_self" >Chart</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="legendOrientations"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            legendOrientations</b>
+                            <a href="#legendOrientations"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>LEGEND_ORIENTATIONS</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="legendPositions"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            legendPositions</b>
+                            <a href="#legendPositions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>LEGEND_POSITIONS</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:28</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="tileForm"></a>
+                        <span class="name">
+                            <b>
+                            tileForm</b>
+                            <a href="#tileForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Form.html" target="_self" >FormGroup | undefined</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titlePositions"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            titlePositions</b>
+                            <a href="#titlePositions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>TITLE_POSITIONS</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="type"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            type</b>
+                            <a href="#type"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="types"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            types</b>
+                            <a href="#types"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>CHART_TYPES</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="chartForm"></a>
+                        <span class="name"><b>chartForm</b><a href="#chartForm"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>chartForm()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/safe/src/lib/components/widgets/chart-settings/chart-settings.component.ts:34</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, EventEmitter, Output } from &#x27;@angular/core&#x27;;
+import { FormGroup, FormBuilder, Validators } from &#x27;@angular/forms&#x27;;
+import { QueryBuilderService } from &#x27;../../../services/query-builder.service&#x27;;
+import { Chart } from &#x27;./charts/chart&#x27;;
+import { CHART_TYPES, LEGEND_ORIENTATIONS, LEGEND_POSITIONS, TITLE_POSITIONS } from &#x27;./constants&#x27;;
+
+@Component({
+  selector: &#x27;safe-chart-settings&#x27;,
+  templateUrl: &#x27;./chart-settings.component.html&#x27;,
+  styleUrls: [&#x27;./chart-settings.component.scss&#x27;]
+})
+/*  Modal content for the settings of the chart widgets.
+*/
+export class SafeChartSettingsComponent implements OnInit {
+
+  // &#x3D;&#x3D;&#x3D; REACTIVE FORM &#x3D;&#x3D;&#x3D;
+  tileForm: FormGroup | undefined;
+
+  // &#x3D;&#x3D;&#x3D; WIDGET &#x3D;&#x3D;&#x3D;
+  @Input() tile: any;
+
+  // &#x3D;&#x3D;&#x3D; EMIT THE CHANGES APPLIED &#x3D;&#x3D;&#x3D;
+  // tslint:disable-next-line: no-output-native
+  @Output() change: EventEmitter&lt;any&gt; &#x3D; new EventEmitter();
+
+  // &#x3D;&#x3D;&#x3D; DATA &#x3D;&#x3D;&#x3D;
+  public types &#x3D; CHART_TYPES;
+  public legendPositions &#x3D; LEGEND_POSITIONS;
+  public legendOrientations &#x3D; LEGEND_ORIENTATIONS;
+  public titlePositions &#x3D; TITLE_POSITIONS;
+  public chart?: Chart;
+  public type: any;
+
+  public get chartForm(): FormGroup {
+    return this.tileForm?.controls.chart as FormGroup || null;
+  }
+
+  // public get type(): object {
+  //   return this.types.find(x &#x3D;&gt; x.name &#x3D;&#x3D;&#x3D; this.tileForm.value.chart.type);
+  // }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private queryBuilder: QueryBuilderService
+  ) { }
+
+  /*  Build the settings form, using the widget saved parameters.
+  */
+  ngOnInit(): void {
+    const tileSettings &#x3D; this.tile.settings;
+    const chartSettings &#x3D; tileSettings.chart;
+    if (chartSettings.type) {
+      this.type &#x3D; this.types.find(x &#x3D;&gt; x.name &#x3D;&#x3D;&#x3D; chartSettings.type);
+      const chartClass &#x3D; this.types.find(x &#x3D;&gt; x.name &#x3D;&#x3D;&#x3D; chartSettings.type);
+      if (chartClass) {
+        this.chart &#x3D; new (chartClass.class)(chartSettings);
+      }
+    } else {
+      this.type &#x3D; null;
+      this.chart &#x3D; new Chart(tileSettings);
+    }
+    this.tileForm &#x3D; this.formBuilder.group(
+      {
+        id: this.tile.id,
+        title: [(tileSettings &amp;&amp; tileSettings.title) ? tileSettings.title : &#x27;&#x27;, Validators.required],
+        chart: this.chart?.form
+      }
+    );
+    this.change.emit(this.tileForm);
+
+    this.tileForm?.valueChanges.subscribe(() &#x3D;&gt; {
+      this.change.emit(this.tileForm);
+    });
+
+    // if (this.tileForm.value.query.name) {
+    //   this.selectedFields &#x3D; this.getFields(this.tileForm.value.query.fields);
+    // }
+
+    const chartForm &#x3D; this.tileForm?.get(&#x27;chart&#x27;) as FormGroup;
+    chartForm.controls.type.valueChanges.subscribe((value) &#x3D;&gt; {
+      this.type &#x3D; this.types.find(x &#x3D;&gt; x.name &#x3D;&#x3D;&#x3D; value);
+    });
+
+    // queryForm.controls.name.valueChanges.subscribe(() &#x3D;&gt; {
+    //   this.tileForm.controls.xAxis.setValue(&#x27;&#x27;);
+    //   this.tileForm.controls.yAxis.setValue(&#x27;&#x27;);
+    // });
+    // queryForm.valueChanges.subscribe((res) &#x3D;&gt; {
+    //   this.selectedFields &#x3D; this.getFields(queryForm.getRawValue().fields);
+    // });
+  }
+
+  private flatDeep(arr: any[]): any[] {
+    return arr.reduce((acc, val) &#x3D;&gt; acc.concat(Array.isArray(val) ? this.flatDeep(val) : val), []);
+  }
+
+  private getFields(fields: any[], prefix?: string): any[] {
+    return this.flatDeep(fields.filter(x &#x3D;&gt; x.kind !&#x3D;&#x3D; &#x27;LIST&#x27;).map(f &#x3D;&gt; {
+      switch (f.kind) {
+        case &#x27;OBJECT&#x27;: {
+          return this.getFields(f.fields, f.name);
+        }
+        default: {
+          return prefix ? &#x60;${prefix}.${f.name}&#x60; : f.name;
+        }
+      }
+    }));
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;tileForm&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;tileForm&quot; class&#x3D;&quot;widget-form-container&quot;&gt;
+        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;div class&#x3D;&quot;form-group-title&quot;&gt;General&lt;/div&gt;
+            &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                &lt;mat-label&gt;Title&lt;/mat-label&gt;
+                &lt;input matInput formControlName&#x3D;&quot;title&quot; type&#x3D;&quot;string&quot; /&gt;
+            &lt;/mat-form-field&gt;
+            &lt;ng-container formGroupName&#x3D;&quot;chart&quot; *ngIf&#x3D;&quot;chartForm&quot;&gt;
+                &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                    &lt;mat-label&gt;Chart Type&lt;/mat-label&gt;
+                    &lt;mat-select formControlName&#x3D;&quot;type&quot;&gt;
+                        &lt;mat-select-trigger&gt;
+                            &lt;mat-icon inline&#x3D;&quot;true&quot; class&#x3D;&quot;chart-icon&quot;&gt;{{type.icon}}&lt;/mat-icon&gt;{{type.name | uppercase
+                            }}
+                        &lt;/mat-select-trigger&gt;
+                        &lt;mat-option *ngFor&#x3D;&quot;let type of types&quot; [value]&#x3D;&quot;type.name&quot;&gt;
+                            &lt;mat-icon&gt;{{type.icon}}&lt;/mat-icon&gt; {{type.name | uppercase }}
+                        &lt;/mat-option&gt;
+                    &lt;/mat-select&gt;
+                &lt;/mat-form-field&gt;
+            &lt;/ng-container&gt;
+        &lt;/div&gt;
+        &lt;div formGroupName&#x3D;&quot;chart&quot; class&#x3D;&quot;chart-form-container&quot; *ngIf&#x3D;&quot;chartForm&quot;&gt;
+            &lt;div class&#x3D;&quot;chart-form&quot;&gt;
+                &lt;mat-tab-group class&#x3D;&quot;chart-settings&quot; animationDuration&#x3D;&quot;0ms&quot; &gt;
+                    &lt;mat-tab label&#x3D;&quot;Data source&quot;&gt;
+                        &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                            &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                                &lt;mat-label&gt;Aggregation&lt;/mat-label&gt;
+                                &lt;textarea matInput formControlName&#x3D;&quot;pipeline&quot;&gt;&lt;/textarea&gt;
+                            &lt;/mat-form-field&gt;
+                        &lt;/div&gt;
+                    &lt;/mat-tab&gt;
+                    &lt;mat-tab label&#x3D;&quot;Display&quot;&gt;
+                        &lt;mat-accordion&gt;
+                            &lt;mat-expansion-panel formGroupName&#x3D;&quot;legend&quot;&gt;
+                                &lt;mat-expansion-panel-header&gt;
+                                    &lt;mat-panel-title&gt;
+                                        Legend
+                                    &lt;/mat-panel-title&gt;
+                                &lt;/mat-expansion-panel-header&gt;
+                                &lt;mat-slide-toggle formControlName&#x3D;&quot;visible&quot;&gt;Display&lt;/mat-slide-toggle&gt;
+                                &lt;ng-container *ngIf&#x3D;&quot;chartForm.value.legend.visible&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;h3&gt;Position&lt;/h3&gt;
+                                        &lt;div&gt;
+                                            &lt;button mat-flat-button
+                                                [color]&#x3D;&quot;position.value &#x3D;&#x3D;&#x3D; chartForm.value.legend.position ? &#x27;primary&#x27; : &#x27;&#x27;&quot;
+                                                (click)&#x3D;&quot;chartForm.patchValue({legend: { position: position.value }})&quot;
+                                                *ngFor&#x3D;&quot;let position of legendPositions&quot;&gt;
+                                                &lt;mat-icon&gt;{{ position.icon }}&lt;/mat-icon&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;h3&gt;Orientation&lt;/h3&gt;
+                                        &lt;div&gt;
+                                            &lt;button mat-flat-button
+                                                [color]&#x3D;&quot;orientation.value &#x3D;&#x3D;&#x3D; chartForm.value.legend.orientation ? &#x27;primary&#x27; : &#x27;&#x27;&quot;
+                                                (click)&#x3D;&quot;chartForm.patchValue({legend: { orientation: orientation.value }})&quot;
+                                                *ngFor&#x3D;&quot;let orientation of legendOrientations&quot;&gt;
+                                                &lt;mat-icon&gt;{{ orientation.icon }}&lt;/mat-icon&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/mat-expansion-panel&gt;
+                            &lt;mat-expansion-panel formGroupName&#x3D;&quot;title&quot;&gt;
+                                &lt;mat-expansion-panel-header&gt;
+                                    &lt;mat-panel-title&gt;
+                                        Title
+                                    &lt;/mat-panel-title&gt;
+                                &lt;/mat-expansion-panel-header&gt;
+                                &lt;mat-slide-toggle formControlName&#x3D;&quot;visible&quot;&gt;Display&lt;/mat-slide-toggle&gt;
+                                &lt;ng-container *ngIf&#x3D;&quot;chartForm.value.title.visible&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                                            &lt;mat-label&gt;Text&lt;/mat-label&gt;
+                                            &lt;input matInput formControlName&#x3D;&quot;text&quot;&gt;
+                                        &lt;/mat-form-field&gt;
+                                    &lt;/div&gt;
+                                    &lt;div&gt;
+                                        &lt;h3&gt;Position&lt;/h3&gt;
+                                        &lt;div&gt;
+                                            &lt;button mat-flat-button
+                                                [color]&#x3D;&quot;position.value &#x3D;&#x3D;&#x3D; chartForm.value.title.position ? &#x27;primary&#x27; : &#x27;&#x27;&quot;
+                                                (click)&#x3D;&quot;chartForm.patchValue({title: { position: position.value }})&quot;
+                                                *ngFor&#x3D;&quot;let position of titlePositions&quot;&gt;
+                                                &lt;mat-icon&gt;{{ position.icon }}&lt;/mat-icon&gt;
+                                            &lt;/button&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                &lt;/ng-container&gt;
+                            &lt;/mat-expansion-panel&gt;
+                        &lt;/mat-accordion&gt;
+                    &lt;/mat-tab&gt;
+                &lt;/mat-tab-group&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;chart-display&quot;&gt;
+                &lt;safe-chart class&#x3D;&quot;widget-content&quot; [header]&#x3D;&quot;false&quot; [export]&#x3D;&quot;false&quot; [settings]&#x3D;&quot;tileForm.value&quot;&gt;
+                &lt;/safe-chart&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/ng-container&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./chart-settings.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.advanced-filtering {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chart-icon {
+    margin-right: 8px;
+}
+
+.widget-form-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-form-container {
+    display: flex;
+    height: 100%;
+
+    .chart-form {
+        flex: 1;
+        max-width: 300px;
+    }
+
+    .chart-display {
+        margin-left: 8px;
+        flex: 1;
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="tileForm">    <form [formGroup]="tileForm" class="widget-form-container">        <div class="form-group">            <div class="form-group-title">General</div>            <mat-form-field appearance="outline">                <mat-label>Title</mat-label>                <input matInput formControlName="title" type="string" />            </mat-form-field>            <ng-container formGroupName="chart" *ngIf="chartForm">                <mat-form-field appearance="outline">                    <mat-label>Chart Type</mat-label>                    <mat-select formControlName="type">                        <mat-select-trigger>                            <mat-icon inline="true" class="chart-icon">{{type.icon}}</mat-icon>{{type.name | uppercase                            }}                        </mat-select-trigger>                        <mat-option *ngFor="let type of types" [value]="type.name">                            <mat-icon>{{type.icon}}</mat-icon> {{type.name | uppercase }}                        </mat-option>                    </mat-select>                </mat-form-field>            </ng-container>        </div>        <div formGroupName="chart" class="chart-form-container" *ngIf="chartForm">            <div class="chart-form">                <mat-tab-group class="chart-settings" animationDuration="0ms" >                    <mat-tab label="Data source">                        <div class="form-group">                            <mat-form-field appearance="outline">                                <mat-label>Aggregation</mat-label>                                <textarea matInput formControlName="pipeline"></textarea>                            </mat-form-field>                        </div>                    </mat-tab>                    <mat-tab label="Display">                        <mat-accordion>                            <mat-expansion-panel formGroupName="legend">                                <mat-expansion-panel-header>                                    <mat-panel-title>                                        Legend                                    </mat-panel-title>                                </mat-expansion-panel-header>                                <mat-slide-toggle formControlName="visible">Display</mat-slide-toggle>                                <ng-container *ngIf="chartForm.value.legend.visible">                                    <div>                                        <h3>Position</h3>                                        <div>                                            <button mat-flat-button                                                [color]="position.value === chartForm.value.legend.position ? \'primary\' : \'\'"                                                (click)="chartForm.patchValue({legend: { position: position.value }})"                                                *ngFor="let position of legendPositions">                                                <mat-icon>{{ position.icon }}</mat-icon>                                            </button>                                        </div>                                    </div>                                    <div>                                        <h3>Orientation</h3>                                        <div>                                            <button mat-flat-button                                                [color]="orientation.value === chartForm.value.legend.orientation ? \'primary\' : \'\'"                                                (click)="chartForm.patchValue({legend: { orientation: orientation.value }})"                                                *ngFor="let orientation of legendOrientations">                                                <mat-icon>{{ orientation.icon }}</mat-icon>                                            </button>                                        </div>                                    </div>                                </ng-container>                            </mat-expansion-panel>                            <mat-expansion-panel formGroupName="title">                                <mat-expansion-panel-header>                                    <mat-panel-title>                                        Title                                    </mat-panel-title>                                </mat-expansion-panel-header>                                <mat-slide-toggle formControlName="visible">Display</mat-slide-toggle>                                <ng-container *ngIf="chartForm.value.title.visible">                                    <div>                                        <mat-form-field appearance="outline">                                            <mat-label>Text</mat-label>                                            <input matInput formControlName="text">                                        </mat-form-field>                                    </div>                                    <div>                                        <h3>Position</h3>                                        <div>                                            <button mat-flat-button                                                [color]="position.value === chartForm.value.title.position ? \'primary\' : \'\'"                                                (click)="chartForm.patchValue({title: { position: position.value }})"                                                *ngFor="let position of titlePositions">                                                <mat-icon>{{ position.icon }}</mat-icon>                                            </button>                                        </div>                                    </div>                                </ng-container>                            </mat-expansion-panel>                        </mat-accordion>                    </mat-tab>                </mat-tab-group>            </div>            <div class="chart-display">                <safe-chart class="widget-content" [header]="false" [export]="false" [settings]="tileForm.value">                </safe-chart>            </div>        </div>    </form></ng-container></div>'
+    var COMPONENTS = [{'name': 'SafeAccessComponent', 'selector': 'safe-access'},{'name': 'SafeAddRoleComponent', 'selector': 'safe-add-role'},{'name': 'SafeChartComponent', 'selector': 'safe-chart'},{'name': 'SafeChartSettingsComponent', 'selector': 'safe-chart-settings'},{'name': 'SafeChooseRecordModalComponent', 'selector': 'safe-choose-record-modal'},{'name': 'SafeConfirmModalComponent', 'selector': 'safe-confirm-modal'},{'name': 'SafeConvertModalComponent', 'selector': 'safe-convert-modal'},{'name': 'SafeDashboardMenuComponent', 'selector': 'safe-dashboard-menu'},{'name': 'SafeEditAccessComponent', 'selector': 'safe-edit-access'},{'name': 'SafeEditorComponent', 'selector': 'safe-editor'},{'name': 'SafeEditorSettingsComponent', 'selector': 'safe-editor-settings'},{'name': 'SafeEditRoleComponent', 'selector': 'safe-edit-role'},{'name': 'SafeEditUserComponent', 'selector': 'safe-edit-user'},{'name': 'SafeExpandedCommentComponent', 'selector': 'safe-expanded-comment'},{'name': 'SafeExpandedWidgetComponent', 'selector': 'safe-expanded-widget'},{'name': 'SafeFloatingButtonSettingsComponent', 'selector': 'safe-floating-button-settings'},{'name': 'SafeFloatingOptionsComponent', 'selector': 'safe-floating-options'},{'name': 'SafeFormBuilderComponent', 'selector': 'safe-form-builder'},{'name': 'SafeFormComponent', 'selector': 'safe-form'},{'name': 'SafeFormModalComponent', 'selector': 'safe-form-modal'},{'name': 'SafeGridComponent', 'selector': 'safe-grid'},{'name': 'SafeGridSettingsComponent', 'selector': 'safe-grid-settings'},{'name': 'SafeInviteUserComponent', 'selector': 'safe-invite-user'},{'name': 'SafeLayoutComponent', 'selector': 'safe-layout'},{'name': 'SafeMapComponent', 'selector': 'safe-map'},{'name': 'SafeMapSettingsComponent', 'selector': 'safe-map-settings'},{'name': 'SafePreviousButtonComponent', 'selector': 'safe-previous-button'},{'name': 'SafeProfileComponent', 'selector': 'safe-profile'},{'name': 'SafeQueryBuilderComponent', 'selector': 'safe-query-builder'},{'name': 'SafeRecordHistoryComponent', 'selector': 'safe-record-history'},{'name': 'SafeRecordModalComponent', 'selector': 'safe-record-modal'},{'name': 'SafeRolesComponent', 'selector': 'safe-roles'},{'name': 'SafeSchedulerComponent', 'selector': 'safe-scheduler'},{'name': 'SafeSchedulerSettingsComponent', 'selector': 'safe-scheduler-settings'},{'name': 'SafeStatusModalComponent', 'selector': 'safe-status-modal'},{'name': 'SafeSurveyGridComponent', 'selector': 'safe-survey-grid'},{'name': 'SafeTabFieldsComponent', 'selector': 'safe-tab-fields'},{'name': 'SafeTabFilterComponent', 'selector': 'safe-tab-filter'},{'name': 'SafeTabSortComponent', 'selector': 'safe-tab-sort'},{'name': 'SafeTileDataComponent', 'selector': 'safe-tile-data'},{'name': 'SafeTileDisplayComponent', 'selector': 'safe-tile-display'},{'name': 'SafeUsersComponent', 'selector': 'safe-users'},{'name': 'SafeWidgetComponent', 'selector': 'safe-widget'},{'name': 'SafeWidgetGridComponent', 'selector': 'safe-widget-grid'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SafeChartSettingsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SafeChartSettingsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

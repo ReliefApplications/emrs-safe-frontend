@@ -1,0 +1,1896 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SafeRecordHistoryComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/safe/src/lib/components/record-history/record-history.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>safe-record-history</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./record-history.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./record-history.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog">dialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#displayedColumns">displayedColumns</a>
+                            </li>
+                            <li>
+                                <a href="#endDate">endDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filterHistory">filterHistory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#filtersDate">filtersDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#history">history</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#loading">loading</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#showMore">showMore</a>
+                            </li>
+                            <li>
+                                <a href="#startDate">startDate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addField">addField</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addObject">addObject</a>
+                            </li>
+                            <li>
+                                <a href="#applyFilter">applyFilter</a>
+                            </li>
+                            <li>
+                                <a href="#clearDateFilter">clearDateFilter</a>
+                            </li>
+                            <li>
+                                <a href="#getDifference">getDifference</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getHistory">getHistory</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#modifyField">modifyField</a>
+                            </li>
+                            <li>
+                                <a href="#modifyObjects">modifyObjects</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onCancel">onCancel</a>
+                            </li>
+                            <li>
+                                <a href="#onRevert">onRevert</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#record">record</a>
+                            </li>
+                            <li>
+                                <a href="#revert">revert</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cancel">cancel</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dialog: MatDialog)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                    <code>MatDialog</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="record"></a>
+                        <b>record</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Record.html" target="_self" >Record</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="revert"></a>
+                        <b>revert</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:15</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cancel"></a>
+                        <b>cancel</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:16</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addField"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            addField
+                        </b>
+                        <a href="#addField"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addField(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, current: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="121"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:121</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>current</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addObject"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            addObject
+                        </b>
+                        <a href="#addObject"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addObject(current: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="104"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:104</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>current</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="applyFilter"></a>
+                    <span class="name">
+                        <b>
+                            applyFilter
+                        </b>
+                        <a href="#applyFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>applyFilter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="235"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:235</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearDateFilter"></a>
+                    <span class="name">
+                        <b>
+                            clearDateFilter
+                        </b>
+                        <a href="#clearDateFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearDateFilter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:227</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDifference"></a>
+                    <span class="name">
+                        <b>
+                            getDifference
+                        </b>
+                        <a href="#getDifference"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDifference(current: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, after: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:43</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>current</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>after</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>string[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHistory"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            getHistory
+                        </b>
+                        <a href="#getHistory"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getHistory(record: <a href="../interfaces/Record.html">Record</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="171"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:171</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>record</td>
+                                    <td>
+                                                <code><a href="../interfaces/Record.html" target="_self" >Record</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>any[]</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modifyField"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            modifyField
+                        </b>
+                        <a href="#modifyField"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>modifyField(key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, after: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, current: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:125</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>after</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>current</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modifyObjects"></a>
+                    <span class="name">
+                        <b>
+                            modifyObjects
+                        </b>
+                        <a href="#modifyObjects"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>modifyObjects(after: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, current: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, key: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="135"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:135</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>after</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>current</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onCancel"></a>
+                    <span class="name">
+                        <b>
+                            onCancel
+                        </b>
+                        <a href="#onCancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onCancel()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:37</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onRevert"></a>
+                    <span class="name">
+                        <b>
+                            onRevert
+                        </b>
+                        <a href="#onRevert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onRevert(item: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="211"
+                            class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:211</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dialog"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            dialog</b>
+                            <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatDialog</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedColumns"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            displayedColumns</b>
+                            <a href="#displayedColumns"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[&#x27;position&#x27;]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="endDate"></a>
+                        <span class="name">
+                            <b>
+                            endDate</b>
+                            <a href="#endDate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatEndDate&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;endDate&#x27;, {read: MatEndDate})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filterHistory"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            filterHistory</b>
+                            <a href="#filterHistory"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filtersDate"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            filtersDate</b>
+                            <a href="#filtersDate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{ startDate: &#x27;&#x27;, endDate: &#x27;&#x27; }</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="history"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            history</b>
+                            <a href="#history"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="loading"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            loading</b>
+                            <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:20</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="showMore"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            showMore</b>
+                            <a href="#showMore"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="startDate"></a>
+                        <span class="name">
+                            <b>
+                            startDate</b>
+                            <a href="#startDate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatStartDate&lt;string&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;startDate&#x27;, {read: MatStartDate})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">projects/safe/src/lib/components/record-history/record-history.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input, EventEmitter, Output, ViewChild } from &#x27;@angular/core&#x27;;
+import { Record } from &#x27;../../models/record.model&#x27;;
+import { MatEndDate, MatStartDate } from &#x27;@angular/material/datepicker&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { SafeRecordModalComponent } from &#x27;../record-modal/record-modal.component&#x27;;
+
+@Component({
+  selector: &#x27;safe-record-history&#x27;,
+  templateUrl: &#x27;./record-history.component.html&#x27;,
+  styleUrls: [&#x27;./record-history.component.scss&#x27;],
+})
+export class SafeRecordHistoryComponent implements OnInit {
+
+  @Input() record: Record &#x3D; {};
+  @Input() revert: any;
+  @Output() cancel &#x3D; new EventEmitter();
+
+  public history: any[] &#x3D; [];
+  public filterHistory: any[] &#x3D; [];
+  public loading &#x3D; true;
+  public showMore &#x3D; false;
+  public displayedColumns: string[] &#x3D; [&#x27;position&#x27;];
+  public filtersDate &#x3D; { startDate: &#x27;&#x27;, endDate: &#x27;&#x27; };
+
+  @ViewChild(&#x27;startDate&#x27;, { read: MatStartDate }) startDate!: MatStartDate&lt;string&gt;;
+  @ViewChild(&#x27;endDate&#x27;, { read: MatEndDate }) endDate!: MatEndDate&lt;string&gt;;
+
+
+  constructor(public dialog: MatDialog) { }
+
+  ngOnInit(): void {
+    this.history &#x3D; this.getHistory(this.record).filter((item) &#x3D;&gt; item.changes.length &gt; 0);
+    this.filterHistory &#x3D; this.history;
+    this.loading &#x3D; false;
+  }
+
+  onCancel(): void {
+    this.cancel.emit(true);
+  }
+
+  /*  Get current and next record to see difference and put it in a string
+  */
+  getDifference(current: any, after: any): string[] {
+    const changes: any[] &#x3D; [];
+    if (current) {
+      const keysCurrent &#x3D; Object.keys(current);
+      keysCurrent.forEach(key &#x3D;&gt; {
+        if (typeof after[key] &#x3D;&#x3D;&#x3D; &#x27;boolean&#x27; || typeof current[key] &#x3D;&#x3D;&#x3D; &#x27;boolean&#x27;) {
+          if (current[key] !&#x3D;&#x3D; null &amp;&amp; after[key] !&#x3D;&#x3D; current[key]) {
+            changes.push(this.modifyField(key, after, current));
+          }
+        } else if (!Array.isArray(after[key]) &amp;&amp; !Array.isArray(current[key])) {
+          if (after[key]) {
+            if (after[key] instanceof Object &amp;&amp; current[key]) {
+              const element &#x3D; this.modifyObjects(after, current, key);
+              if (element.length &gt; 0) {
+                changes.push(element);
+              }
+            } else if (current[key] &amp;&amp; after[key] !&#x3D;&#x3D; current[key]) {
+              changes.push(this.modifyField(key, after, current));
+            }
+          } else if (current[key]) {
+            if (current[key] instanceof Object) {
+              const element &#x3D; this.modifyObjects(after, current, key);
+              if (element.length &gt; 0) {
+                changes.push(element);
+              }
+            } else if (after[key] !&#x3D;&#x3D; current[key]) {
+              changes.push(this.modifyField(key, after, current));
+            }
+            else {
+              changes.push(this.addField(key, current));
+            }
+          }
+        } else {
+          if (!after[key] &amp;&amp; current[key] || current[key] &amp;&amp; after[key] &amp;&amp; after[key].toString() !&#x3D;&#x3D; current[key].toString()) {
+            changes.push(this.modifyField(key, after, current));
+          } else if (!after[key] &amp;&amp; current[key]) {
+            changes.push(this.addField(key, current));
+          }
+        }
+      });
+    }
+
+    const keysAfter &#x3D; Object.keys(after);
+    keysAfter.forEach(key &#x3D;&gt; {
+      if (typeof after[key] &#x3D;&#x3D;&#x3D; &#x27;boolean&#x27;) {
+        if ((!current || current[key]) &#x3D;&#x3D;&#x3D; null &amp;&amp; after[key] !&#x3D;&#x3D; null) {
+          changes.push(&#x27;&lt;p&gt;&lt;span class&#x3D;&quot;add-field&quot;&gt;Add field&lt;/span&gt; &lt;b&gt;&#x27; + key + &#x27;&lt;/b&gt; with value &lt;b&gt;&#x27; + after[key] + &#x27;&lt;/b&gt; &lt;/p&gt;&#x27;);
+        }
+      } else if ((!current || current[key] &#x3D;&#x3D;&#x3D; null) &amp;&amp; !Array.isArray(after[key]) &amp;&amp; after[key] instanceof Object) {
+        const element &#x3D; this.addObject(after, key);
+        if (element.length &gt; 0) {
+          changes.push(element);
+        }
+      }
+      else if ((!current || current[key] &#x3D;&#x3D;&#x3D; null) &amp;&amp; after[key]) {
+        changes.push(&#x27;&lt;p&gt;&lt;span class&#x3D;&quot;add-field&quot;&gt;Add field&lt;/span&gt; &lt;b&gt;&#x27; + key + &#x27;&lt;/b&gt; with value &lt;b&gt;&#x27; + after[key] + &#x27;&lt;/b&gt; &lt;/p&gt;&#x27;);
+      }
+    });
+    return changes;
+  }
+
+  private addObject(current: any, key: string): string {
+    const currentKeys &#x3D; Object.keys(current[key]);
+    let currentValuesHTML &#x3D; &#x27;&#x27;;
+    let element &#x3D; &#x60;&lt;p&gt; &lt;span class&#x3D;&quot;add-field&quot;&gt;Add field&lt;/span&gt; &lt;b&gt; ${key} &lt;/b&gt; with value  &#x60;;
+    currentKeys.forEach(k &#x3D;&gt; {
+      let currentValues;
+      if (current[key][k] instanceof Object) {
+        currentValues &#x3D; Object.values(current[key][k]);
+      } else {
+        currentValues &#x3D; current[key][k];
+      }
+      currentValuesHTML +&#x3D; &#x60;&lt;b&gt;${k} ( ${currentValues} )&lt;/b&gt; &#x60;;
+    });
+    element +&#x3D; &#x60;${currentValuesHTML} &lt;/p&gt;&#x60;;
+    return element;
+  }
+
+  private addField(key: string, current: any): string {
+    return &#x27;&lt;p&gt;&lt;span class&#x3D;&quot;add-field&quot;&gt;Add field&lt;/span&gt; &lt;b&gt;&#x27; + key + &#x27;&lt;/b&gt; with value &lt;b&gt;&#x27; + current[key] + &#x27;&lt;/b&gt; &lt;/p&gt;&#x27;;
+  }
+
+  private modifyField(key: string, after: any, current: any): string {
+    if (after[key] &#x3D;&#x3D;&#x3D; null) {
+      return &#x27;&lt;p&gt; &lt;span  class&#x3D;&quot;remove-field&quot;&gt;Remove field&lt;/span&gt; &lt;b&gt;&#x27; + key + &#x27;&lt;/b&gt; with value &lt;b&gt;&#x27; + current[key] +
+        &#x27;&lt;/b&gt; &lt;/p&gt;&#x27;;
+    } else {
+      return &#x27;&lt;p&gt; &lt;span  class&#x3D;&quot;modify-field&quot;&gt;Change field&lt;/span&gt; &lt;b&gt;&#x27; + key + &#x27;&lt;/b&gt; from &lt;b&gt;&#x27; + current[key] +
+        &#x27;&lt;/b&gt; to &lt;b&gt;&#x27; + after[key] + &#x27;&lt;/b&gt; &lt;/p&gt;&#x27;;
+    }
+  }
+
+  modifyObjects(after: any, current: any, key: string): string {
+    const afterKeys &#x3D; Object.keys(after[key] ? after[key] : current[key]);
+    let element &#x3D; &#x60;&lt;p&gt; &lt;span class&#x3D;&quot;modify-field&quot;&gt;Change field&lt;/span&gt; &lt;b&gt; ${key} &lt;/b&gt; from  &#x60;;
+    let afterValuesHTML &#x3D; &#x27;&#x27;;
+    let currentValuesHTML &#x3D; &#x27;&#x27;;
+
+    afterKeys.forEach(k &#x3D;&gt; {
+      let afterValues &#x3D; [];
+      let currentValues &#x3D; [];
+      if (after[key] &amp;&amp; after[key][k]) {
+        if (after[key][k] instanceof  Object) {
+          afterValues &#x3D; Object.values(after[key][k]);
+        } else {
+          afterValues &#x3D; after[key][k];
+        }
+      }
+      if (current[key] &amp;&amp; current[key][k]) {
+        if (current[key][k] instanceof Object) {
+          currentValues &#x3D; Object.values(current[key][k]);
+        } else {
+          currentValues &#x3D; current[key][k];
+        }
+      }
+
+      if (currentValues.toString() !&#x3D;&#x3D; afterValues.toString()) {
+        afterValuesHTML +&#x3D; &#x60;&lt;b&gt;${k} ( ${afterValues} )&lt;/b&gt; &#x60;;
+        currentValuesHTML +&#x3D; &#x60;&lt;b&gt;${k} ( ${currentValues} )&lt;/b&gt; &#x60;;
+      }
+    });
+    if (afterValuesHTML.length &gt; 0) {
+      element +&#x3D; &#x60;${currentValuesHTML} to ${afterValuesHTML}&lt;/p&gt;&#x60;;
+      return element;
+    }
+    return &#x27;&#x27;;
+  }
+
+  private getHistory(record: Record): any[] {
+    const res: any[] &#x3D; [];
+    const versions &#x3D; record.versions || [];
+    let difference;
+    if (versions.length &#x3D;&#x3D;&#x3D; 0) {
+      difference &#x3D; this.getDifference(null, record.data);
+      res.push({
+        created: record.createdAt,
+        createdBy: record.createdBy?.name,
+        changes: difference,
+        id: record.id
+      });
+      return res;
+    }
+    difference &#x3D; this.getDifference(null, versions[0].data);
+    res.push({
+      created: versions[0].createdAt,
+      createdBy: record.createdBy?.name,
+      changes: difference,
+      id: versions[0].id
+    });
+    for (let i &#x3D; 1; i &lt; versions.length; i++) {
+      difference &#x3D; this.getDifference(versions[i - 1].data, versions[i].data);
+      res.push({
+        created: versions[i].createdAt,
+        createdBy: versions[i - 1].createdBy?.name,
+        changes: difference,
+        id: versions[i].id
+      });
+    }
+    difference &#x3D; this.getDifference(versions[versions.length - 1].data, record.data);
+    res.push({
+      created: record.modifiedAt,
+      createdBy: versions[versions.length - 1].createdBy?.name,
+      changes: difference,
+      id: record.id
+    });
+    return res.reverse();
+  }
+
+  onRevert(item: any): void {
+    const dialogRef &#x3D; this.dialog.open(SafeRecordModalComponent, {
+      data: {
+        recordId: this.record.id,
+        locale: &#x27;en&#x27;,
+        compareTo: this.record.versions?.find(x &#x3D;&gt; x.id &#x3D;&#x3D;&#x3D; item.id)
+      },
+      height: &#x27;98%&#x27;,
+      width: &#x27;100vw&#x27;,
+      panelClass: &#x27;full-screen-modal&#x27;,
+    });
+    dialogRef.afterClosed().subscribe(value &#x3D;&gt; {
+      if (value) { this.revert(item); }
+    });
+  }
+
+  clearDateFilter(): void {
+    this.filtersDate.startDate &#x3D; &#x27;&#x27;;
+    this.filtersDate.endDate &#x3D; &#x27;&#x27;;
+    this.filterHistory &#x3D; this.history;
+    this.startDate.value &#x3D; &#x27;&#x27;;
+    this.endDate.value &#x3D; &#x27;&#x27;;
+  }
+
+  applyFilter(): void {
+    const startDate &#x3D; new Date(this.filtersDate.startDate).getTime();
+    const endDate &#x3D; new Date(this.filtersDate.endDate).getTime();
+    this.filterHistory &#x3D; this.history.filter(item &#x3D;&gt; !startDate || !endDate || item.created &gt;&#x3D; startDate &amp;&amp; item.created &lt;&#x3D; endDate);
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;history-header&quot;&gt;
+  &lt;div&gt;
+    &lt;h2&gt;History&lt;/h2&gt;
+    &lt;button style&#x3D;&quot;float: right&quot; mat-icon-button (click)&#x3D;&quot;onCancel()&quot;&gt;
+      &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div style&#x3D;&quot;clear: both&quot;&gt;
+    &lt;mat-form-field&gt;
+      &lt;mat-date-range-input (click)&#x3D;&quot;rangePicker.open()&quot; [rangePicker]&#x3D;&quot;rangePicker&quot;&gt;
+        &lt;input #startDate (dateInput)&#x3D;&quot;filtersDate[&#x27;startDate&#x27;] &#x3D; $event.value&quot; matStartDate placeholder&#x3D;&quot;Start date&quot;
+          readonly&gt;
+        &lt;input #endDate (dateInput)&#x3D;&quot;filtersDate[&#x27;endDate&#x27;] &#x3D; $event.value&quot; matEndDate placeholder&#x3D;&quot;End date&quot; readonly&gt;
+      &lt;/mat-date-range-input&gt;
+      &lt;mat-datepicker-toggle matSuffix [for]&#x3D;&quot;rangePicker&quot;&gt;&lt;/mat-datepicker-toggle&gt;
+      &lt;mat-date-range-picker #rangePicker&gt;
+        &lt;mat-date-range-picker-actions&gt;
+          &lt;button mat-button matDateRangePickerCancel (click)&#x3D;&quot;clearDateFilter()&quot;&gt;Clear range&lt;/button&gt;
+          &lt;button mat-raised-button color&#x3D;&quot;primary&quot; matDateRangePickerApply (click)&#x3D;&quot;applyFilter()&quot;&gt;Apply&lt;/button&gt;
+        &lt;/mat-date-range-picker-actions&gt;
+      &lt;/mat-date-range-picker&gt;
+    &lt;/mat-form-field&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;history-container&quot;&gt;
+  &lt;ng-container *ngFor&#x3D;&quot;let item of filterHistory; let index&#x3D;index&quot;&gt;
+    &lt;mat-expansion-panel (closed)&#x3D;&quot;showMore &#x3D; false&quot;&gt;
+      &lt;mat-expansion-panel-header&gt;
+        &lt;mat-panel-title&gt;
+          &lt;span class&#x3D;&quot;history-date&quot;&gt;{{item.created | date:&#x27;dd/MM/yyyy&#x27;}}&lt;/span&gt;
+          {{item.created | date:&#x27;HH:mm&#x27;}}
+          &lt;span class&#x3D;&quot;history-user&quot; *ngIf&#x3D;&quot;item.createdBy&quot;&gt;{{item.createdBy}}&lt;/span&gt;
+        &lt;/mat-panel-title&gt;
+      &lt;/mat-expansion-panel-header&gt;
+
+      &lt;ng-template matExpansionPanelContent&gt;
+        &lt;div class&#x3D;&quot;changes-content&quot; *ngFor&#x3D;&quot;let value of showMore ? item.changes : item.changes.slice(0, 4)&quot;
+          [innerHTML]&#x3D;&quot;value&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;full-history&quot;&gt;&lt;button mat-button color&#x3D;&quot;primary&quot; *ngIf&#x3D;&quot;!showMore &amp;&amp; item.changes.length &gt; 4&quot;
+            (click)&#x3D;&quot;showMore &#x3D; true&quot;&gt;Show more ({{item.changes.length - 4}})&lt;/button&gt;&lt;/div&gt;
+        &lt;button class&#x3D;&quot;revert-icon&quot; (click)&#x3D;&quot;onRevert(item)&quot; mat-stroked-button *ngIf&#x3D;&quot;index &gt; 0&quot;&gt;Preview and revert
+          &lt;mat-icon&gt;update&lt;/mat-icon&gt;&lt;/button&gt;
+      &lt;/ng-template&gt;
+    &lt;/mat-expansion-panel&gt;
+  &lt;/ng-container&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./record-history.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  width: 328px;
+}
+
+.history-header {
+  align-items: center;
+  padding: 16px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+  h2 {
+    float: left;
+    margin-bottom: unset;
+  }
+}
+
+.history-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.history-user {
+  background-color: #b2c9eb;
+  border-radius: 10px;
+  padding: 4px;
+  margin-left: auto;
+}
+
+::ng-deep .modify-field, ::ng-deep .add-field, ::ng-deep .remove-field {
+  border-radius: 10px;
+  padding: 5px;
+}
+
+::ng-deep .modify-field {
+  background-color: #e8ddb8;
+}
+
+::ng-deep .add-field {
+  background-color: #b2ebbf;
+}
+
+::ng-deep .remove-field {
+  background-color: #EBB2B2;
+}
+
+.changes-content {
+  margin-top: 0.7rem;
+}
+
+mat-expansion-panel {
+  box-shadow: none !important;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+}
+
+.mat-expansion-panel-header-title {
+  align-items: center;
+  font-size: 14px;
+}
+
+::ng-deep p {
+  line-height: 2;
+}
+
+.history-date {
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.revert-icon {
+  float: right;
+}
+
+.full-history {
+  text-align: center;
+  margin-bottom: 12px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="history-header">  <div>    <h2>History</h2>    <button style="float: right" mat-icon-button (click)="onCancel()">      <mat-icon>close</mat-icon>    </button>  </div>  <div style="clear: both">    <mat-form-field>      <mat-date-range-input (click)="rangePicker.open()" [rangePicker]="rangePicker">        <input #startDate (dateInput)="filtersDate[\'startDate\'] = $event.value" matStartDate placeholder="Start date"          readonly>        <input #endDate (dateInput)="filtersDate[\'endDate\'] = $event.value" matEndDate placeholder="End date" readonly>      </mat-date-range-input>      <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>      <mat-date-range-picker #rangePicker>        <mat-date-range-picker-actions>          <button mat-button matDateRangePickerCancel (click)="clearDateFilter()">Clear range</button>          <button mat-raised-button color="primary" matDateRangePickerApply (click)="applyFilter()">Apply</button>        </mat-date-range-picker-actions>      </mat-date-range-picker>    </mat-form-field>  </div></div><div class="history-container">  <ng-container *ngFor="let item of filterHistory; let index=index">    <mat-expansion-panel (closed)="showMore = false">      <mat-expansion-panel-header>        <mat-panel-title>          <span class="history-date">{{item.created | date:\'dd/MM/yyyy\'}}</span>          {{item.created | date:\'HH:mm\'}}          <span class="history-user" *ngIf="item.createdBy">{{item.createdBy}}</span>        </mat-panel-title>      </mat-expansion-panel-header>      <ng-template matExpansionPanelContent>        <div class="changes-content" *ngFor="let value of showMore ? item.changes : item.changes.slice(0, 4)"          [innerHTML]="value"></div>        <div class="full-history"><button mat-button color="primary" *ngIf="!showMore && item.changes.length > 4"            (click)="showMore = true">Show more ({{item.changes.length - 4}})</button></div>        <button class="revert-icon" (click)="onRevert(item)" mat-stroked-button *ngIf="index > 0">Preview and revert          <mat-icon>update</mat-icon></button>      </ng-template>    </mat-expansion-panel>  </ng-container></div></div>'
+    var COMPONENTS = [{'name': 'SafeAccessComponent', 'selector': 'safe-access'},{'name': 'SafeAddRoleComponent', 'selector': 'safe-add-role'},{'name': 'SafeChartComponent', 'selector': 'safe-chart'},{'name': 'SafeChartSettingsComponent', 'selector': 'safe-chart-settings'},{'name': 'SafeChooseRecordModalComponent', 'selector': 'safe-choose-record-modal'},{'name': 'SafeConfirmModalComponent', 'selector': 'safe-confirm-modal'},{'name': 'SafeConvertModalComponent', 'selector': 'safe-convert-modal'},{'name': 'SafeDashboardMenuComponent', 'selector': 'safe-dashboard-menu'},{'name': 'SafeEditAccessComponent', 'selector': 'safe-edit-access'},{'name': 'SafeEditorComponent', 'selector': 'safe-editor'},{'name': 'SafeEditorSettingsComponent', 'selector': 'safe-editor-settings'},{'name': 'SafeEditRoleComponent', 'selector': 'safe-edit-role'},{'name': 'SafeEditUserComponent', 'selector': 'safe-edit-user'},{'name': 'SafeExpandedCommentComponent', 'selector': 'safe-expanded-comment'},{'name': 'SafeExpandedWidgetComponent', 'selector': 'safe-expanded-widget'},{'name': 'SafeFloatingButtonSettingsComponent', 'selector': 'safe-floating-button-settings'},{'name': 'SafeFloatingOptionsComponent', 'selector': 'safe-floating-options'},{'name': 'SafeFormBuilderComponent', 'selector': 'safe-form-builder'},{'name': 'SafeFormComponent', 'selector': 'safe-form'},{'name': 'SafeFormModalComponent', 'selector': 'safe-form-modal'},{'name': 'SafeGridComponent', 'selector': 'safe-grid'},{'name': 'SafeGridSettingsComponent', 'selector': 'safe-grid-settings'},{'name': 'SafeInviteUserComponent', 'selector': 'safe-invite-user'},{'name': 'SafeLayoutComponent', 'selector': 'safe-layout'},{'name': 'SafeMapComponent', 'selector': 'safe-map'},{'name': 'SafeMapSettingsComponent', 'selector': 'safe-map-settings'},{'name': 'SafePreviousButtonComponent', 'selector': 'safe-previous-button'},{'name': 'SafeProfileComponent', 'selector': 'safe-profile'},{'name': 'SafeQueryBuilderComponent', 'selector': 'safe-query-builder'},{'name': 'SafeRecordHistoryComponent', 'selector': 'safe-record-history'},{'name': 'SafeRecordModalComponent', 'selector': 'safe-record-modal'},{'name': 'SafeRolesComponent', 'selector': 'safe-roles'},{'name': 'SafeSchedulerComponent', 'selector': 'safe-scheduler'},{'name': 'SafeSchedulerSettingsComponent', 'selector': 'safe-scheduler-settings'},{'name': 'SafeStatusModalComponent', 'selector': 'safe-status-modal'},{'name': 'SafeSurveyGridComponent', 'selector': 'safe-survey-grid'},{'name': 'SafeTabFieldsComponent', 'selector': 'safe-tab-fields'},{'name': 'SafeTabFilterComponent', 'selector': 'safe-tab-filter'},{'name': 'SafeTabSortComponent', 'selector': 'safe-tab-sort'},{'name': 'SafeTileDataComponent', 'selector': 'safe-tile-data'},{'name': 'SafeTileDisplayComponent', 'selector': 'safe-tile-display'},{'name': 'SafeUsersComponent', 'selector': 'safe-users'},{'name': 'SafeWidgetComponent', 'selector': 'safe-widget'},{'name': 'SafeWidgetGridComponent', 'selector': 'safe-widget-grid'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SafeRecordHistoryComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SafeRecordHistoryComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

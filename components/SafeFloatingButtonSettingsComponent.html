@@ -1,0 +1,1793 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-front documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-front documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SafeFloatingButtonSettingsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../miscellaneous/variables.html#SEPARATOR_KEYS_CODE" target="_self" >{ provide: MAT_CHIPS_DEFAULT_OPTIONS, useFactory: () &#x3D;&gt; ({ separatorKeyCodes: SEPARATOR_KEYS_CODE }) }</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>safe-floating-button-settings</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./floating-button-settings.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./floating-button-settings.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#canPassData">canPassData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Optional</span>
+                                <a href="#emailInput">emailInput</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#emails">emails</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#isDashboard">isDashboard</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#separatorKeysCodes">separatorKeysCodes</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Optional</span>
+                                <a href="#workflowSubscription">workflowSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#add">add</a>
+                            </li>
+                            <li>
+                                <a href="#compareFields">compareFields</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#deleteInvalidModifications">deleteInvalidModifications</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#emitDeleteButton">emitDeleteButton</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onAddModification">onAddModification</a>
+                            </li>
+                            <li>
+                                <a href="#onDeleteModification">onDeleteModification</a>
+                            </li>
+                            <li>
+                                <a href="#remove">remove</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#buttonForm">buttonForm</a>
+                            </li>
+                            <li>
+                                <a href="#channels">channels</a>
+                            </li>
+                            <li>
+                                <a href="#fields">fields</a>
+                            </li>
+                            <li>
+                                <a href="#forms">forms</a>
+                            </li>
+                            <li>
+                                <a href="#relatedForms">relatedForms</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#deleteButton">deleteButton</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#scalarFields">scalarFields</a>
+                                </li>
+                                <li>
+                                    <a href="#modificationsArray">modificationsArray</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(formBuilder: <a href="../interfaces/Form.html">FormBuilder</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, workflowService: <a href="../injectables/SafeWorkflowService.html">SafeWorkflowService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>formBuilder</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/Form.html" target="_self" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>workflowService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SafeWorkflowService.html" target="_self" >SafeWorkflowService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="buttonForm"></a>
+                        <b>buttonForm</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Form.html" target="_self" >FormGroup</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:27</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="channels"></a>
+                        <b>channels</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Channel.html" target="_self" >Channel[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:29</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="fields"></a>
+                        <b>fields</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:28</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="forms"></a>
+                        <b>forms</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Form.html" target="_self" >Form[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:30</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="relatedForms"></a>
+                        <b>relatedForms</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Form.html" target="_self" >Form[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:31</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteButton"></a>
+                        <b>deleteButton</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;boolean&gt;</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="add"></a>
+                    <span class="name">
+                        <b>
+                            add
+                        </b>
+                        <a href="#add"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>add(event: MatChipInputEvent | any)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="182"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:182</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                            <code>MatChipInputEvent | any</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compareFields"></a>
+                    <span class="name">
+                        <b>
+                            compareFields
+                        </b>
+                        <a href="#compareFields"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>compareFields(field1: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>, field2: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>field1</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>field2</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deleteInvalidModifications"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            deleteInvalidModifications
+                        </b>
+                        <a href="#deleteInvalidModifications"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deleteInvalidModifications()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="167"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:167</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emitDeleteButton"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Public</span>
+                            emitDeleteButton
+                        </b>
+                        <a href="#emitDeleteButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>emitDeleteButton()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="178"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:178</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="210"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:210</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onAddModification"></a>
+                    <span class="name">
+                        <b>
+                            onAddModification
+                        </b>
+                        <a href="#onAddModification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onAddModification()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDeleteModification"></a>
+                    <span class="name">
+                        <b>
+                            onDeleteModification
+                        </b>
+                        <a href="#onDeleteModification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDeleteModification(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="156"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:156</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remove"></a>
+                    <span class="name">
+                        <b>
+                            remove
+                        </b>
+                        <a href="#remove"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>remove(email: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="201"
+                            class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:201</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>email</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="canPassData"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            canPassData</b>
+                            <a href="#canPassData"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:37</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="emailInput"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Optional</span>
+                            emailInput</b>
+                            <a href="#emailInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>ElementRef&lt;HTMLInputElement&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;emailInput&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="emails"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            emails</b>
+                            <a href="#emails"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>string[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:42</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="isDashboard"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            isDashboard</b>
+                            <a href="#isDashboard"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:34</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="separatorKeysCodes"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Readonly</span>
+                            separatorKeysCodes</b>
+                            <a href="#separatorKeysCodes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>number[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>SEPARATOR_KEYS_CODE</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:41</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="workflowSubscription"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                                <span class="modifier">Optional</span>
+                            workflowSubscription</b>
+                            <a href="#workflowSubscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Subscription.html" target="_self" >Subscription</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:38</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="scalarFields"></a>
+                        <span class="name"><b>scalarFields</b><a href="#scalarFields"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>scalarFields()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:46</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="modificationsArray"></a>
+                        <span class="name"><b>modificationsArray</b><a href="#modificationsArray"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>modificationsArray()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="152" class="link-to-prism">projects/safe/src/lib/components/widgets/grid-settings/floating-button-settings/floating-button-settings.component.ts:152</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnDestroy, OnInit, Output, EventEmitter, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+import { FormArray, FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Channel } from &#x27;../../../../models/channel.model&#x27;;
+import { Form } from &#x27;../../../../models/form.model&#x27;;
+import { ContentType } from &#x27;../../../../models/page.model&#x27;;
+import { SafeWorkflowService } from &#x27;../../../../services/workflow.service&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { MatChipInputEvent, MAT_CHIPS_DEFAULT_OPTIONS } from &#x27;@angular/material/chips&#x27;;
+import { COMMA, ENTER, SPACE, TAB } from &#x27;@angular/cdk/keycodes&#x27;;
+
+const DISABLED_FIELDS &#x3D; [&#x27;id&#x27;, &#x27;createdAt&#x27;, &#x27;modifiedAt&#x27;];
+const SEPARATOR_KEYS_CODE &#x3D; [ENTER, COMMA, TAB, SPACE];
+
+@Component({
+  selector: &#x27;safe-floating-button-settings&#x27;,
+  templateUrl: &#x27;./floating-button-settings.component.html&#x27;,
+  styleUrls: [&#x27;./floating-button-settings.component.scss&#x27;],
+  providers: [
+    { provide: MAT_CHIPS_DEFAULT_OPTIONS, useFactory: () &#x3D;&gt; ({ separatorKeyCodes: SEPARATOR_KEYS_CODE })}
+  ]
+})
+
+export class SafeFloatingButtonSettingsComponent implements OnInit, OnDestroy {
+
+  @Output() deleteButton: EventEmitter&lt;boolean&gt; &#x3D; new EventEmitter();
+  @Input() buttonForm?: FormGroup;
+  @Input() fields: any[] &#x3D; [];
+  @Input() channels: Channel[] &#x3D; [];
+  @Input() forms: Form[] &#x3D; [];
+  @Input() relatedForms: Form[] &#x3D; [];
+
+  // Indicate is the page is a single dashboard.
+  public isDashboard &#x3D; false;
+
+  // Indicate if the next step is a Form and so we could potentially pass some data to it.
+  public canPassData &#x3D; false;
+  private workflowSubscription?: Subscription;
+
+  // Emails
+  readonly separatorKeysCodes: number[] &#x3D; SEPARATOR_KEYS_CODE;
+  public emails: string[] &#x3D; [];
+
+  @ViewChild(&#x27;emailInput&#x27;) emailInput?: ElementRef&lt;HTMLInputElement&gt;;
+
+  get scalarFields(): any[] {
+    return this.fields.filter(x &#x3D;&gt; x.type.kind &#x3D;&#x3D;&#x3D; &#x27;SCALAR&#x27; &amp;&amp; !DISABLED_FIELDS.includes(x.name));
+  }
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private workflowService: SafeWorkflowService,
+  ) { }
+
+  ngOnInit(): void {
+    if (this.router.url.includes(&#x27;dashboard&#x27;) &amp;&amp; !this.router.url.includes(&#x27;workflow&#x27;)) {
+      this.isDashboard &#x3D; true;
+    } else {
+      const currentStepContent &#x3D; this.router.url.split(&#x27;/&#x27;).pop();
+      this.workflowSubscription &#x3D; this.workflowService.workflow.subscribe(workflow &#x3D;&gt; {
+        if (workflow) {
+          const steps &#x3D; workflow.steps || [];
+          const currentStepIndex &#x3D; steps.findIndex(x &#x3D;&gt; x.content &#x3D;&#x3D;&#x3D; currentStepContent);
+          if (currentStepIndex &gt;&#x3D; 0) {
+            const nextStep &#x3D; steps[currentStepIndex + 1];
+            this.canPassData &#x3D; nextStep &amp;&amp; nextStep.type &#x3D;&#x3D;&#x3D; ContentType.form;
+          }
+        } else {
+          const workflowId &#x3D; this.router.url.split(&#x27;/workflow/&#x27;).pop()?.split(&#x27;/&#x27;).shift();
+          this.workflowService.loadWorkflow(workflowId);
+        }
+      });
+    }
+    this.buttonForm?.get(&#x27;notify&#x27;)?.valueChanges.subscribe(value &#x3D;&gt; {
+      if (value) {
+        this.buttonForm?.get(&#x27;notificationChannel&#x27;)?.setValidators(Validators.required);
+        this.buttonForm?.get(&#x27;notificationMessage&#x27;)?.setValidators(Validators.required);
+      } else {
+        this.buttonForm?.get(&#x27;notificationChannel&#x27;)?.clearValidators();
+        this.buttonForm?.get(&#x27;notificationMessage&#x27;)?.clearValidators();
+      }
+      this.buttonForm?.get(&#x27;notificationChannel&#x27;)?.updateValueAndValidity();
+      this.buttonForm?.get(&#x27;notificationMessage&#x27;)?.updateValueAndValidity();
+    });
+
+    this.buttonForm?.get(&#x27;publish&#x27;)?.valueChanges.subscribe(value &#x3D;&gt; {
+      if (value) {
+        this.buttonForm?.get(&#x27;publicationChannel&#x27;)?.setValidators(Validators.required);
+      } else {
+        this.buttonForm?.get(&#x27;publicationChannel&#x27;)?.clearValidators();
+      }
+      this.buttonForm?.get(&#x27;publicationChannel&#x27;)?.updateValueAndValidity();
+    });
+
+    this.buttonForm?.get(&#x27;show&#x27;)?.valueChanges.subscribe(value &#x3D;&gt; {
+      if (!value) {
+        this.deleteInvalidModifications();
+        this.buttonForm?.controls.notify.setValue(false);
+        this.buttonForm?.controls.publish.setValue(false);
+      }
+    });
+
+    this.buttonForm?.get(&#x27;modifySelectedRows&#x27;)?.valueChanges.subscribe(value &#x3D;&gt; {
+      if (!value) {
+        this.deleteInvalidModifications();
+      }
+    });
+
+    this.buttonForm?.get(&#x27;attachToRecord&#x27;)?.valueChanges.subscribe(value &#x3D;&gt; {
+      if (value) {
+        this.buttonForm?.get(&#x27;targetForm&#x27;)?.setValidators(Validators.required);
+      } else {
+        this.buttonForm?.get(&#x27;targetForm&#x27;)?.clearValidators();
+        this.buttonForm?.get(&#x27;targetForm&#x27;)?.setValue(null);
+      }
+      this.buttonForm?.get(&#x27;targetForm&#x27;)?.updateValueAndValidity();
+    });
+
+    this.buttonForm?.get(&#x27;targetForm&#x27;)?.valueChanges.subscribe(value &#x3D;&gt; {
+      if (value) {
+        this.buttonForm?.get(&#x27;targetFormField&#x27;)?.setValidators(Validators.required);
+      } else {
+        this.buttonForm?.get(&#x27;targetFormField&#x27;)?.clearValidators();
+        this.buttonForm?.get(&#x27;targetFormField&#x27;)?.setValue(null);
+      }
+      this.buttonForm?.get(&#x27;targetFormField&#x27;)?.updateValueAndValidity();
+    });
+
+    this.buttonForm?.get(&#x27;sendMail&#x27;)?.valueChanges.subscribe(value &#x3D;&gt; {
+      if (value) {
+        this.buttonForm?.get(&#x27;distributionList&#x27;)?.setValidators(Validators.required);
+        this.buttonForm?.get(&#x27;subject&#x27;)?.setValidators(Validators.required);
+      } else {
+        this.buttonForm?.get(&#x27;distributionList&#x27;)?.clearValidators();
+        this.buttonForm?.get(&#x27;subject&#x27;)?.clearValidators();
+      }
+      this.buttonForm?.get(&#x27;distributionList&#x27;)?.updateValueAndValidity();
+      this.buttonForm?.get(&#x27;subject&#x27;)?.updateValueAndValidity();
+    });
+    this.emails &#x3D; [...this.buttonForm?.get(&#x27;distributionList&#x27;)?.value];
+  }
+
+  compareFields(field1: any, field2: any): boolean {
+    if (field2) {
+      return field1.name &#x3D;&#x3D;&#x3D; field2.name;
+    } else {
+      return false;
+    }
+  }
+
+  get modificationsArray(): FormArray {
+    return this.buttonForm?.get(&#x27;modifications&#x27;) as FormArray;
+  }
+
+  onDeleteModification(index: number): void {
+    this.modificationsArray.removeAt(index);
+  }
+
+  onAddModification(): void {
+    this.modificationsArray.push(this.formBuilder.group({
+      field: [&#x27;&#x27;, Validators.required],
+      value: [&#x27;&#x27;, Validators.required]
+    }));
+  }
+
+  private deleteInvalidModifications(): void {
+    const modifications &#x3D; this.buttonForm?.get(&#x27;modifications&#x27;) as FormArray;
+    for (let i &#x3D; 0; i &lt; modifications.value.length; i ++) {
+      const modification &#x3D; modifications.at(i);
+      if (modification.invalid) {
+        modifications.removeAt(i);
+        i--;
+      }
+    }
+  }
+
+  public emitDeleteButton(): void {
+    this.deleteButton.emit(true);
+  }
+
+  add(event: MatChipInputEvent | any): void {
+    // use setTimeout to prevent add input value on focusout
+    setTimeout(() &#x3D;&gt; {
+      const input &#x3D; event.type &#x3D;&#x3D;&#x3D; &#x27;focusout&#x27; ? this.emailInput?.nativeElement : event.input;
+      const value &#x3D; event.type &#x3D;&#x3D;&#x3D; &#x27;focusout&#x27; ? this.emailInput?.nativeElement.value : event.value;
+
+      // Add the mail
+      if ((value || &#x27;&#x27;).trim()) {
+        this.emails.push(value.trim());
+      }
+      this.buttonForm?.get(&#x27;distributionList&#x27;)?.setValue(this.emails);
+      this.buttonForm?.get(&#x27;distributionList&#x27;)?.updateValueAndValidity();
+      // Reset the input value
+      if (input) {
+        input.value &#x3D; &#x27;&#x27;;
+      }
+    }, event.type &#x3D;&#x3D;&#x3D; &#x27;focusout&#x27; ? 500 : 0);
+  }
+
+  remove(email: string): void {
+    const index &#x3D; this.emails.indexOf(email);
+    if (index &gt;&#x3D; 0) {
+      this.emails.splice(index, 1);
+    }
+    this.buttonForm?.get(&#x27;distributionList&#x27;)?.setValue(this.emails);
+    this.buttonForm?.get(&#x27;distributionList&#x27;)?.updateValueAndValidity();
+  }
+
+  ngOnDestroy(): void {
+    if (this.workflowSubscription) {
+      this.workflowSubscription.unsubscribe();
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ng-container *ngIf&#x3D;&quot;buttonForm&quot;&gt;
+  &lt;form [formGroup]&#x3D;&quot;buttonForm&quot; class&#x3D;&quot;form-container&quot;&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;div style&#x3D;&quot;display: flex; justify-content: space-between;&quot;&gt;
+        &lt;mat-slide-toggle formControlName&#x3D;&quot;show&quot;&gt;Enable&lt;/mat-slide-toggle&gt;
+        &lt;button mat-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;emitDeleteButton()&quot;&gt;
+          &lt;mat-icon&gt;remove_circle_outline&lt;/mat-icon&gt;
+          Delete this button
+        &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;ng-container *ngIf&#x3D;&quot;buttonForm.value.show&quot;&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+          &lt;mat-label&gt;Button name&lt;/mat-label&gt;
+          &lt;input matInput formControlName&#x3D;&quot;name&quot; type&#x3D;&quot;string&quot;&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-checkbox *ngIf&#x3D;&quot;!isDashboard&quot; formControlName&#x3D;&quot;goToNextStep&quot;&gt;Go to next step&lt;/mat-checkbox&gt;
+        &lt;span class&#x3D;&quot;info-row&quot; *ngIf&#x3D;&quot;!isDashboard &amp;&amp; buttonForm.value.goToNextStep &amp;&amp; canPassData&quot;&gt;
+          &lt;mat-checkbox formControlName&#x3D;&quot;passDataToNextStep&quot;&gt;Prefill next step form with selected data&lt;/mat-checkbox&gt;
+          &lt;mat-icon class&#x3D;&quot;info-icon&quot;
+            matTooltip&#x3D;&quot;When enabled, the next step should be a form containing some matching fields with this grid&#x27;s records AND a &#x27;Resources&#x27; question referring to this grid&#x27;s records. The next step form will then be prefilled with values from selected records and the &#x27;Resources&#x27; question will also be prefilled with selected records.&quot;
+            matTooltipPosition&#x3D;&quot;right&quot;&gt;
+            info
+          &lt;/mat-icon&gt;
+        &lt;/span&gt;
+        &lt;mat-checkbox formControlName&#x3D;&quot;autoSave&quot;&gt;Auto-save&lt;/mat-checkbox&gt;
+        &lt;div class&#x3D;&quot;update-form&quot;&gt;
+          &lt;mat-checkbox formControlName&#x3D;&quot;modifySelectedRows&quot;&gt;Auto-modify selected rows&lt;/mat-checkbox&gt;
+          &lt;div *ngIf&#x3D;&quot;buttonForm.value.modifySelectedRows&quot; class&#x3D;&quot;update-list sub-parameters&quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;$any(modification)&quot; *ngFor&#x3D;&quot;let modification of modificationsArray.controls; index as i&quot;
+              class&#x3D;&quot;update-row&quot;&gt;
+              &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+                &lt;mat-label&gt;Field to update&lt;/mat-label&gt;
+                &lt;mat-select formControlName&#x3D;&quot;field&quot; [compareWith]&#x3D;&quot;compareFields&quot;&gt;
+                  &lt;mat-option&gt;-- None --&lt;/mat-option&gt;
+                  &lt;mat-option *ngFor&#x3D;&quot;let field of scalarFields&quot; [value]&#x3D;&quot;field&quot;&gt;{{field.name}}&lt;/mat-option&gt;
+                &lt;/mat-select&gt;
+              &lt;/mat-form-field&gt;
+              &lt;mat-form-field appearance&#x3D;&quot;outline&quot; *ngIf&#x3D;&quot;modification.value.field&quot;&gt;
+                &lt;mat-label&gt;Value to attribute&lt;/mat-label&gt;
+                &lt;ng-container *ngIf&#x3D;&quot;modification.value.field.type.name &#x3D;&#x3D;&#x3D; &#x27;Int&#x27;&quot;&gt;
+                  &lt;input matInput formControlName&#x3D;&quot;value&quot; type&#x3D;&quot;number&quot; /&gt;
+                &lt;/ng-container&gt;
+                &lt;ng-container *ngIf&#x3D;&quot;modification.value.field.type.name &#x3D;&#x3D;&#x3D; &#x27;Boolean&#x27;&quot;&gt;
+                  &lt;mat-select formControlName&#x3D;&quot;value&quot;&gt;
+                    &lt;mat-option&gt;-- None --&lt;/mat-option&gt;
+                    &lt;mat-option [value]&#x3D;&quot;true&quot;&gt;True&lt;/mat-option&gt;
+                    &lt;mat-option [value]&#x3D;&quot;false&quot;&gt;False&lt;/mat-option&gt;
+                  &lt;/mat-select&gt;
+                &lt;/ng-container&gt;
+                &lt;ng-container
+                  *ngIf&#x3D;&quot;modification.value.field.type.name !&#x3D;&#x3D; &#x27;Int&#x27; &amp;&amp; modification.value.field.type.name !&#x3D;&#x3D; &#x27;Boolean&#x27;&quot;&gt;
+                  &lt;input matInput formControlName&#x3D;&quot;value&quot; type&#x3D;&quot;string&quot; /&gt;
+                &lt;/ng-container&gt;
+              &lt;/mat-form-field&gt;
+              &lt;button mat-icon-button color&#x3D;&quot;warn&quot; (click)&#x3D;&quot;onDeleteModification(i)&quot;&gt;
+                &lt;mat-icon&gt;remove_circle_outline&lt;/mat-icon&gt;
+              &lt;/button&gt;
+            &lt;/form&gt;
+            &lt;button mat-icon-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;onAddModification()&quot;&gt;
+              &lt;mat-icon&gt;add_circle_outline&lt;/mat-icon&gt;
+            &lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;span class&#x3D;&quot;info-row&quot;&gt;
+          &lt;mat-checkbox formControlName&#x3D;&quot;attachToRecord&quot;&gt;Attach to record&lt;/mat-checkbox&gt;
+          &lt;mat-icon class&#x3D;&quot;info-icon&quot;
+            matTooltip&#x3D;&quot;When enabled, you must provide a form and a field of this form. All selected rows will be attached to a record from this form. The user will be able to choose which record using a the given field.&quot;
+            matTooltipPosition&#x3D;&quot;right&quot;&gt;
+            info
+          &lt;/mat-icon&gt;
+        &lt;/span&gt;
+        &lt;div *ngIf&#x3D;&quot;buttonForm.value.attachToRecord&quot; class&#x3D;&quot;sub-parameters&quot;&gt;
+          &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-label&gt;Target form&lt;/mat-label&gt;
+            &lt;mat-select formControlName&#x3D;&quot;targetForm&quot; [compareWith]&#x3D;&quot;compareFields&quot;&gt;
+              &lt;mat-option&gt;-- None --&lt;/mat-option&gt;
+              &lt;mat-option *ngFor&#x3D;&quot;let form of relatedForms&quot; [value]&#x3D;&quot;form&quot;&gt;
+                {{form.name}}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+          &lt;ng-container *ngIf&#x3D;&quot;buttonForm.value.targetForm&quot;&gt;
+            &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+              &lt;mat-label&gt;Display field&lt;/mat-label&gt;
+              &lt;mat-select formControlName&#x3D;&quot;targetFormField&quot;&gt;
+                &lt;mat-option&gt;-- None --&lt;/mat-option&gt;
+                &lt;mat-option *ngFor&#x3D;&quot;let field of buttonForm.value.targetForm.fields&quot; [value]&#x3D;&quot;field.name&quot;&gt;
+                  {{field.name}}
+                &lt;/mat-option&gt;
+              &lt;/mat-select&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/ng-container&gt;
+        &lt;/div&gt;
+        &lt;span class&#x3D;&quot;info-row&quot;&gt;
+          &lt;mat-checkbox formControlName&#x3D;&quot;notify&quot;&gt;Notify&lt;/mat-checkbox&gt;
+          &lt;mat-icon class&#x3D;&quot;info-icon&quot;
+            matTooltip&#x3D;&quot;When enabled, you must provide a channel and a message. All selected rows will be sent as a single notification on the specified channel. The provided message is used to define the notification’s action.&quot;
+            matTooltipPosition&#x3D;&quot;right&quot;&gt;
+            info
+          &lt;/mat-icon&gt;
+        &lt;/span&gt;
+        &lt;div *ngIf&#x3D;&quot;buttonForm.value.notify&quot; class&#x3D;&quot;sub-parameters&quot;&gt;
+          &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-label&gt;Channel&lt;/mat-label&gt;
+            &lt;mat-select formControlName&#x3D;&quot;notificationChannel&quot;&gt;
+              &lt;mat-option&gt;-- None --&lt;/mat-option&gt;
+              &lt;mat-option *ngFor&#x3D;&quot;let channel of channels&quot; [value]&#x3D;&quot;channel.id&quot;&gt;
+                {{channel.title}}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+          &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-label&gt;Message&lt;/mat-label&gt;
+            &lt;input matInput formControlName&#x3D;&quot;notificationMessage&quot; type&#x3D;&quot;string&quot;&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;span class&#x3D;&quot;info-row&quot;&gt;
+          &lt;mat-checkbox formControlName&#x3D;&quot;publish&quot;&gt;Publish&lt;/mat-checkbox&gt;
+          &lt;mat-icon class&#x3D;&quot;info-icon&quot;
+            matTooltip&#x3D;&quot;When enabled, you must provide a channel. All selected rows will be sent as a single publication on the specified channel. Everyone listening to this channel can receive the records.&quot;
+            matTooltipPosition&#x3D;&quot;right&quot;&gt;
+            info
+          &lt;/mat-icon&gt;
+        &lt;/span&gt;
+        &lt;div *ngIf&#x3D;&quot;buttonForm.value.publish&quot; class&#x3D;&quot;sub-parameters&quot;&gt;
+          &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-label&gt;Channel&lt;/mat-label&gt;
+            &lt;mat-select formControlName&#x3D;&quot;publicationChannel&quot;&gt;
+              &lt;mat-option&gt;-- None --&lt;/mat-option&gt;
+              &lt;mat-option *ngFor&#x3D;&quot;let channel of channels&quot; [value]&#x3D;&quot;channel.id&quot;&gt;
+                {{channel.title}}
+              &lt;/mat-option&gt;
+            &lt;/mat-select&gt;
+          &lt;/mat-form-field&gt;
+        &lt;/div&gt;
+        &lt;mat-checkbox formControlName&#x3D;&quot;sendMail&quot;&gt;Send mail&lt;/mat-checkbox&gt;
+        &lt;div *ngIf&#x3D;&quot;buttonForm.value.sendMail&quot; class&#x3D;&quot;sub-parameters&quot;&gt;
+          &lt;mat-form-field class&#x3D;&quot;chip-list&quot; appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-label&gt;Distribution list&lt;/mat-label&gt;
+            &lt;mat-chip-list #chipList aria-label&#x3D;&quot;Emails chip list&quot;&gt;
+              &lt;mat-chip
+                *ngFor&#x3D;&quot;let email of emails&quot;
+                [selectable]&#x3D;&quot;true&quot;
+                [removable]&#x3D;&quot;true&quot;
+                (removed)&#x3D;&quot;remove(email)&quot;&gt;
+                {{email}}
+                &lt;mat-icon matChipRemove&gt;cancel&lt;/mat-icon&gt;
+              &lt;/mat-chip&gt;
+              &lt;input
+                #emailInput
+                [matChipInputFor]&#x3D;&quot;chipList&quot;
+                [matChipInputSeparatorKeyCodes]&#x3D;&quot;separatorKeysCodes&quot;
+                (focusout)&#x3D;&quot;add($event)&quot;
+                (matChipInputTokenEnd)&#x3D;&quot;add($event)&quot;&gt;
+            &lt;/mat-chip-list&gt;
+          &lt;/mat-form-field&gt;
+          &lt;mat-form-field appearance&#x3D;&quot;outline&quot;&gt;
+            &lt;mat-label&gt;Subject&lt;/mat-label&gt;
+            &lt;input matInput formControlName&#x3D;&quot;subject&quot; type&#x3D;&quot;string&quot;&gt;
+          &lt;/mat-form-field&gt;
+          &lt;!-- &lt;span class&#x3D;&quot;radio-row&quot;&gt;
+            &lt;mat-radio-group formControlName&#x3D;&quot;attachment&quot;&gt;
+              Link records:
+              &lt;mat-radio-button [value]&#x3D;&quot;false&quot;&gt;In body&lt;/mat-radio-button&gt;
+              &lt;mat-radio-button [value]&#x3D;&quot;true&quot;&gt;In attachment&lt;/mat-radio-button&gt;
+            &lt;/mat-radio-group&gt;
+          &lt;/span&gt; --&gt;
+        &lt;/div&gt;
+      &lt;/ng-container&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/ng-container&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./floating-button-settings.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.mat-checkbox {
+    margin-bottom: 10px;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-row {
+    align-items: center;
+    margin-top: 24px;
+    .mat-form-field {
+        margin-left: 16px;
+    }
+}
+
+.form-container {
+    display: flex;
+}
+
+.form-group {
+    flex: 50%;
+    
+    &amp;:not(:first-child) {
+        margin-top: 0px;
+        margin-left: 64px;
+      }
+}
+
+.mat-chip {
+    max-width: none;
+    border-radius: 1rem !important;
+}
+
+.radio-row {
+    display: flex;
+    flex-direction: row;
+    .mat-radio-button {
+        margin-left: 12px;
+    }
+}
+
+.sub-parameters {
+    margin-left: 24px;
+    border-left: 2px solid gray;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+}   </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ng-container *ngIf="buttonForm">  <form [formGroup]="buttonForm" class="form-container">    <div class="form-group">      <div style="display: flex; justify-content: space-between;">        <mat-slide-toggle formControlName="show">Enable</mat-slide-toggle>        <button mat-button color="warn" (click)="emitDeleteButton()">          <mat-icon>remove_circle_outline</mat-icon>          Delete this button        </button>      </div>      <ng-container *ngIf="buttonForm.value.show">        <mat-form-field appearance="outline">          <mat-label>Button name</mat-label>          <input matInput formControlName="name" type="string">        </mat-form-field>        <mat-checkbox *ngIf="!isDashboard" formControlName="goToNextStep">Go to next step</mat-checkbox>        <span class="info-row" *ngIf="!isDashboard && buttonForm.value.goToNextStep && canPassData">          <mat-checkbox formControlName="passDataToNextStep">Prefill next step form with selected data</mat-checkbox>          <mat-icon class="info-icon"            matTooltip="When enabled, the next step should be a form containing some matching fields with this grid\'s records AND a \'Resources\' question referring to this grid\'s records. The next step form will then be prefilled with values from selected records and the \'Resources\' question will also be prefilled with selected records."            matTooltipPosition="right">            info          </mat-icon>        </span>        <mat-checkbox formControlName="autoSave">Auto-save</mat-checkbox>        <div class="update-form">          <mat-checkbox formControlName="modifySelectedRows">Auto-modify selected rows</mat-checkbox>          <div *ngIf="buttonForm.value.modifySelectedRows" class="update-list sub-parameters">            <form [formGroup]="$any(modification)" *ngFor="let modification of modificationsArray.controls; index as i"              class="update-row">              <mat-form-field appearance="outline">                <mat-label>Field to update</mat-label>                <mat-select formControlName="field" [compareWith]="compareFields">                  <mat-option>-- None --</mat-option>                  <mat-option *ngFor="let field of scalarFields" [value]="field">{{field.name}}</mat-option>                </mat-select>              </mat-form-field>              <mat-form-field appearance="outline" *ngIf="modification.value.field">                <mat-label>Value to attribute</mat-label>                <ng-container *ngIf="modification.value.field.type.name === \'Int\'">                  <input matInput formControlName="value" type="number" />                </ng-container>                <ng-container *ngIf="modification.value.field.type.name === \'Boolean\'">                  <mat-select formControlName="value">                    <mat-option>-- None --</mat-option>                    <mat-option [value]="true">True</mat-option>                    <mat-option [value]="false">False</mat-option>                  </mat-select>                </ng-container>                <ng-container                  *ngIf="modification.value.field.type.name !== \'Int\' && modification.value.field.type.name !== \'Boolean\'">                  <input matInput formControlName="value" type="string" />                </ng-container>              </mat-form-field>              <button mat-icon-button color="warn" (click)="onDeleteModification(i)">                <mat-icon>remove_circle_outline</mat-icon>              </button>            </form>            <button mat-icon-button color="primary" (click)="onAddModification()">              <mat-icon>add_circle_outline</mat-icon>            </button>          </div>        </div>        <span class="info-row">          <mat-checkbox formControlName="attachToRecord">Attach to record</mat-checkbox>          <mat-icon class="info-icon"            matTooltip="When enabled, you must provide a form and a field of this form. All selected rows will be attached to a record from this form. The user will be able to choose which record using a the given field."            matTooltipPosition="right">            info          </mat-icon>        </span>        <div *ngIf="buttonForm.value.attachToRecord" class="sub-parameters">          <mat-form-field appearance="outline">            <mat-label>Target form</mat-label>            <mat-select formControlName="targetForm" [compareWith]="compareFields">              <mat-option>-- None --</mat-option>              <mat-option *ngFor="let form of relatedForms" [value]="form">                {{form.name}}              </mat-option>            </mat-select>          </mat-form-field>          <ng-container *ngIf="buttonForm.value.targetForm">            <mat-form-field appearance="outline">              <mat-label>Display field</mat-label>              <mat-select formControlName="targetFormField">                <mat-option>-- None --</mat-option>                <mat-option *ngFor="let field of buttonForm.value.targetForm.fields" [value]="field.name">                  {{field.name}}                </mat-option>              </mat-select>            </mat-form-field>          </ng-container>        </div>        <span class="info-row">          <mat-checkbox formControlName="notify">Notify</mat-checkbox>          <mat-icon class="info-icon"            matTooltip="When enabled, you must provide a channel and a message. All selected rows will be sent as a single notification on the specified channel. The provided message is used to define the notification’s action."            matTooltipPosition="right">            info          </mat-icon>        </span>        <div *ngIf="buttonForm.value.notify" class="sub-parameters">          <mat-form-field appearance="outline">            <mat-label>Channel</mat-label>            <mat-select formControlName="notificationChannel">              <mat-option>-- None --</mat-option>              <mat-option *ngFor="let channel of channels" [value]="channel.id">                {{channel.title}}              </mat-option>            </mat-select>          </mat-form-field>          <mat-form-field appearance="outline">            <mat-label>Message</mat-label>            <input matInput formControlName="notificationMessage" type="string">          </mat-form-field>        </div>        <span class="info-row">          <mat-checkbox formControlName="publish">Publish</mat-checkbox>          <mat-icon class="info-icon"            matTooltip="When enabled, you must provide a channel. All selected rows will be sent as a single publication on the specified channel. Everyone listening to this channel can receive the records."            matTooltipPosition="right">            info          </mat-icon>        </span>        <div *ngIf="buttonForm.value.publish" class="sub-parameters">          <mat-form-field appearance="outline">            <mat-label>Channel</mat-label>            <mat-select formControlName="publicationChannel">              <mat-option>-- None --</mat-option>              <mat-option *ngFor="let channel of channels" [value]="channel.id">                {{channel.title}}              </mat-option>            </mat-select>          </mat-form-field>        </div>        <mat-checkbox formControlName="sendMail">Send mail</mat-checkbox>        <div *ngIf="buttonForm.value.sendMail" class="sub-parameters">          <mat-form-field class="chip-list" appearance="outline">            <mat-label>Distribution list</mat-label>            <mat-chip-list #chipList aria-label="Emails chip list">              <mat-chip                *ngFor="let email of emails"                [selectable]="true"                [removable]="true"                (removed)="remove(email)">                {{email}}                <mat-icon matChipRemove>cancel</mat-icon>              </mat-chip>              <input                #emailInput                [matChipInputFor]="chipList"                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"                (focusout)="add($event)"                (matChipInputTokenEnd)="add($event)">            </mat-chip-list>          </mat-form-field>          <mat-form-field appearance="outline">            <mat-label>Subject</mat-label>            <input matInput formControlName="subject" type="string">          </mat-form-field>          <!-- <span class="radio-row">            <mat-radio-group formControlName="attachment">              Link records:              <mat-radio-button [value]="false">In body</mat-radio-button>              <mat-radio-button [value]="true">In attachment</mat-radio-button>            </mat-radio-group>          </span> -->        </div>      </ng-container>    </div>  </form></ng-container></div>'
+    var COMPONENTS = [{'name': 'SafeAccessComponent', 'selector': 'safe-access'},{'name': 'SafeAddRoleComponent', 'selector': 'safe-add-role'},{'name': 'SafeChartComponent', 'selector': 'safe-chart'},{'name': 'SafeChartSettingsComponent', 'selector': 'safe-chart-settings'},{'name': 'SafeChooseRecordModalComponent', 'selector': 'safe-choose-record-modal'},{'name': 'SafeConfirmModalComponent', 'selector': 'safe-confirm-modal'},{'name': 'SafeConvertModalComponent', 'selector': 'safe-convert-modal'},{'name': 'SafeDashboardMenuComponent', 'selector': 'safe-dashboard-menu'},{'name': 'SafeEditAccessComponent', 'selector': 'safe-edit-access'},{'name': 'SafeEditorComponent', 'selector': 'safe-editor'},{'name': 'SafeEditorSettingsComponent', 'selector': 'safe-editor-settings'},{'name': 'SafeEditRoleComponent', 'selector': 'safe-edit-role'},{'name': 'SafeEditUserComponent', 'selector': 'safe-edit-user'},{'name': 'SafeExpandedCommentComponent', 'selector': 'safe-expanded-comment'},{'name': 'SafeExpandedWidgetComponent', 'selector': 'safe-expanded-widget'},{'name': 'SafeFloatingButtonSettingsComponent', 'selector': 'safe-floating-button-settings'},{'name': 'SafeFloatingOptionsComponent', 'selector': 'safe-floating-options'},{'name': 'SafeFormBuilderComponent', 'selector': 'safe-form-builder'},{'name': 'SafeFormComponent', 'selector': 'safe-form'},{'name': 'SafeFormModalComponent', 'selector': 'safe-form-modal'},{'name': 'SafeGridComponent', 'selector': 'safe-grid'},{'name': 'SafeGridSettingsComponent', 'selector': 'safe-grid-settings'},{'name': 'SafeInviteUserComponent', 'selector': 'safe-invite-user'},{'name': 'SafeLayoutComponent', 'selector': 'safe-layout'},{'name': 'SafeMapComponent', 'selector': 'safe-map'},{'name': 'SafeMapSettingsComponent', 'selector': 'safe-map-settings'},{'name': 'SafePreviousButtonComponent', 'selector': 'safe-previous-button'},{'name': 'SafeProfileComponent', 'selector': 'safe-profile'},{'name': 'SafeQueryBuilderComponent', 'selector': 'safe-query-builder'},{'name': 'SafeRecordHistoryComponent', 'selector': 'safe-record-history'},{'name': 'SafeRecordModalComponent', 'selector': 'safe-record-modal'},{'name': 'SafeRolesComponent', 'selector': 'safe-roles'},{'name': 'SafeSchedulerComponent', 'selector': 'safe-scheduler'},{'name': 'SafeSchedulerSettingsComponent', 'selector': 'safe-scheduler-settings'},{'name': 'SafeStatusModalComponent', 'selector': 'safe-status-modal'},{'name': 'SafeSurveyGridComponent', 'selector': 'safe-survey-grid'},{'name': 'SafeTabFieldsComponent', 'selector': 'safe-tab-fields'},{'name': 'SafeTabFilterComponent', 'selector': 'safe-tab-filter'},{'name': 'SafeTabSortComponent', 'selector': 'safe-tab-sort'},{'name': 'SafeTileDataComponent', 'selector': 'safe-tile-data'},{'name': 'SafeTileDisplayComponent', 'selector': 'safe-tile-display'},{'name': 'SafeUsersComponent', 'selector': 'safe-users'},{'name': 'SafeWidgetComponent', 'selector': 'safe-widget'},{'name': 'SafeWidgetGridComponent', 'selector': 'safe-widget-grid'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SafeFloatingButtonSettingsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SafeFloatingButtonSettingsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
