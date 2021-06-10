@@ -1,7 +1,7 @@
 import { gql } from 'apollo-angular';
 import {
   Dashboard, Form, Permission, Resource, Role, User, Record,
-  Application, Page, Workflow, Step, PositionAttribute, ApiConfiguration
+  Application, Page, Workflow, Step, PositionAttribute, ApiConfiguration, Client
 } from '@safe/builder';
 
 // === GET USERS ===
@@ -655,6 +655,19 @@ export interface GetRecordDetailsQueryResponse {
   record: Record;
 }
 
+// === GET CLIENTS ===
+export const GET_CLIENTS = gql`
+query GetClients {
+  clients {
+    id
+    name
+    createdAt
+  }
+}`;
+
+export interface GetClientsQueryResponse {
+  loading: boolean;
+  clients: Client[];
 // === GET API CONFIGURATIONS ===
 export const GET_API_CONFIGURATIONS = gql`
 query GetApiConfigurations {

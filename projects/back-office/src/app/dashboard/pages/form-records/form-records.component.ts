@@ -3,7 +3,7 @@ import { Component, ComponentFactory, ComponentFactoryResolver, OnInit } from '@
 import { ActivatedRoute } from '@angular/router';
 import { GetFormByIdQueryResponse,
   GetRecordDetailsQueryResponse, GET_FORM_BY_ID, GET_RECORD_DETAILS } from '../../../graphql/queries';
-import { EditRecordMutationResponse, EDIT_RECORD, DeleteRecordMutationResponse, DELETE_RECORD } from '../../../graphql/mutations';
+import { DeleteRecordMutationResponse, DELETE_RECORD, EditRecordMutationResponse, EDIT_RECORD } from '../../../graphql/mutations';
 import { extractColumns } from '../../../utils/extractColumns';
 import { SafeDownloadService, SafeRecordHistoryComponent, SafeLayoutService, SafeConfirmModalComponent,
   NOTIFICATIONS, SafeSnackBarService } from '@safe/builder';

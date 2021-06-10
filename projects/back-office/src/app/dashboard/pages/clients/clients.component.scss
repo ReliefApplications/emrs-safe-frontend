@@ -1,0 +1,27 @@
+.actions {
+    margin: 10px 0 16px;
+    text-align: right;
+  }
+  
+  .searchbar {
+    float: left;
+  
+    .filters-toggle {
+      margin-left: 12px;
+    }
+  
+    button {
+      margin-bottom: 10px;
+    }
+  }
+  
+  .filters {
+    clear: both;
+    float: left;
+    margin-left: -12px;
+  
+    .mat-form-field {
+      margin-left: 12px;
+    }
+  }
+  
