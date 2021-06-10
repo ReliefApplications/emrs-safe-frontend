@@ -71,6 +71,11 @@ query GetFormById($id: ID!, $filters: JSON, $display: Boolean) {
     structure
     status
     fields
+    isLocked
+    isLockedBy {
+      id
+      name
+    }
     records(filters: $filters) {
       id
       data(display: $display)

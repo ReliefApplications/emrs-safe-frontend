@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { EditFormMutationResponse, EDIT_FORM_NAME, EDIT_FORM_PERMISSIONS, EDIT_FORM_STATUS, EDIT_FORM_STRUCTURE } from '../../../graphql/mutations';
+import { EditFormMutationResponse, EDIT_FORM_LOCK, EDIT_FORM_NAME, EDIT_FORM_PERMISSIONS, EDIT_FORM_STATUS, EDIT_FORM_STRUCTURE } from '../../../graphql/mutations';
 import { GetFormByIdQueryResponse, GET_SHORT_FORM_BY_ID } from '../../../graphql/queries';
 import { MatDialog } from '@angular/material/dialog';
 import { SafeAuthService, SafeSnackBarService, Form, SafeConfirmModalComponent } from '@safe/builder';
@@ -24,6 +24,7 @@ export class FormBuilderComponent implements OnInit {
   public structure: any;
   public activeVersions = false;
   public activeVersion: any;
+  public isLocked: boolean | undefined = undefined;
 
   // === ENUM OF FORM STATUSES ===
   public statuses = [
@@ -96,6 +97,7 @@ export class FormBuilderComponent implements OnInit {
         if (res.data.form) {
           console.log("res data = ", res.data);
           this.loading = res.loading;
+          this.isLocked = res.data.form.isLocked ? res.data.form.isLocked : false;
           this.form = res.data.form;
           this.nameForm = new FormGroup({
             formName: new FormControl(this.form.name, Validators.required)
@@ -121,6 +123,37 @@ export class FormBuilderComponent implements OnInit {
       // redirect to default screen if error
       this.router.navigate(['/forms']);
     }
+  }
+
+  onLock(value?: boolean): void {
+    const dialogRef = this.dialog.open(SafeConfirmModalComponent, {
+      data: {
+        title: this.isLocked ? 'Unlock' : 'Lock'  + ` edition`,
+        content: 'Do you want to ' + this.isLocked ? 'Unlock' : 'Lock' + ` ${this.form?.name}'s edition ?`,
+        confirmText: 'Confirm',
+        confirmColor: 'primary'
+      }
+    });
+    dialogRef.afterClosed().subscribe(value => {
+      if (value) {
+        console.log("locked = ", this.isLocked);
+        this.apollo.mutate<EditFormMutationResponse>({
+          mutation: EDIT_FORM_LOCK,
+          variables: {
+            id: this.form?.id,
+            isLocked: value ? value : !this.isLocked,
+          }
+        }).subscribe(res => {
+          if (res.data) {
+            console.log("res.data = ", res.data);
+            this.form = { ...this.form, isLocked: res.data.editForm.isLocked, isLockedBy: res.data.editForm.isLockedBy };
+            this.isLocked = this.form.isLocked;
+            console.log("this.form = ", this.form);
+          }
+        });
+      }
+    });
+    
   }
 
   toggleFormActive(): void {

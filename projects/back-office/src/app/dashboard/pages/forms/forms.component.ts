@@ -14,11 +14,12 @@ import {
   NOTIFICATIONS,
   Form
 } from '@safe/builder';
-import { DeleteFormMutationResponse, DELETE_FORM, AddFormMutationResponse, ADD_FORM } from '../../../graphql/mutations';
+import { DeleteFormMutationResponse, DELETE_FORM, AddFormMutationResponse, ADD_FORM, EditFormMutationResponse, EDIT_FORM_LOCK } from '../../../graphql/mutations';
 import { AddFormComponent } from '../../../components/add-form/add-form.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatEndDate, MatStartDate } from '@angular/material/datepicker';
+import { FormUnlockedSubscriptionResponse, FORM_UNLOCKED_SUBSCRIPTION } from 'projects/safe/src/lib/graphql/subscriptions';
 
 
 @Component({
@@ -32,6 +33,10 @@ export class FormsComponent implements OnInit, OnDestroy, AfterViewInit {
   public loading = true;
   displayedColumns = ['name', 'createdAt', 'status', 'versionsCount', 'recordsCount', 'core', 'parentForm', 'actions'];
   dataSource = new MatTableDataSource<Form>([]);
+  public isLocked: boolean | undefined = undefined;
+  public isLockedByActualUser: boolean | undefined = undefined;
+  public user: any;
+
 
   // === PERMISSIONS ===
   canAdd = false;
@@ -64,15 +69,54 @@ export class FormsComponent implements OnInit, OnDestroy, AfterViewInit {
     Check user permission to add new forms.
   */
   ngOnInit(): void {
+    this.authSubscription = this.authService.user.subscribe((user) => {
+      if (user) {
+        this.user = { ...user};
+      }
+    });
     this.apollo.watchQuery<GetFormsQueryResponse>({
       query: GET_SHORT_FORMS,
     }).valueChanges.subscribe((res: any) => {
       this.dataSource.data = res.data.forms;
+      console.log("data source = ", this.dataSource.data);
       this.loading = res.loading;
       this.filterPredicate();
     });
     this.authSubscription = this.authService.user.subscribe(() => {
       this.canAdd = this.authService.userHasClaim(PermissionsManagement.getRightFromPath(this.router.url, PermissionType.create));
+    });
+  }
+
+  onUnlock(id: string, form: any): void {
+    this.apollo.mutate<EditFormMutationResponse>({
+      mutation: EDIT_FORM_LOCK,
+      variables: {
+        id,
+        isLocked: false
+      }
+    }).subscribe(res => {
+      if (res.data) {
+        this.apollo.subscribe<FormUnlockedSubscriptionResponse>({
+          query: FORM_UNLOCKED_SUBSCRIPTION,
+          variables: {
+            form: id,
+            lockedByID: form.isLockedBy.id
+          }
+        }).subscribe(() => {
+          this.snackBar.openSnackBar(NOTIFICATIONS.objectUnlocked(element.name));
+        });
+        this.apollo.watchQuery<GetFormsQueryResponse>({
+          query: GET_SHORT_FORMS,
+        }).valueChanges.subscribe((res: any) => {
+          this.dataSource.data = res.data.forms;
+          this.isLocked = false;
+          this.loading = res.loading;
+          this.filterPredicate();
+        });
+        this.authSubscription = this.authService.user.subscribe(() => {
+          this.canAdd = this.authService.userHasClaim(PermissionsManagement.getRightFromPath(this.router.url, PermissionType.create));
+        });
+      }
     });
   }
 

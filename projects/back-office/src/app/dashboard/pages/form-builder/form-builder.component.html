@@ -2,6 +2,8 @@
     <div class="page-header">
         <ng-container *ngIf="!formActive">
             <h1 class="page-title" (click)="toggleFormActive()">{{form.name}} {{ activeVersion ? activeVersion.id : '' }}</h1>
+            <button class="lock-button" mat-button color="primary" (click)="onLock()">{{ isLocked ? 'Unlock' : 'Lock' }} edition</button>
+
         </ng-container>
 
         <ng-container *ngIf="formActive">

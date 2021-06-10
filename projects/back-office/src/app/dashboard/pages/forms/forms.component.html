@@ -165,9 +165,13 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item [routerLink]="['/forms/builder', element.id]" *ngIf="element.canUpdate">
+          <button *ngIf="!element.isLocked && element.canUpdate" mat-menu-item [routerLink]="['/forms/builder', element.id]">
             <mat-icon>edit</mat-icon>
             Edit
+          </button>
+          <button *ngIf="element.isLocked && element.isLockedBy?.id !== user._id && element.canUpdate" mat-menu-item (click)="onUnlock(element.id, element)">
+            <mat-icon>edit</mat-icon>
+            Unlock edition
           </button>
           <ng-container *ngIf="element.canSee && element.recordsCount > 0">
             <button mat-menu-item [routerLink]="['/forms/records', element.id]">
