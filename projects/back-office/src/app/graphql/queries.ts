@@ -102,6 +102,11 @@ query GetShortForms {
     canCreate
     canUpdate
     canDelete
+    isLocked
+    isLockedBy {
+      id
+      name
+    }
     resource {
       id
       coreForm {
@@ -133,6 +138,11 @@ query GetShortFormById($id: ID!) {
       data
     }
     canUpdate
+    isLocked
+    isLockedBy {
+      id
+      name
+    }
   }
 }`;
 
@@ -145,6 +155,11 @@ query GetFormById($id: ID!, $filters: JSON, $display: Boolean) {
     structure
     fields
     status
+    isLocked
+    isLockedBy {
+      id
+      name
+    }
     versions {
       id
       createdAt

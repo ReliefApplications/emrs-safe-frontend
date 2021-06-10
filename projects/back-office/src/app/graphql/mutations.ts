@@ -254,6 +254,17 @@ mutation editForm($id: ID!, $status: String!) {
   }
 }`;
 
+export const EDIT_FORM_LOCK = gql`
+mutation editForm($id: ID!, $isLocked: Boolean!) {
+  editForm(id: $id, isLocked: $isLocked) {
+    isLocked
+    isLockedBy {
+      id
+      name
+    }
+  }
+}`;
+
 export const EDIT_FORM_NAME = gql`
 mutation editForm($id: ID!, $name: String!){
   editForm(id: $id, name: $name){

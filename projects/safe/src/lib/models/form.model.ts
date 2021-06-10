@@ -30,4 +30,6 @@ export interface Form {
     canDelete?: boolean;
     canCreateRecords?: boolean;
     uniqueRecord?: Record;
+    isLocked?: boolean;
+    isLockedBy?: any;
 }

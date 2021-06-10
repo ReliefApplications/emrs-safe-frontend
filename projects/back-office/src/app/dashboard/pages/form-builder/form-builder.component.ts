@@ -94,6 +94,7 @@ export class FormBuilderComponent implements OnInit {
         }
       }).valueChanges.subscribe((res) => {
         if (res.data.form) {
+          console.log("res data = ", res.data);
           this.loading = res.loading;
           this.form = res.data.form;
           this.nameForm = new FormGroup({
