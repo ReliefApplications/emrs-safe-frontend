@@ -74,6 +74,11 @@ export function init(Survey: any, domService: DomService, dialog: MatDialog): vo
                 }
             }
             // Display of add button for resource question
+            if (question.getType() === 'section') {
+                el.parentElement.parentElement.style.height = '5px';
+                el.parentElement.parentElement.style.padding = '0';
+                el.parentElement.parentElement.style.background = '#008DC9';
+            }
             if (question.getType() === 'resource') {
                 const mainDiv = document.createElement('div');
                 mainDiv.id = 'addRecordDiv';
