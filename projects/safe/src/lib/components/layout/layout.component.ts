@@ -2,7 +2,7 @@ import { Component, ComponentRef, EventEmitter, HostListener, Inject, Input, OnC
   OnInit, Output, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { SafeAuthService } from '../../services/auth.service';
 import { SafeLayoutService } from '../../services/layout.service';
-import { Account } from 'msal';
+import { AccountInfo } from '@azure/msal-browser';
 import { PermissionsManagement, PermissionType } from '../../models/user.model';
 import { Application } from '../../models/application.model';
 import { moveItemInArray } from '@angular/cdk/drag-drop';
@@ -43,7 +43,7 @@ export class SafeLayoutComponent implements OnInit, OnChanges, OnDestroy {
   notificationsSubscription?: Subscription;
 
   // === AZURE ACCOUNT ===
-  account: Account | null;
+  account: AccountInfo | null;
 
   // === DISPLAY ===
   public largeDevice: boolean;

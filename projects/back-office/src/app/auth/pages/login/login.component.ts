@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MSAL_GUARD_CONFIG, MsalGuardConfiguration, MsalService } from '@azure/msal-angular';
+import { RedirectRequest } from '@azure/msal-browser';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private router: Router,
+    @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
+    private authService: MsalService
   ) { }
 
   ngOnInit(): void {
@@ -18,6 +21,10 @@ export class LoginComponent implements OnInit {
   /* Redirect to Azure authentication page.
   */
   onLogin(): void {
-    this.router.navigate(['/']);
+    if (this.msalGuardConfig.authRequest){
+      this.authService.loginRedirect({...this.msalGuardConfig.authRequest} as RedirectRequest);
+    } else {
+      this.authService.loginRedirect();
+    }
   }
 }

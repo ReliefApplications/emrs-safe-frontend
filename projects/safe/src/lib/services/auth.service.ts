@@ -1,11 +1,11 @@
-import {Apollo} from 'apollo-angular';
+import { Apollo } from 'apollo-angular';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-import { Account } from 'msal';
 import { MsalService } from '@azure/msal-angular';
 
 import { GetProfileQueryResponse, GET_PROFILE } from '../graphql/queries';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { AccountInfo } from '@azure/msal-browser';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ export class SafeAuthService {
   // === LOGGED USER ===
   // tslint:disable-next-line: variable-name
   private _user = new BehaviorSubject<User | null>(null);
-  public account: Account | null = null;
+  public account: AccountInfo | null = null;
 
   // if we have the modal confirmation open on form builder we cannot logout until close modal
   public canLogout = new BehaviorSubject<boolean>(true);
@@ -70,12 +70,14 @@ export class SafeAuthService {
   /*  Get the Azure AD profile.
   */
   checkAccount(): void {
-    this.account = this.msalService.getAccount();
+    this.account = this.msalService.instance.getActiveAccount();
+    console.log(this.account)
   }
 
   /*  Get the profile from the database, using GraphQL.
   */
   getProfile(): void {
+    console.log('tell me')
     this.apollo.query<GetProfileQueryResponse>({
       query: GET_PROFILE,
       fetchPolicy: 'network-only',

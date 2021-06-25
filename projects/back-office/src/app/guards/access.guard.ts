@@ -12,7 +12,7 @@ export class AccessGuard implements CanActivate {
     private authService: SafeAuthService,
     private snackBar: SafeSnackBarService,
     private router: Router
-  ) { }
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -20,6 +20,7 @@ export class AccessGuard implements CanActivate {
       return this.authService.user.pipe(
         skip(1), // this is important as first value of behaviorSubject is null
         map((user: User | null) => {
+          console.log(user);
           if (user) {
             if (user.isAdmin) {
               return true;
