@@ -45,14 +45,16 @@ export class SafeDownloadService {
     setTimeout(() => link.remove(), 0);
   }
 
-  updateRecords(path: string): void {
+  updateRecords(path: string, data: any): void {
     const url = path.startsWith('http') ? path : `${this.baseUrl}/${path}`;
     const token = localStorage.getItem('msal.idtoken');
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
     });
-    this.http.get(url, {headers}).subscribe(res => {
+    console.log('*** body ***');
+    console.log(data);
+    this.http.post(url, data, {headers}).subscribe(res => {
       console.log(res);
     });
   }

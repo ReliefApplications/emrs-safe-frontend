@@ -26,6 +26,7 @@ import { SafeStatusModalModule } from './components/status-modal/status-modal.mo
 import { SafeProfileModule } from './pages/profile/profile.module';
 import { SafeSearchResourceGridModalModule } from './components/search-resource-grid-modal/search-resource-grid-modal.module';
 import { SafeImportRecordModalModule } from './components/import-record-modal/import-record-modal.module';
+import { SafeImportRecordsTokensModalModule } from './components/import-records-tokens-modal/import-records-tokens-modal.module';
 
 @NgModule({
   exports: [
@@ -55,7 +56,8 @@ import { SafeImportRecordModalModule } from './components/import-record-modal/im
     SafeRecordModalModule,
     SafeProfileModule,
     SafeSearchResourceGridModalModule,
-    SafeImportRecordModalModule
+    SafeImportRecordModalModule,
+    SafeImportRecordsTokensModalModule
   ]
 })
 export class SafeModule { }

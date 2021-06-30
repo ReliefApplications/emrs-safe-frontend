@@ -11,7 +11,7 @@ import {
   PermissionsManagement,
   PermissionType,
   SafeConfirmModalComponent,
-  SafeImportRecordModalComponent,
+  SafeImportRecordsTokensModalComponent,
   NOTIFICATIONS,
   Form,
   SafeDownloadService
@@ -21,7 +21,6 @@ import { AddFormComponent } from '../../../components/add-form/add-form.componen
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatEndDate, MatStartDate } from '@angular/material/datepicker';
-import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-forms',
@@ -204,8 +203,12 @@ export class FormsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onImportRecord(element: any, e: any): void {
     console.log(element);
-    // this.importPopup.open(ImportRecordModalComponent);
-    const path = `upload/records/update/${element.id}`;
-    this.downloadService.updateRecords(path);
+    const dialogRef = this.importPopup.open(SafeImportRecordsTokensModalComponent);
+    dialogRef.afterClosed().subscribe(data => {
+        if (data !== undefined){
+          const path = `upload/records/update/${element.id}`;
+          this.downloadService.updateRecords(path, data);
+        }
+    });
   }
 }

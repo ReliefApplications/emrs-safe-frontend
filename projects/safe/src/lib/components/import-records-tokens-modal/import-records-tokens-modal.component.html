@@ -1,0 +1,26 @@
+<!--<p>import-records-tokens-modal works!</p>-->
+<!--<div id="cont">-->
+<!--  <label> Token Access </label>-->
+<!--  <input type="text"/>-->
+<!--  <label> Form Identifier </label>-->
+<!--  <input type="text"/>-->
+<!--  <button mat-flat-button color="primary" (click)="importRecords($event)"> Done </button>-->
+<!--</div>-->
+
+<h3> Import records from KoBo </h3>
+
+<form class="cont">
+  <mat-form-field id="access-token">
+    <mat-label>Access token</mat-label>
+    <input matInput #acessToken>
+  </mat-form-field>
+
+  <mat-form-field id="form-id">
+    <mat-label>Form Id</mat-label>
+    <input matInput #formId>
+  </mat-form-field>
+</form>
+
+<button mat-flat-button color="primary" (click)="importRecords(acessToken.value, formId.value)"> Done </button>
+<!--[mat-dialog-close]="data"-->
+<!--[mat-dialog-close]="{acessToken:acessToken.value, formId:formId.value}"-->
