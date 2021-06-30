@@ -1,0 +1,16 @@
+<h3> Import records from KoBo </h3>
+
+<form class="form">
+  <mat-form-field id="access-token">
+    <mat-label>Access token</mat-label>
+    <input matInput #acessToken>
+  </mat-form-field>
+</form>
+
+<mat-spinner id="spinner" mode="indeterminate" color="primary" id="spinner-loading" diameter="50" [ngStyle]="{'display': spinnerDisplay == false ? 'none' : 'block' }"></mat-spinner>
+
+<mat-card id="card" [ngStyle]="{'display': cardDisplay == false ? 'none' : 'block' }">
+  <p id="success-message"> Records has been successfully imported <mat-icon>check</mat-icon> </p>
+</mat-card>
+
+<button mat-flat-button id="btn-import" color="primary" [disabled]="doneButton" (click)="importRecords(acessToken.value)"> Import </button>

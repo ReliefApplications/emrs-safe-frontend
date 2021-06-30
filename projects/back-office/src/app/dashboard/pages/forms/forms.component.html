@@ -179,6 +179,24 @@
             <mat-icon>delete</mat-icon>
             Delete
           </button>
+          <ng-container *ngIf="element.koboUrl == null && element.uid == null">
+            <button mat-menu-item (click)="onExportForm(element, $event)">
+              <mat-icon>send</mat-icon>
+              Export form
+            </button>
+          </ng-container>
+          <ng-container *ngIf="element.uid !== null">
+            <button mat-menu-item (click)="onImportRecord(element, $event)">
+              <mat-icon>get_app</mat-icon>
+              Import record
+            </button>
+          </ng-container>
+          <ng-container *ngIf="element.koboUrl !== null">
+            <button mat-menu-item (click)="copyUrl(element, $event)">
+              <mat-icon>link</mat-icon>
+              Copy link
+            </button>
+          </ng-container>
         </mat-menu>
       </td>
     </ng-container>

@@ -1,0 +1,25 @@
+<h3> Export form to KoBo </h3>
+
+<form id="form">
+  <mat-form-field id="access-token">
+    <mat-label>Access token</mat-label>
+    <input id="input" matInput #acessToken>
+  </mat-form-field>
+</form>
+
+<mat-spinner mode="indeterminate" color="primary" id="spinner-loading" diameter="50" [ngStyle]="{'display': spinnerDisplay == false ? 'none' : 'block' }"></mat-spinner>
+
+<div id="cont-card">
+  <mat-card id="card" [ngStyle]="{'display': cardDisplay == false ? 'none' : 'block' }">
+    <p id="success-message" [ngStyle]="{'display': successDisplay == false ? 'none' : 'block' }"> The form has been successfully exported <mat-icon>check</mat-icon> </p>
+    <p id="error-message" [ngStyle]="{'display': successDisplay != false ? 'none' : 'block' }" [innerText]="errorMsg">  <mat-icon>close</mat-icon> </p>
+    <div [ngStyle]="{'display': cardUrlDisplay == false ? 'none' : 'block' }">
+      <p [textContent]="link" (click)="copyLinkToClipboard()" style="display: inline" id="link"></p>
+      <button mat-icon-button color="primary" style="display: inline" (click)="copyLinkToClipboard()">
+        <mat-icon>file_copy</mat-icon>
+      </button>
+    </div>
+  </mat-card>
+</div>
+
+<button mat-flat-button id="btn-export" color="primary" [disabled]="doneButton" (click)="exportForm(acessToken.value)"> Export </button>

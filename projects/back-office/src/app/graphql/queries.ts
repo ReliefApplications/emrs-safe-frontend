@@ -109,6 +109,8 @@ query GetShortForms {
         name
       }
     }
+    koboUrl
+    uid
   }
 }`;
 

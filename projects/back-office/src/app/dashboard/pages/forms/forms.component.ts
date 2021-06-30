@@ -11,15 +11,17 @@ import {
   PermissionsManagement,
   PermissionType,
   SafeConfirmModalComponent,
+  ImportRecordsTokensModalComponent,
+  ExportFormsTokenModalComponent,
   NOTIFICATIONS,
-  Form
+  Form,
+  SafeDownloadService
 } from '@safe/builder';
 import { DeleteFormMutationResponse, DELETE_FORM, AddFormMutationResponse, ADD_FORM } from '../../../graphql/mutations';
 import { AddFormComponent } from '../../../components/add-form/add-form.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatEndDate, MatStartDate } from '@angular/material/datepicker';
-
 
 @Component({
   selector: 'app-forms',
@@ -57,7 +59,9 @@ export class FormsComponent implements OnInit, OnDestroy, AfterViewInit {
     public dialog: MatDialog,
     private router: Router,
     private snackBar: SafeSnackBarService,
-    private authService: SafeAuthService
+    private authService: SafeAuthService,
+    private downloadService: SafeDownloadService,
+    private importPopup: MatDialog
   ) {}
 
   /*  Load the forms.
@@ -191,4 +195,29 @@ export class FormsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.coreFilter = '';
     this.clearDateFilter();
   }
+
+  onExportForm(element: any, e: any): void {
+    this.importPopup.open(ExportFormsTokenModalComponent, {data: {elt: element, src: this.dataSource}});
+  }
+
+  onImportRecord(element: any, e: any): void {
+    this.importPopup.open(ImportRecordsTokensModalComponent, {data: {elt: element}});
+  }
+
+  copyUrl(element: any, $event: any): void {
+    console.log('copyUrl');
+    console.log(element);
+    console.log(element.koboUrl);
+    this.copyStringToClipboard(element.koboUrl);
+  }
+
+  copyStringToClipboard(str: any): void {
+    const input = document.body.appendChild(document.createElement('input'));
+    input.value = str;
+    input.focus();
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+  }
+
 }

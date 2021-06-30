@@ -178,6 +178,10 @@ export class SafeFormComponent implements OnInit, OnDestroy {
     let mutation: any;
     this.surveyActive = false;
     const data = this.survey.data;
+
+    // console.log('*** data ***');
+    // console.log(data);
+
     const questionsToUpload = Object.keys(this.temporaryFilesStorage);
     for (const name of questionsToUpload) {
       const files = this.temporaryFilesStorage[name];
@@ -208,6 +212,12 @@ export class SafeFormComponent implements OnInit, OnDestroy {
       }
     }
     this.survey.data = data;
+    console.log('this.survey');
+    console.log(this.survey);
+    console.log('this.survey.data');
+    console.log(this.survey.data);
+    console.log('this.form');
+    console.log(this.form);
     if (this.record || this.form.uniqueRecord) {
       const recordId = this.record ? this.record.id : this.form.uniqueRecord?.id;
       mutation = this.apollo.mutate<EditRecordMutationResponse>({

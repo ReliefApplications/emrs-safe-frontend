@@ -1,0 +1,20 @@
+#form {
+  width: 500px;
+}
+
+#access-token {
+  width: 315px;
+  margin-right: 10px;
+}
+
+#success-message {
+  color: #63D168;
+}
+
+#card {
+  width: fit-content;
+}
+
+#btn-import {
+  margin-top: 20px;
+}

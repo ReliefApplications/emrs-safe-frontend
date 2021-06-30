@@ -1,0 +1,32 @@
+#access-token {
+  width: 400px;
+  margin-right: 10px;
+}
+
+#spinner-loading {
+  display:none;
+}
+
+#card {
+  width: fit-content;
+}
+
+#success-message {
+  color: #63D168;
+}
+
+#error-message {
+  color: #9b001d;
+}
+
+#cont-card {
+  display: inline;
+}
+
+#link {
+  text-decoration: underline;
+}
+
+#btn-export {
+  margin-top: 20px;
+}

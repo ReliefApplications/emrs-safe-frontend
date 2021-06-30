@@ -62,6 +62,9 @@ export * from './lib/components/convert-modal/public-api';
 export * from './lib/components/record-history/public-api';
 export * from './lib/components/record-modal/public-api';
 export * from './lib/components/status-modal/public-api';
+export * from './lib/components/import-record-modal/public-api';
+export * from './lib/components/import-records-tokens-modal/public-api';
+export * from './lib/components/export-forms-token-modal/public-api';
 export * from './lib/components/search-resource-grid-modal/public-api';
 export * from './lib/components/config-display-grid-fields-modal/public-api';
 

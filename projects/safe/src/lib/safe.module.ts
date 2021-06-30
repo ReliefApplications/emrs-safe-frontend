@@ -24,7 +24,21 @@ import { SafeRecordHistoryModule } from './components/record-history/record-hist
 import { SafeRecordModalModule } from './components/record-modal/public-api';
 import { SafeStatusModalModule } from './components/status-modal/status-modal.module';
 import { SafeProfileModule } from './pages/profile/profile.module';
+import { ImportRecordModalComponent } from './components/import-record-modal/import-record-modal.component';
+import { ExportFormsTokenModalComponent } from './components/export-forms-token-modal/export-forms-token-modal.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { ImportRecordsTokensModalComponent } from './components/import-records-tokens-modal/import-records-tokens-modal.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
 import { SafeSearchResourceGridModalModule } from './components/search-resource-grid-modal/search-resource-grid-modal.module';
+import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   exports: [
@@ -54,5 +68,24 @@ import { SafeSearchResourceGridModalModule } from './components/search-resource-
     SafeRecordModalModule,
     SafeProfileModule,
     SafeSearchResourceGridModalModule
-  ]})
+  ],
+  imports: [
+    NgxDropzoneModule,
+    CommonModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatCardModule,
+    MatIconModule,
+    MatGridListModule
+  ],
+  declarations: [
+    ImportRecordModalComponent,
+    ImportRecordsTokensModalComponent,
+    ExportFormsTokenModalComponent
+  ]
+})
 export class SafeModule { }

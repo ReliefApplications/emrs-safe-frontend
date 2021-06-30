@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Apollo } from 'apollo-angular';
+import { GetFormsQueryResponse, GET_FORMS } from '../graphql/queries';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,8 @@ export class SafeDownloadService {
 
   constructor(
     @Inject('environment') environment: any,
-    private http: HttpClient
+    private http: HttpClient,
+    private apollo: Apollo,
   ) {
     this.baseUrl = environment.API_URL;
   }
@@ -42,5 +45,51 @@ export class SafeDownloadService {
     document.body.append(link);
     link.click();
     setTimeout(() => link.remove(), 0);
+  }
+
+  async exportFormGetLink(path: string, data: any): Promise<any> {
+    const url = path.startsWith('http') ? path : `${this.baseUrl}/${path}`;
+    const token = localStorage.getItem('msal.idtoken');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    let response = null;
+    let reason = null;
+    await this.http.post(url, data, { headers }).toPromise().then((res) => {
+      response = res;
+    }).catch((reas => {console.log(reas); reason = reas; }));
+    console.log(response);
+    console.log(reason);
+    let dataReturn = null;
+    if (reason == null){
+      const koboUrl = JSON.parse(JSON.stringify(response)).url;
+      const responseApollo = await this.apollo.query<GetFormsQueryResponse>({query: GET_FORMS}).toPromise();
+      dataReturn = {
+        status: true,
+        data : {
+          src: responseApollo.data.forms,
+          url: koboUrl
+        }
+      };
+    }
+    else {
+      dataReturn = {
+        status: false,
+        data : reason
+      };
+    }
+    return dataReturn;
+  }
+
+  async updateRecords(path: string, data: any): Promise<void> {
+    const url = path.startsWith('http') ? path : `${this.baseUrl}/${path}`;
+    const token = localStorage.getItem('msal.idtoken');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    console.log(data);
+    await this.http.post(url, data, { headers }).toPromise().then(res => { console.log(res); });
   }
 }
