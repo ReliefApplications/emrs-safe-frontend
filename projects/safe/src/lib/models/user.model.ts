@@ -106,3 +106,11 @@ export class PermissionsManagement {
         return (value as any)[type];
     }
 }
+
+/*  Interface for Adding new users.
+*/
+export interface AddUser {
+    email: string;
+    roles: string[];
+    attributes: { value: string, category: string };
+  }

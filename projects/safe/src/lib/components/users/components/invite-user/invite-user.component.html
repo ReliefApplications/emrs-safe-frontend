@@ -1,57 +1,82 @@
 <h1 mat-dialog-title>Invite users</h1>
 <div mat-dialog-content>
-
-  <form [formGroup]="inviteForm">
-        <div class="form-group">
-          <label class="invite-label">Select existing users, invite new users or import csv list
-            <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
-          </label>
-          <mat-form-field class="chip-list">
-            <mat-chip-list #chipList aria-label="Email invitation">
-              <mat-chip
-                *ngFor="let email of emails"
-                [selectable]="true"
-                [removable]="true"
-                (removed)="remove(email)">
-                {{email}}
-                <mat-icon matChipRemove>cancel</mat-icon>
-              </mat-chip>
-              <input
-                placeholder="Emails..."
-                #emailInput
-                formControlName="email"
-                [matAutocomplete]="auto"
-                [matChipInputFor]="chipList"
-                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                (focusout)="add($event)"
-                (matChipInputTokenEnd)="add($event)">
-            </mat-chip-list>
-            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-              <mat-option *ngFor="let user of filteredUsers | async" [value]="user.username">
-                {{user.username}}
-              </mat-option>
-            </mat-autocomplete>
+  <form [formGroup]="inviteForm" *ngIf="!allowMultipleInvites">
+    <div class="form-group">
+      <label class="invite-label">Select existing users, invite new users or import from csv list</label>
+      <input type="file" #csvReader name="Upload CSV" class="file-select" (change)="uploadListener($event)" accept=".csv" />
+      <mat-form-field class="chip-list">
+        <mat-chip-list #chipList aria-label="Email invitation">
+          <mat-chip *ngFor="let email of emails" [selectable]="true" [removable]="true" (removed)="remove(email)">
+            {{email}}
+            <mat-icon matChipRemove>cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="Emails..." #emailInput formControlName="email" [matAutocomplete]="auto"
+            [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (focusout)="add($event)"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let user of filteredUsers | async" [value]="user.username">
+            {{user.username}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <label class="invite-label">Select the role to assign</label>
+      <mat-form-field appearance="outline">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role">
+          <mat-option *ngFor="let role of data.roles" [value]="role.id">{{ role.title }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <ng-container *ngIf="data.positionAttributeCategories && positionAttributes && data.positionAttributeCategories.length > 0">
+        <ng-container formArrayName="positionAttributes">
+          <label class="invite-label">Set additional attributes</label>
+          <mat-form-field appearance="outline" *ngFor="let category of positionAttributes.controls; let index = index;"
+            [formGroup]="$any(category)">
+            <mat-label>{{ data.positionAttributeCategories[index].title | titlecase }}</mat-label>
+            <input matInput formControlName="value" type="text" placeholder="Enter a value for the category" />
           </mat-form-field>
-            <label class="invite-label">Select the role to assign</label>
+        </ng-container>
+      </ng-container>
+    </div>
+  </form>
+  <div *ngIf="allowMultipleInvites">
+    <div *ngFor="let user of multipleInviteForm.controls; let i = index" class="user-row">
+      <ng-container [formGroup]="getMultipleInviteForm(i)">
+        <button (click)="removeUserForm(i)" mat-icon-button color="warn">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+        <ng-container>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" type="text" />
+          </mat-form-field>
+        </ng-container>
+        <ng-container *ngFor="let role of getRoles(i)?.controls">
+          <form [formGroup]="$any(role)" class="form-container">
             <mat-form-field appearance="outline">
-                <mat-label>Role</mat-label>
-                <mat-select formControlName="role">
-                    <mat-option *ngFor="let role of data.roles" [value]="role.id">{{ role.title }}</mat-option>
-                </mat-select>
+              <mat-label>Role</mat-label>
+              <mat-select formControlName="id">
+                <mat-option *ngFor="let role of data.roles" [value]="role.id">{{ role.title }}</mat-option>
+              </mat-select>
             </mat-form-field>
-            <ng-container *ngIf="data.positionAttributeCategories && positionAttributes">
-                <ng-container formArrayName="positionAttributes">
-                    <label class="invite-label">Set additional attributes</label>
-                    <mat-form-field appearance="outline" *ngFor="let category of positionAttributes.controls; let index = index;" [formGroup]="$any(category)">
-                        <mat-label>{{ data.positionAttributeCategories[index].title | titlecase }}</mat-label>
-                        <input matInput formControlName="value" type="text" placeholder="Enter a value for the category"/>
-                    </mat-form-field>
-                </ng-container>
-            </ng-container>
-        </div>
-    </form>
+          </form>
+        </ng-container>
+        <ng-container *ngFor="let category of getCategories(i)?.controls">
+          <form [formGroup]="$any(category)" class="form-container">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ category.value.title }}</mat-label>
+              <input matInput formControlName="value" type="text" />
+            </mat-form-field>
+          </form>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
 </div>
 <div mat-dialog-actions align="end">
-    <button mat-button (click)="onClose()">Close</button>
-    <button type="submit" mat-flat-button [mat-dialog-close]="inviteForm.value" color="primary" [disabled]="!inviteForm.valid">Invite</button>
+  <button mat-button (click)="onClose()">Close</button>
+  <button type="submit" *ngIf="!allowMultipleInvites" mat-flat-button [mat-dialog-close]="inviteForm.value"
+    color="primary" [disabled]="!inviteForm.valid">Invite</button>
+  <button type="submit" *ngIf="allowMultipleInvites" mat-flat-button [mat-dialog-close]="returnValueMultipleUsers()"
+    color="primary" [disabled]="!multipleInviteForm.valid">Invite users</button>
 </div>

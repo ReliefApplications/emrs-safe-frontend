@@ -1,8 +1,16 @@
 .invite-label {
-    margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .mat-chip {
   max-width: none;
   border-radius: 1rem !important;
+}
+
+.user-row {
+  display: flex!important;
+}
+
+.file-select {
+  margin-bottom: 24px;
 }

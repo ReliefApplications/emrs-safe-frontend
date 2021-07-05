@@ -3,7 +3,7 @@ import { Component, OnInit, Inject, ViewChild, ElementRef } from '@angular/core'
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { Role, User } from '../../../../models/user.model';
+import { Role, User, AddUser } from '../../../../models/user.model';
 import { GetUsersQueryResponse, GET_USERS } from '../../../../graphql/queries';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -23,6 +23,7 @@ export class SafeInviteUserComponent implements OnInit {
 
   // === REACTIVE FORM ===
   inviteForm: FormGroup = new FormGroup({});
+  multipleInviteForm: FormArray = new FormArray([]);
 
   // === DATA ===
   readonly separatorKeysCodes: number[] = [ENTER, COMMA, TAB];
@@ -31,6 +32,11 @@ export class SafeInviteUserComponent implements OnInit {
   public emails: any[] = [];
   public formValues: any;
   public csvRecords: any[] = [];
+  public userArray: any[] = [];
+  public emailsList: any[] = [];
+  public rolesList: any[] = [];
+  public positionAttributesList: any[] = [];
+  public allowMultipleInvites = false;
 
   @ViewChild('emailInput') emailInput?: ElementRef<HTMLInputElement>;
   @ViewChild('csvReader') csvReader: any;
@@ -45,6 +51,22 @@ export class SafeInviteUserComponent implements OnInit {
 
   get positionAttributes(): FormArray | null {
     return this.inviteForm.get('positionAttributes') ? this.inviteForm.get('positionAttributes') as FormArray : null;
+  }
+
+  getRoles(i: number): FormArray | null {
+    return this.multipleInviteForm.at(i).get('role') ? this.multipleInviteForm.at(i).get('role') as FormArray : null;
+  }
+
+  getCategories(i: number): FormArray | null {
+    return this.multipleInviteForm.at(i).get('categories') ? this.multipleInviteForm.at(i).get('categories') as FormArray : null;
+  }
+
+  getMultipleInviteForm(i: number): FormGroup {
+    return this.multipleInviteForm.at(i) as FormGroup;
+  }
+
+  removeUserForm(i: number): any {
+    this.multipleInviteForm.removeAt(i);
   }
 
   constructor(
@@ -139,7 +161,6 @@ export class SafeInviteUserComponent implements OnInit {
   }
 
   uploadListener($event: any): void {
-
     const files = $event.target.files;
 
     if (files[0] && this.isValidCSVFile(files[0])) {
@@ -152,7 +173,66 @@ export class SafeInviteUserComponent implements OnInit {
       reader.onload = () => {
         const csvData = reader.result || '';
         const csvRecordsArray = csvData.toString().split(/\r\n|\n/);
-
+        const header = csvRecordsArray[0].split(',');
+        for (let index = 1; index < csvRecordsArray.length - 1; index++) {
+          const update: any = {};
+          const row = csvRecordsArray[index].split(',');
+          for (const column in row) {
+            if (row[column]) { update[header[column]] = row[column]; }
+          }
+          this.userArray.push(update);
+        }
+        this.userArray.forEach((e) => {
+          const user: any = {
+            category : [],
+            role: []
+          };
+          for (const el in e) {
+            if (el === 'email') {
+              if (e[el].trim()) {
+                if (!this.data.users.find((email: any) => email.username.toLowerCase() === e[el].toLocaleString())) {
+                  user[el] = e[el];
+                  emailRegistered = false;
+                } else {
+                  emailRegistered = true;
+                  this.snackBar.openSnackBar(NOTIFICATIONS.emailRegistered);
+                }
+              }
+            } else if (el === 'role') {
+              this.allowMultipleInvites = true;
+              this.data.roles?.map(x => {
+                if (x.title?.toLowerCase() === e[el].toLowerCase()) {
+                  user.role.push({ title: e[el], id: x.id});
+                }
+              });
+            } else {
+              this.data.positionAttributeCategories?.map(x => {
+                if (x.title?.toLowerCase() === el.toLowerCase()) {
+                  user.category.push({ title: el, value: e[el], id: x.id});
+                }
+              });
+            }
+          }
+          if (!emailRegistered) {
+            const userForm = this.formBuilder.group({
+              email: [user.email, Validators.minLength(1)],
+              role: this.formBuilder.array(user.role.map((x: any) => {
+                return this.formBuilder.group({
+                  title: [x.title],
+                  id: [x.id, Validators.required],
+                });
+              })),
+              categories: this.formBuilder.array(user.category.map((x: any) => {
+                return this.formBuilder.group({
+                  title: [x.title],
+                  value: [x.value],
+                  id: [x.id, Validators.required],
+                });
+              }))
+            });
+            this.multipleInviteForm.push(userForm);
+          }
+        });
         this.csvRecords = this.getDataRecordsArrayFromCSVFile(csvRecordsArray);
         for (const record of this.csvRecords) {
           if (record.trim()) {
@@ -206,4 +286,13 @@ export class SafeInviteUserComponent implements OnInit {
     return Array.from(new Set(csvArr));
   }
 
+  public returnValueMultipleUsers(): AddUser[]{
+    return this.multipleInviteForm.value.map((userForm: any) => {
+      return {
+        email: userForm.email,
+        roles: userForm.role.map((x: any) => x.id),
+        attributes: userForm.categories.map((x: any) => ({ value: x.value, category: x.id }))
+      };
+    });
+  }
 }
