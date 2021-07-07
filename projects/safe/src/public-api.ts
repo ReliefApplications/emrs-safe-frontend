@@ -65,6 +65,9 @@ export * from './lib/components/status-modal/public-api';
 export * from './lib/components/search-resource-grid-modal/public-api';
 export * from './lib/components/config-display-grid-fields-modal/public-api';
 
+// === UI COMPONENTS ===
+export * from './lib/components/ui/button/public-api';
+
 // === PAGES ===
 export * from './lib/pages/profile/public-api';
 

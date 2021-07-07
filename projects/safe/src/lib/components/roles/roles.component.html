@@ -4,14 +4,12 @@
     <mat-form-field appearance="outline">
       <mat-icon matPrefix>search</mat-icon>
       <input id="custom-search" matInput [ngModel]="searchText" (keyup)="applyFilter('', $event)" type="search"
-        placeholder="Search...">
+             placeholder="Search...">
     </mat-form-field>
   </div>
   <div class="actions">
-    <button mat-flat-button color="primary" (click)="onAdd()">
-      <mat-icon>add</mat-icon>
-      Create a role
-    </button>
+    <safe-button buttonType="mat-flat-button" text="Create a role" icon="add" color="primary" (click)="onAdd()">
+    </safe-button>
   </div>
   <table mat-table [dataSource]="roles" matSort>
     <ng-container matColumnDef="title">
@@ -35,18 +33,14 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
-          <mat-icon>more_vert</mat-icon>
-        </button>
+        <safe-button buttonType="mat-icon-button" icon="more_vert" [matMenuTriggerFor]="menu"
+                     (click)="$event.stopPropagation()">
+        </safe-button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="onEdit(element)">
-            <mat-icon>edit</mat-icon>
-            Edit
-          </button>
-          <button mat-menu-item color="warn" (click)="onDelete(element)">
-            <mat-icon>delete</mat-icon>
-            Delete
-          </button>
+          <safe-button buttonType="mat-menu-item" text="Edit" icon="edit" (click)="onEdit(element)">
+          </safe-button>
+          <safe-button buttonType="mat-menu-item" text="Delete" icon="delete" (click)="onDelete(element)">
+          </safe-button>
         </mat-menu>
       </td>
     </ng-container>

@@ -1,10 +1,11 @@
 <div class="toolbar">
     <div class="toolbar-buttons">
-        <button *ngIf="locked" mat-icon-button [color]="lockedByUser ? 'primary' : 'warn'"(click)="onUnlock()">
-            <mat-icon>lock</mat-icon>
-        </button>
-        <button mat-button color="warn" (click)="onClose()">Cancel</button>
-        <button mat-flat-button class="success-button" (click)="onPublish()" [disabled]="!canPublish">Publish</button>
+      <safe-button buttonType="mat-icon-button" icon="lock" [color]="lockedByUser ? 'primary' : 'warn'"
+                   (click)="onUnlock()" *ngIf="locked">
+      </safe-button>
+      <safe-button buttonType="mat-button" text="Cancel" color="warn" (click)="onClose()"></safe-button>
+      <safe-button buttonType="mat-flat-button" text="Publish" class="success-button" (click)="onPublish()"
+                   [disabled]="!canPublish"></safe-button>
     </div>
 </div>
 <mat-divider></mat-divider>

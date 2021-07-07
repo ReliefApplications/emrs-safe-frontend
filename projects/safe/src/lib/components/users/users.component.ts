@@ -172,7 +172,7 @@ export class SafeUsersComponent implements OnInit, AfterViewInit {
     this.users.sort = this.sort || null;
   }
 
-  applyFilter(column: string, event: any): void {
+  applyFilter(column?: string, event?: any): void {
     if (column === 'role') {
       this.roleFilter = !!event.value ? event.value.trim() : '';
     } else {
@@ -184,6 +184,7 @@ export class SafeUsersComponent implements OnInit, AfterViewInit {
   clearAllFilters(): void {
     this.searchText = '';
     this.roleFilter = '';
+    this.applyFilter();
   }
 
   /** Whether the number of selected elements matches the total number of rows. */

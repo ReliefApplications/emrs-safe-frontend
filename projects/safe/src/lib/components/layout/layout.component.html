@@ -1,51 +1,47 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="nav.toggle()" *ngIf="!largeDevice">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <button mat-icon-button (click)="goBack()" *ngIf="largeDevice && route">
-    <mat-icon>keyboard_backspace</mat-icon>
-  </button>
+  <safe-button buttonType="mat-icon-button" icon="menu" (click)="nav.toggle()" *ngIf="!largeDevice"></safe-button>
+  <safe-button buttonType="mat-icon-button" icon="keyboard_backspace" (click)="goBack()"
+               *ngIf="largeDevice && route"></safe-button>
   <ng-container *ngIf="!applications || applications.length === 0">
     <h1 class="application-title">{{title}}</h1>
   </ng-container>
   <ng-container *ngIf="applications && applications.length > 0">
-    <button mat-button [matMenuTriggerFor]="applicationMenu">
-      {{title}}
-      <mat-icon>arrow_drop_down</mat-icon>
-    </button>
+    <safe-button buttonType="mat-button" [text]="title" icon="arrow_drop_down"
+                 [matMenuTriggerFor]="applicationMenu"></safe-button>
     <mat-menu #applicationMenu="matMenu">
-      <button mat-menu-item *ngFor="let application of applications"
-        (click)="onOpenApplication(application)">{{application.name}}</button>
+      <safe-button buttonType="mat-menu-item" [text]="application.name" *ngFor="let application of applications"
+                   (click)="onOpenApplication(application)"></safe-button>
     </mat-menu>
   </ng-container>
   <div class="account-container">
     <div class="account-property">{{account ? account.name : ''}}</div>
     <div class="account-property">{{account ? account.userName : ''}}</div>
   </div>
-  <button mat-icon-button [matMenuTriggerFor]="accountMenu">
-    <mat-icon>account_circle</mat-icon>
-  </button>
+  <safe-button buttonType="mat-icon-button" icon="account_circle" [matMenuTriggerFor]="accountMenu">
+  </safe-button>
   <button mat-icon-button [matMenuTriggerFor]="notificationMenu" [disabled]="notifications.length == 0">
     <mat-icon [matBadge]="notifications.length" matBadgeSize="small" matBadgeColor="warn"
       [matBadgeHidden]="notifications.length == 0">
       notifications</mat-icon>
   </button>
   <mat-menu #accountMenu="matMenu">
-    <button mat-menu-item (click)="onOpenProfile()">Profile</button>
+    <safe-button buttonType="mat-menu-item" text="Profile" (click)="onOpenProfile()"></safe-button>
     <ng-container *ngIf="user && user.isAdmin">
       <mat-divider></mat-divider>
-      <button mat-menu-item (click)="onSwitchOffice()">Switch to {{ otherOffice }}</button>
+      <safe-button buttonType="mat-menu-item" [text]="'Switch to ' + otherOffice"
+                   (click)="onSwitchOffice()"></safe-button>
     </ng-container>
     <mat-divider></mat-divider>
-    <button mat-menu-item (click)="logout()" class="warn">Logout</button>
+    <safe-button buttonType="mat-menu-item" text="Logout" customClass="warn" (click)="logout()"></safe-button>
   </mat-menu>
   <mat-menu #notificationMenu="matMenu">
     <div class="notification-menu">
       <a (click)="onMarkAllNotificationsAsRead()">Mark all as read<mat-icon [inline]="true">check_circle_outline
         </mat-icon></a>
-      <button mat-menu-item (click)="onNotificationClick(notification)" *ngFor="let notification of notifications">{{
-        notification.action }} -
-        {{ notification.createdAt | date }}</button>
+      <ng-container *ngFor="let notification of notifications">
+        <safe-button buttonType="mat-menu-item" [text]="notification.action + ' - ' + notification.createdAt"
+                     (click)="onNotificationClick(notification)"></safe-button>
+      </ng-container>
     </div>
   </mat-menu>
 </mat-toolbar>
@@ -66,11 +62,10 @@
                 <a [routerLink]="item.path" routerLinkActive="active-link"
                   (click)="largeDevice ? null : nav.toggle()" [class]="item.class ? item.class : ''">
                   <ng-container *ngIf="item.isAddPage">
-                    <button mat-stroked-button class="add-page-button" color="primary"
-                      [class]="item.class ? item.class : ''">
-                      <mat-icon>add</mat-icon>
-                      Add a Page
-                    </button>
+                    <safe-button buttonType="mat-stroked-button" text="Add a page" icon="add" class="add-page-button"
+                                 color="primary"
+                                 [class]="item.class ? item.class : ''">
+                    </safe-button>
                   </ng-container>
                   <ng-container *ngIf="!item.isAddPage">
                     <mat-icon mat-list-icon class="nav-icon">
@@ -80,13 +75,13 @@
                   </ng-container>
                 </a>
                 <div class="nav-actions" *ngIf="item.action || item.orderable">
-                    <button mat-icon-button class="nav-action" *ngIf="item.action" 
+                    <button mat-icon-button class="nav-action" *ngIf="item.action"
                     (click)="onClick(item.action.callback, $event)">
                     <mat-icon matTooltip="{{item.action.toolTip}}">{{ item.action.icon }}</mat-icon>
                   </button>
-                  <button mat-icon-button cdkDragHandle class="nav-item-handle" *ngIf="item.orderable">
-                    <mat-icon>drag_indicator</mat-icon>
-                  </button>
+                  <safe-button buttonType="mat-icon-button" icon="drag_indicator" cdkDragHandle class="nav-item-handle"
+                               *ngIf="item.orderable">
+                  </safe-button>
                 </div>
               </mat-list-item>
               <mat-list *cdkDragPreview>

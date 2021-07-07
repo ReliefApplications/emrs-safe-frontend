@@ -5,10 +5,9 @@
       <input id="custom-search" matInput [ngModel]="searchText" (keyup)="applyFilter('', $event)" type="search"
              placeholder="Search...">
     </mat-form-field>
-    <button mat-stroked-button color="primary" (click)="showFilters = !showFilters" class="filters-toggle">
-      <mat-icon>filter_list</mat-icon>
-      Filter
-    </button>
+    <safe-button buttonType="mat-stroked-button" text="Filter" icon="filter_list" color="primary"
+                 (click)="showFilters = !showFilters" class="filters-toggle">
+    </safe-button>
   </div>
   <div class="filters" [style.display]="!showFilters ? 'none' : ''">
     <mat-form-field appearance="outline">
@@ -20,21 +19,18 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-button color="warn" (click)="clearAllFilters()">Clear Filters</button>
+    <safe-button buttonType="mat-button" text="Clear Filters" color="warn" (click)="clearAllFilters()"></safe-button>
   </div>
 </div>
 <div>
   <div class="actions">
-    <button mat-flat-button color="primary" (click)="onInvite()">
-      <mat-icon>send</mat-icon>
-      Invite users
-    </button>
+    <safe-button buttonType="mat-flat-button" text="Invite users" icon="send" color="primary"
+                 (click)="onInvite()"></safe-button>
   </div>
   <div class="actions" *ngIf="selection.selected.length > 0">
-    <button mat-flat-button color="warn" (click)="onDelete(selection.selected)">
-      <mat-icon>delete</mat-icon>
-      Delete selected users
-    </button>
+    <safe-button buttonType="mat-flat-button" text="Delete selected users" icon="delete" color="warn"
+                 (click)="onDelete(selection.selected)">
+    </safe-button>
   </div>
 </div>
 <mat-spinner diameter="45" class="page-loader" *ngIf="loading"></mat-spinner>
@@ -106,18 +102,14 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
     <td mat-cell *matCellDef="let element">
-      <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
-        <mat-icon>more_vert</mat-icon>
-      </button>
+      <safe-button buttonType="mat-icon-button" icon="more_vert" [matMenuTriggerFor]="menu"
+                   (click)="$event.stopPropagation()">
+      </safe-button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="onEdit(element)">
-          <mat-icon>edit</mat-icon>
-          Edit
-        </button>
-        <button mat-menu-item (click)="onDelete([element])">
-          <mat-icon>delete</mat-icon>
-          Delete
-        </button>
+        <safe-button buttonType="mat-menu-item" text="Edit" icon="edit" (click)="onEdit(element)">
+        </safe-button>
+        <safe-button buttonType="mat-menu-item" text="Delete" icon="delete" (click)="onDelete([element])">
+        </safe-button>
       </mat-menu>
     </td>
   </ng-container>

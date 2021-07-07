@@ -16,6 +16,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { SafeConfirmModalModule } from '../confirm-modal/confirm-modal.module';
 import { MatSortModule } from '@angular/material/sort';
+import { SafeButtonModule } from '../ui/button/safe-button.module';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatMenuModule,
     MatIconModule,
     SafeConfirmModalModule,
-    MatSortModule
+    MatSortModule,
+    SafeButtonModule,
   ],
   exports: [SafeRolesComponent]
 })

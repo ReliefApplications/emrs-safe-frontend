@@ -8,7 +8,7 @@
         </mat-label>
         <input matInput formControlName="name" type='text' placeholder="Enter a name for the application" />
       </mat-form-field>
-  
+
       <mat-form-field appearance="outline" style="flex: 1;">
         <mat-label>
           Application ID
@@ -25,17 +25,17 @@
         [matTextareaAutosize]="true" [matAutosizeMinRows]="2" [matAutosizeMaxRows]="5"></textarea>
     </mat-form-field>
   </div>
-  <button mat-flat-button (click)="onSubmit()" color="primary" [disabled]="settingsForm.invalid || !settingsForm.dirty">Save changes</button>
+  <safe-button buttonType="mat-flat-button" text="Save changes" (click)="onSubmit()" color="primary"
+               [disabled]="settingsForm.invalid || !settingsForm.dirty"></safe-button>
 </form>
 
 <div class="action-list" *ngIf="application && (application.canUpdate || application.canDelete)">
   <h1 class="header">Actions</h1>
-  <button mat-stroked-button (click)="onDuplicate()" color="primary" *ngIf="application.canUpdate">
-    <mat-icon class="button-icon">file_copy</mat-icon>
-    Duplicate Application
-  </button>
-  <button mat-stroked-button (click)="onDelete()" color="warn" *ngIf="application.canDelete">
-    <mat-icon class="button-icon">delete</mat-icon>
-    Delete Application
-  </button>
+  <safe-button buttonType="mat-stroked-button" text="Duplicate Application" icon="file_copy" style="margin-right: 1rem"
+               (click)="onDuplicate()"
+               color="primary" *ngIf="application.canUpdate">
+  </safe-button>
+  <safe-button buttonType="mat-stroked-button" text="Delete Application" icon="delete" (click)="onDelete()" color="warn"
+               *ngIf="application.canDelete">
+  </safe-button>
 </div>

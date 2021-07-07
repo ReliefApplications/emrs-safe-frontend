@@ -1,97 +1,104 @@
 <mat-spinner diameter="45" class="page-loader" *ngIf="loading"></mat-spinner>
 <ng-container *ngIf="!loading && apiConfiguration">
-    <div class="page-header">
-      <safe-previous-button path="/settings/apiconfigurations"></safe-previous-button>
-      <h1 class="page-title">
-          {{apiConfiguration?.name}}
-      </h1>
-      <safe-access [access]="apiConfiguration?.permissions" (save)="saveAccess($event)" *ngIf="apiConfiguration?.canUpdate"></safe-access>
-    </div>
-    <form [formGroup]="apiForm" *ngIf="apiForm">
-        <h1>General</h1>
-        <div class="form-group">
-          <div class="form-group-row">
-            <mat-form-field appearance="outline" style="flex: 2;">
-              <mat-label>
-                API Configuration Name
-              </mat-label>
-              <input matInput formControlName="name" type='text' placeholder="Enter a name for the API Configuration" />
-            </mat-form-field>
-        
-            <mat-form-field appearance="outline" style="flex: 1;">
-              <mat-label>
-                Status
-              </mat-label>
-              <mat-select formControlName="status">
-                <mat-option *ngFor="let statusChoice of statusChoices" [value]=statusChoice>{{ statusChoice }}</mat-option>
-              </mat-select>
-            </mat-form-field>
+  <div class="page-header">
+    <safe-previous-button path="/settings/apiconfigurations"></safe-previous-button>
+    <h1 class="page-title">
+      {{apiConfiguration?.name}}
+    </h1>
+    <safe-access [access]="apiConfiguration?.permissions" (save)="saveAccess($event)"
+                 *ngIf="apiConfiguration?.canUpdate"></safe-access>
+  </div>
+  <form [formGroup]="apiForm" *ngIf="apiForm">
+    <h1>General</h1>
+    <div class="form-group">
+      <div class="form-group-row">
+        <mat-form-field appearance="outline" style="flex: 2;">
+          <mat-label>
+            API Configuration Name
+          </mat-label>
+          <input matInput formControlName="name" type='text' placeholder="Enter a name for the API Configuration"/>
+        </mat-form-field>
 
-            <mat-form-field appearance="outline" style="flex: 1;">
-                <mat-label>
-                  Authentication type
-                </mat-label>
-                <mat-select formControlName="authType">
-                  <mat-option *ngFor="let authTypeChoice of authTypeChoices" [value]=authTypeChoice>{{ authTypeChoice }}</mat-option>
-                </mat-select>
-              </mat-form-field>
-          </div>
+        <mat-form-field appearance="outline" style="flex: 1;">
+          <mat-label>
+            Status
+          </mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let statusChoice of statusChoices" [value]=statusChoice>{{ statusChoice }}</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-          <h1>Endpoint</h1>
-          <div class="form-group-row">
-            <mat-form-field appearance="outline" style="flex: 2;">
-              <mat-label>
-                Main endpoint
-              </mat-label>
-              <input matInput formControlName="endpoint" type='text' placeholder="Base URL for the API" />
-            </mat-form-field>
-        
-            <mat-form-field appearance="outline" style="flex: 1;">
-              <mat-label>
-                Ping extension
-              </mat-label>
-              <input matInput formControlName="pingUrl" type='text' placeholder="Ping extension URL" />
-            </mat-form-field>
+        <mat-form-field appearance="outline" style="flex: 1;">
+          <mat-label>
+            Authentication type
+          </mat-label>
+          <mat-select formControlName="authType">
+            <mat-option *ngFor="let authTypeChoice of authTypeChoices"
+                        [value]=authTypeChoice>{{ authTypeChoice }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-            <div class="ping-button-container">
-              <button mat-flat-button color="primary" (click)="onPing()" [disabled]="!apiForm.value.pingUrl || !apiForm.value.endpoint">
-                Send ping request
-                <mat-icon>online_prediction</mat-icon>
-              </button>
-            </div>
+      <h1>Endpoint</h1>
+      <div class="form-group-row">
+        <mat-form-field appearance="outline" style="flex: 2;">
+          <mat-label>
+            Main endpoint
+          </mat-label>
+          <input matInput formControlName="endpoint" type='text' placeholder="Base URL for the API"/>
+        </mat-form-field>
 
-          </div>
-          
-          <h1>API authentication settings</h1>
-          <ng-container *ngIf="apiForm.value.authType === 'service-to-service'">
-            <div formGroupName="settings" class="form-group">
-              <mat-form-field appearance="outline">
-                <mat-label>
-                  Authentication target URL
-                </mat-label>
-                <input matInput formControlName="authTargetUrl" type='text' placeholder="Enter the authentication target URL" onfocus="this.value=''"/>
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>
-                  External API client ID
-                </mat-label>
-                <input matInput formControlName="apiClientID" type='text' placeholder="Enter the external API client ID" onfocus="this.value=''"/>
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>
-                  SAFE secret
-                </mat-label>
-                <input matInput formControlName="safeSecret" type='text' placeholder="Enter the SAFE secret" onfocus="this.value=''"/>
-              </mat-form-field>
-              <mat-form-field appearance="outline">
-                <mat-label>
-                  SAFE ID
-                </mat-label>
-                <input matInput formControlName="safeID" type='text' placeholder="Enter the SAFE ID" onfocus="this.value=''"/>
-              </mat-form-field>
-            </div>
-          </ng-container>
+        <mat-form-field appearance="outline" style="flex: 1;">
+          <mat-label>
+            Ping extension
+          </mat-label>
+          <input matInput formControlName="pingUrl" type='text' placeholder="Ping extension URL"/>
+        </mat-form-field>
+
+        <div class="ping-button-container">
+          <safe-button buttonType="mat-flat-button" text="Send ping request" icon="online_prediction" color="primary"
+                       (click)="onPing()" [disabled]="!apiForm.value.pingUrl || !apiForm.value.endpoint">
+          </safe-button>
         </div>
-        <button mat-flat-button (click)="onSave()" color="primary" [disabled]="apiForm.invalid || !apiForm.dirty">Save changes</button>
-      </form>
+
+      </div>
+
+      <h1>API authentication settings</h1>
+      <ng-container *ngIf="apiForm.value.authType === 'service-to-service'">
+        <div formGroupName="settings" class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label>
+              Authentication target URL
+            </mat-label>
+            <input matInput formControlName="authTargetUrl" type='text'
+                   placeholder="Enter the authentication target URL" onfocus="this.value=''"/>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>
+              External API client ID
+            </mat-label>
+            <input matInput formControlName="apiClientID" type='text' placeholder="Enter the external API client ID"
+                   onfocus="this.value=''"/>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>
+              SAFE secret
+            </mat-label>
+            <input matInput formControlName="safeSecret" type='text' placeholder="Enter the SAFE secret"
+                   onfocus="this.value=''"/>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>
+              SAFE ID
+            </mat-label>
+            <input matInput formControlName="safeID" type='text' placeholder="Enter the SAFE ID"
+                   onfocus="this.value=''"/>
+          </mat-form-field>
+        </div>
+      </ng-container>
+    </div>
+    <safe-button buttonType="mat-flat-button" (click)="onSave()" color="primary" [disabled]="apiForm.invalid || !apiForm.dirty">Save
+      changes
+    </safe-button>
+  </form>
 </ng-container>

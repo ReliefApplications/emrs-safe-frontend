@@ -16,8 +16,6 @@ import { SafeSchedulerSettingsModule } from './components/widgets/scheduler-sett
 import { SafeWidgetModule } from './components/widget/widget.module';
 import { SafeWidgetGridModule } from './components/widget-grid/widget-grid.module';
 import { SafeConfirmModalModule } from './components/confirm-modal/confirm-modal.module';
-import { SafeUsersModule } from './components/users/users.module';
-import { SafeRolesModule } from './components/roles/roles.module';
 import { SafePreviousButtonModule } from './components/previous-button/previous-button.module';
 import { SafeConvertModalModule } from './components/convert-modal/convert-modal.module';
 import { SafeRecordHistoryModule } from './components/record-history/record-history.module';
@@ -25,6 +23,7 @@ import { SafeRecordModalModule } from './components/record-modal/public-api';
 import { SafeStatusModalModule } from './components/status-modal/status-modal.module';
 import { SafeProfileModule } from './pages/profile/profile.module';
 import { SafeSearchResourceGridModalModule } from './components/search-resource-grid-modal/search-resource-grid-modal.module';
+import { SafeButtonModule } from './components/ui/button/safe-button.module';
 
 @NgModule({
   exports: [
@@ -46,13 +45,12 @@ import { SafeSearchResourceGridModalModule } from './components/search-resource-
     SafeWidgetGridModule,
     SafeConfirmModalModule,
     SafeStatusModalModule,
-    SafeUsersModule,
-    SafeRolesModule,
     SafePreviousButtonModule,
     SafeConvertModalModule,
     SafeRecordHistoryModule,
     SafeRecordModalModule,
     SafeProfileModule,
-    SafeSearchResourceGridModalModule
+    SafeSearchResourceGridModalModule,
+    SafeButtonModule
   ]})
 export class SafeModule { }

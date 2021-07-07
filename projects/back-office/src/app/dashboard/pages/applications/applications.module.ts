@@ -14,7 +14,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { AddApplicationComponent } from './components/add-application/add-application.component';
-import { SafeAccessModule, SafeConfirmModalModule } from '@safe/builder';
+import { SafeAccessModule, SafeButtonModule, SafeConfirmModalModule } from '@safe/builder';
 import { MatSortModule } from '@angular/material/sort';
 import { MatChipsModule } from '@angular/material/chips';
 import { ChoseRoleComponent } from './components/chose-role/chose-role.component';
@@ -24,28 +24,29 @@ import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [ApplicationsComponent, AddApplicationComponent, ChoseRoleComponent],
-  imports: [
-    CommonModule,
-    ApplicationsRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatProgressSpinnerModule,
-    MatTableModule,
-    MatSortModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatChipsModule,
-    SafeConfirmModalModule,
-    SafeAccessModule,
-    DuplicateApplicationModule,
-    MatDatepickerModule,
-    MatNativeDateModule
-  ],
+    imports: [
+        CommonModule,
+        ApplicationsRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatProgressSpinnerModule,
+        MatTableModule,
+        MatSortModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatIconModule,
+        MatChipsModule,
+        SafeConfirmModalModule,
+        SafeAccessModule,
+        DuplicateApplicationModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        SafeButtonModule
+    ],
   exports: [ApplicationsComponent]
 })
 export class ApplicationsModule { }

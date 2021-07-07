@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ApiConfigurationRoutingModule } from './api-configuration-routing.module';
 import { ApiConfigurationComponent } from './api-configuration.component';
-import { SafeAccessModule, SafePreviousButtonModule } from '@safe/builder';
+import { SafeAccessModule, SafeButtonModule, SafePreviousButtonModule } from '@safe/builder';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -19,19 +19,20 @@ import { MatOptionModule } from '@angular/material/core';
   declarations: [
     ApiConfigurationComponent
   ],
-  imports: [
-    CommonModule,
-    ApiConfigurationRoutingModule,
-    SafePreviousButtonModule,
-    SafeAccessModule,
-    MatProgressSpinnerModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    MatIconModule,
-    MatSelectModule,
-    MatOptionModule
-  ]
+    imports: [
+        CommonModule,
+        ApiConfigurationRoutingModule,
+        SafePreviousButtonModule,
+        SafeAccessModule,
+        MatProgressSpinnerModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatIconModule,
+        MatSelectModule,
+        MatOptionModule,
+        SafeButtonModule
+    ]
 })
 export class ApiConfigurationModule { }

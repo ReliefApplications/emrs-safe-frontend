@@ -14,25 +14,27 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
+import { SafeButtonModule } from '@safe/builder';
 
 @NgModule({
   declarations: [ResourcesComponent],
-  imports: [
-    CommonModule,
-    ResourcesRoutingModule,
-    MatProgressSpinnerModule,
-    MatTableModule,
-    MatIconModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatSortModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatFormFieldModule,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        ResourcesRoutingModule,
+        MatProgressSpinnerModule,
+        MatTableModule,
+        MatIconModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatSortModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatFormFieldModule,
+        FormsModule,
+        SafeButtonModule
+    ],
   exports: [ResourcesComponent]
 })
 export class ResourcesModule { }

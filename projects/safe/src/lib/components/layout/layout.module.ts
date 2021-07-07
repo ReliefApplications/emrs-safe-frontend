@@ -13,24 +13,26 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatDividerModule } from '@angular/material/divider';
 import { SafeConfirmModalModule } from '../confirm-modal/confirm-modal.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { SafeButtonModule } from '../ui/button/safe-button.module';
 
 @NgModule({
   declarations: [SafeLayoutComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatSidenavModule,
-    MatListModule,
-    DragDropModule,
-    MatBadgeModule,
-    MatDividerModule,
-    SafeConfirmModalModule,
-    MatTooltipModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatSidenavModule,
+        MatListModule,
+        DragDropModule,
+        MatBadgeModule,
+        MatDividerModule,
+        SafeConfirmModalModule,
+        MatTooltipModule,
+        SafeButtonModule
+    ],
   exports: [SafeLayoutComponent]
 })
 export class SafeLayoutModule { }

@@ -6,12 +6,11 @@
       <mat-form-field appearance="outline">
         <mat-icon matPrefix>search</mat-icon>
         <input id="custom-search" matInput [ngModel]="searchText" (keyup)="applyFilter('', $event)" type="search"
-          placeholder="Search...">
+               placeholder="Search...">
       </mat-form-field>
-      <button mat-stroked-button color="primary" (click)="showFilters = !showFilters" class="filters-toggle">
-        <mat-icon>filter_list</mat-icon>
-        Filter
-      </button>
+      <safe-button buttonType="mat-stroked-button" text="Filter" icon="filter_list" color="primary"
+                   (click)="showFilters = !showFilters" class="filters-toggle">
+      </safe-button>
     </div>
 
     <div class="filters" [style.display]="!showFilters ? 'none' : ''">
@@ -24,10 +23,11 @@
         <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
         <mat-date-range-picker #rangePicker>
           <mat-date-range-picker-actions>
-            <button mat-button matDateRangePickerCancel (click)="clearDateFilter()">Clear range</button>
-            <button mat-raised-button color="primary" matDateRangePickerApply (click)="applyFilter('createdAt', null)">
-              Apply
-            </button>
+            <safe-button buttonType="mat-button" text="Clear range" matDateRangePickerCancel
+                         (click)="clearDateFilter()"></safe-button>
+            <safe-button buttonType="mat-raised-button" text="Apply" color="primary" matDateRangePickerApply
+                         (click)="applyFilter('createdAt', null)">
+            </safe-button>
           </mat-date-range-picker-actions>
         </mat-date-range-picker>
       </mat-form-field>
@@ -60,16 +60,14 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-button color="warn" (click)="clearAllFilters()">Clear Filters</button>
+      <safe-button buttonType="mat-button" text="Clear Filters" color="warn" (click)="clearAllFilters()"></safe-button>
     </div>
   </div>
 
   <div>
     <div class="actions">
-      <button mat-flat-button color="primary" (click)="onAdd()" *ngIf="canAdd">
-        <mat-icon>add</mat-icon>
-        Create a form
-      </button>
+      <safe-button buttonType="mat-flat-button" text="Create a form" icon="add" color="primary" (click)="onAdd()"
+                   *ngIf="canAdd"></safe-button>
     </div>
   </div>
 
@@ -151,41 +149,38 @@
         </span>
       </th>
       <td mat-cell *matCellDef="let element">
-        <button mat-button *ngIf="!element.core && element.resource?.coreForm?.name" [routerLink]="['/forms/builder', element.resource.coreForm.id]">
-          {{ element.resource.coreForm.name }}
-        </button>
+        <safe-button buttonType="mat-button" [text]="element.resource.coreForm.name"
+                     *ngIf="!element.core && element.resource?.coreForm?.name"
+                     [routerLink]="['/forms/builder', element.resource.coreForm.id]">
+        </safe-button>
       </td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()"
-          [disabled]="!(element.canUpdate || element.canDelete || (element.recordsCount > 0))">
-          <mat-icon>more_vert</mat-icon>
-        </button>
+        <safe-button buttonType="mat-icon-button" icon="more_vert" [matMenuTriggerFor]="menu"
+                     (click)="$event.stopPropagation()"
+                     [disabled]="!(element.canUpdate || element.canDelete || (element.recordsCount > 0))">
+        </safe-button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item [routerLink]="['/forms/builder', element.id]" *ngIf="element.canUpdate">
-            <mat-icon>edit</mat-icon>
-            Edit
-          </button>
+          <safe-button buttonType="mat-menu-item" text="Edit" icon="edit" [routerLink]="['/forms/builder', element.id]"
+                       *ngIf="element.canUpdate">
+          </safe-button>
           <ng-container *ngIf="element.canSee && element.recordsCount > 0">
-            <button mat-menu-item [routerLink]="['/forms/records', element.id]">
-              <mat-icon>plagiarism</mat-icon>
-              View
-            </button>
+            <safe-button buttonType="mat-menu-item" text="View" icon="plagiarism"
+                         [routerLink]="['/forms/records', element.id]">
+            </safe-button>
           </ng-container>
-          <button mat-menu-item (click)="onDelete(element, $event)" *ngIf="element.canDelete">
-            <mat-icon>delete</mat-icon>
-            Delete
-          </button>
+          <safe-button buttonType="mat-menu-item" text="Delete" icon="delete" (click)="onDelete(element, $event)"
+                       *ngIf="element.canDelete"></safe-button>
         </mat-menu>
       </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"
-      [ngClass]="{'clickable': ( row.canCreate && (row.status === 'active') )}"
-      [routerLink]="( row.canCreate && (row.status === 'active') ) ? ['/forms/answer', row.id] : []"></tr>
+        [ngClass]="{'clickable': ( row.canCreate && (row.status === 'active') )}"
+        [routerLink]="( row.canCreate && (row.status === 'active') ) ? ['/forms/answer', row.id] : []"></tr>
   </table>
 </ng-container>

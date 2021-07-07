@@ -18,28 +18,30 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRippleModule } from '@angular/material/core';
+import { SafeButtonModule } from '../ui/button/safe-button.module';
 
 @NgModule({
   declarations: [SafeUsersComponent, SafeEditUserComponent, SafeInviteUserComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatTableModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatIconModule,
-    MatInputModule,
-    MatAutocompleteModule,
-    MatSortModule,
-    MatChipsModule,
-    MatRippleModule,
-    MatCheckboxModule,
-    MatProgressSpinnerModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatTableModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatIconModule,
+        MatInputModule,
+        MatAutocompleteModule,
+        MatSortModule,
+        MatChipsModule,
+        MatRippleModule,
+        MatCheckboxModule,
+        MatProgressSpinnerModule,
+        SafeButtonModule
+    ],
   exports: [SafeUsersComponent]
 })
 export class SafeUsersModule { }
