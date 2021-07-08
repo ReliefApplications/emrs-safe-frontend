@@ -74,16 +74,7 @@
     <td mat-cell *matCellDef="let element">{{ element.name }}</td>
   </ng-container>
 
-  <ng-container matColumnDef="roles" *ngIf="applicationService">
-    <th mat-header-cell *matHeaderCellDef>
-      <span class="headerTitle" mat-sort-header>
-        Role
-      </span>
-    </th>
-    <td mat-cell *matCellDef="let element">{{element.roles[0] ? element.roles[0].title : '-'}}</td>
-  </ng-container>
-
-  <ng-container matColumnDef="roles" *ngIf="!applicationService">
+  <ng-container matColumnDef="roles">
     <th mat-header-cell *matHeaderCellDef>
       <span class="headerTitle" mat-sort-header>
         Role
