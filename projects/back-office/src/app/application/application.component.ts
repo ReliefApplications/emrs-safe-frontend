@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Application, SafeConfirmModalComponent, ContentType, SafeApplicationService } from '@safe/builder';
+import { Application, SafeConfirmModalComponent, ContentType, SafeApplicationService, SafeLayoutService } from '@safe/builder';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -17,6 +17,7 @@ export class ApplicationComponent implements OnInit, OnDestroy {
 
   // === AVAILABLE ROUTES, DEPENDS ON USER ===
   public navGroups: any[] = [];
+  public navItems: any[] = [];
 
   // === APPLICATION ===
   public application?: Application;
@@ -29,12 +30,26 @@ export class ApplicationComponent implements OnInit, OnDestroy {
     private applicationService: SafeApplicationService,
     public route: ActivatedRoute,
     private router: Router,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private layoutService: SafeLayoutService,
   ) { }
 
   ngOnInit(): void {
     this.routeSubscription = this.route.params.subscribe((params) => {
       this.applicationService.loadApplication(params.id);
+    });
+    this.layoutService.navItems.subscribe((navItems: any) => {
+      if (navItems) {
+        this.navItems = navItems;
+      } else {
+        this.navItems = [
+          {
+            name: 'Settings',
+            path: './settings/edit',
+            icon: 'settings'
+          }
+        ];
+      }
     });
     this.applicationSubscription = this.applicationService.application.subscribe((application: Application | null) => {
       if (application) {
@@ -72,44 +87,7 @@ export class ApplicationComponent implements OnInit, OnDestroy {
           },
           {
             name: 'Administration',
-            navItems: [
-              {
-                name: 'Settings',
-                path: './settings/edit',
-                icon: 'settings'
-              }
-              ,
-              {
-                name: 'Users',
-                path: './settings/users',
-                icon: 'supervisor_account'
-              },
-              {
-                name: 'Roles',
-                path: './settings/roles',
-                icon: 'admin_panel_settings'
-              },
-              {
-                name: 'Attributes',
-                path: './settings/position',
-                icon: 'manage_accounts'
-              },
-              {
-                name: 'Channels',
-                path: './settings/channels',
-                icon: 'edit_notifications'
-              },
-              {
-                name: 'Subscriptions',
-                path: './settings/subscriptions',
-                icon: 'move_to_inbox'
-              },
-              {
-                name: 'Pull jobs',
-                path: './settings/pull-jobs',
-                icon: 'cloud_download'
-              }
-            ]
+            navItems: this.navItems
           }
         ];
         if (!this.application || application.id !== this.application.id) {

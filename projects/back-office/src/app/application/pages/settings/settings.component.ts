@@ -2,14 +2,13 @@ import {Apollo} from 'apollo-angular';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { Application, SafeApplicationService, SafeConfirmModalComponent, SafeSnackBarService, NOTIFICATIONS, SafeAuthService } from '@safe/builder';
+import { Application, SafeApplicationService, SafeConfirmModalComponent, SafeSnackBarService,
+  NOTIFICATIONS, SafeAuthService, SafeLayoutService } from '@safe/builder';
 import { MatDialog} from '@angular/material/dialog';
 import { DeleteApplicationMutationResponse, DELETE_APPLICATION } from '../../../graphql/mutations';
 import { DuplicateApplicationComponent } from '../../../components/duplicate-application/duplicate-application.component';
-
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -25,6 +24,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
   public user: any;
   public locked: boolean  | undefined = undefined;
   public lockedByUser: boolean | undefined = undefined;
+  public navItems: any[] = [];
+  public title = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -33,6 +34,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
     private snackBar: SafeSnackBarService,
     private applicationService: SafeApplicationService,
     private authService: SafeAuthService,
+    private layoutService: SafeLayoutService,
     public dialog: MatDialog
   ) { }
 
@@ -51,6 +53,44 @@ export class SettingsComponent implements OnInit, OnDestroy {
         this.lockedByUser = this.application?.lockedByUser;
       }
     });
+    this.navItems = [
+      {
+        name: 'Settings',
+        path: './settings/edit',
+        icon: 'settings'
+      },
+      {
+        name: 'Users',
+        path: './settings/users',
+        icon: 'supervisor_account'
+      },
+      {
+        name: 'Roles',
+        path: './settings/roles',
+        icon: 'admin_panel_settings'
+      },
+      {
+        name: 'Attributes',
+        path: './settings/position',
+        icon: 'manage_accounts'
+      },
+      {
+        name: 'Channels',
+        path: './settings/channels',
+        icon: 'edit_notifications'
+      },
+      {
+        name: 'Subscriptions',
+        path: './settings/subscriptions',
+        icon: 'move_to_inbox'
+      },
+      {
+        name: 'Pull jobs',
+        path: './settings/pull-jobs',
+        icon: 'cloud_download'
+      }
+    ];
+    this.layoutService.setNavItems(this.navItems);
   }
 
   onSubmit(): void {
