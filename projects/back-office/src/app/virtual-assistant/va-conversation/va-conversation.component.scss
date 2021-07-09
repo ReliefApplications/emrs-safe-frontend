@@ -1,0 +1,18 @@
+#chat-global {
+  height: 100%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 5px 5px 2px gray;
+  background-color: white;
+}
+
+#conversation {
+  //height: 100px;
+  height: calc(100% - 100px);
+}
+
+.example-viewport {
+  //height: 300px;
+  width: 100%;
+  height: 100%;
+}

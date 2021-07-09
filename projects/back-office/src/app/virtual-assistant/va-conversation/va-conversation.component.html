@@ -1,0 +1,9 @@
+<div id="chat-global">
+  <app-conversation-header></app-conversation-header>
+  <div id="conversation">
+    <cdk-virtual-scroll-viewport id="scrollView" itemSize="50" class="example-viewport">
+      <app-conversation-message backgroundColor="#8e8e93" backgroundColorReply="#1982FC" *ngFor="let msg of this.conv" class="example-item" type="{{msg.type}}" text="{{msg.text}}" imgSrc="{{msg.user.avatar}}" reply="{{msg.reply}}" [choices]="msg.choices" (btnChoiceClick)="choiceClick($event)" (btnChoiceCheckBoxValidateClick)="choiceCheckBoxValidateClick($event)"></app-conversation-message>
+    </cdk-virtual-scroll-viewport>
+  </div>
+  <app-conversation-footer id="foot" inputValue="{{currentText}}" (inputChange)="msgUpdated($event)" (keyup.enter)="sendReplyMsgText(currentText)" (btnSendClick)="sendReplyMsgText(currentText)" (btnRecClick)="startSpeech()"></app-conversation-footer>
+</div>

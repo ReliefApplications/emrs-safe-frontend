@@ -19,6 +19,7 @@ import { AddFormComponent } from '../../../components/add-form/add-form.componen
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatEndDate, MatStartDate } from '@angular/material/datepicker';
+import {SafeDownloadService} from '../../../../../../safe/src/lib/services/download.service';
 
 
 @Component({
@@ -57,7 +58,8 @@ export class FormsComponent implements OnInit, OnDestroy, AfterViewInit {
     public dialog: MatDialog,
     private router: Router,
     private snackBar: SafeSnackBarService,
-    private authService: SafeAuthService
+    private authService: SafeAuthService,
+    private downloadService: SafeDownloadService
   ) {}
 
   /*  Load the forms.
@@ -190,5 +192,14 @@ export class FormsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.statusFilter = '';
     this.coreFilter = '';
     this.clearDateFilter();
+  }
+
+  async onExportAssistant(element: any, $event: any): Promise<void> {
+    console.log(element);
+    // const path = `download/form/${element.id}`;
+    // const dataReturn = await this.downloadService.getForm(path);
+    window.open(`/va/${element.id}`);
+    // this.router.navigate([`/va/${element.id}`]);
+    // return dataReturn;
   }
 }

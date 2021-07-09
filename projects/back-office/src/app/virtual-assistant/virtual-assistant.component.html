@@ -1,0 +1,39 @@
+<!--<mat-grid-list cols="12" rowHeight="4:1">-->
+<!--  &lt;!&ndash; 24 &ndash;&gt;-->
+<!--  <mat-grid-tile style="background-color: #53a7ff" [colspan]="vaCols" rowspan="14">-->
+<!--    <img id="va-face" src="https://www.121outsource.com/wp-content/uploads/2018/08/virtual-assitants.png"/>-->
+<!--  </mat-grid-tile>-->
+<!--  <ng-container *ngIf="vaCols == 6">-->
+<!--    <mat-grid-tile class="conversation" style="background-color: #cb53ff" colspan="6" rowspan="14">-->
+<!--&lt;!&ndash;      <app-va-conversation [form]="form"></app-va-conversation>&ndash;&gt;-->
+<!--    </mat-grid-tile>-->
+<!--  </ng-container>-->
+<!--  <mat-grid-tile style="background-color: #67dd2d;" colspan="2" rowspan="10">-->
+<!--    <button mat-fab id="speak-button" color="primary"><mat-icon>mic</mat-icon></button>-->
+<!--  </mat-grid-tile>-->
+<!--  <mat-grid-tile class="conversation" style="background-color: #ef4f06;" colspan="8" rowspan="10">-->
+<!--    <app-va-conversation [form]="form"></app-va-conversation>-->
+<!--  </mat-grid-tile>-->
+<!--  <mat-grid-tile style="background-color: #9b001d" colspan="2" rowspan="10">-->
+<!--    <button mat-fab id="chat-button" color="primary" (click)="onChatButton($event)"><mat-icon>chat</mat-icon></button>-->
+<!--  </mat-grid-tile>-->
+<!--</mat-grid-list>-->
+
+<!--<mat-grid-list cols="2" rowHeight="1:1" style="background-color: black">-->
+<!--  <mat-grid-tile style="background-color: #53a7ff;" colspan="1" rowspan="1">-->
+<!--    <img id="va-face" src="https://www.121outsource.com/wp-content/uploads/2018/08/virtual-assitants.png"/>-->
+<!--  </mat-grid-tile>-->
+<!--  <mat-grid-tile class="conversation" style="background-color: #cb53ff" colspan="1" rowspan="1">-->
+<!--    <app-va-conversation [form]="form"></app-va-conversation>-->
+<!--  </mat-grid-tile>-->
+<!--</mat-grid-list>-->
+
+
+<mat-grid-list cols="2" rowHeight="100%">
+  <mat-grid-tile style="background-color: #53a7ff;" colspan="1" rowspan="1">
+    <img id="va-face" alt="va-face" src="https://www.121outsource.com/wp-content/uploads/2018/08/virtual-assitants.png"/>
+  </mat-grid-tile>
+  <mat-grid-tile class="conversation" colspan="1" rowspan="1">
+    <app-va-conversation [form]="form"></app-va-conversation>
+  </mat-grid-tile>
+</mat-grid-list>

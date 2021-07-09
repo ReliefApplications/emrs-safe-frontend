@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MsalGuard } from '@azure/msal-angular';
 import { AccessGuard } from './guards/access.guard';
+import {VirtualAssistantComponent} from './virtual-assistant/virtual-assistant.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,17 @@ const routes: Routes = [
               .then(m => m.AppPreviewModule),
           }
         ]
-      }
+      },
+      {
+          path: 'va',
+          children: [
+          {
+            path: ':id',
+            loadChildren: () => import('./virtual-assistant/virtual-assistant.module')
+              .then(m => m.VirtualAssistantModule),
+          }
+        ]
+      },
     ],
     canActivate: [MsalGuard, AccessGuard]
   },

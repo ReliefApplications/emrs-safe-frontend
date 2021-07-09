@@ -1,0 +1,5 @@
+<div id="footer">
+  <input id="inputMsg" type="text" placeholder="Tap your message here" [value]="inputValue" #test (input)="msgChange(test.value)">
+  <button mat-mini-fab id="btnSend" class="btnFoot" style="display: none" (click)="btnSendClick.emit($event)" disabled><mat-icon>chat</mat-icon></button>
+  <button mat-mini-fab id="btnRec" class="btnFoot" (click)="btnRecClick.emit($event)"><mat-icon>mic</mat-icon></button>
+</div>
