@@ -10,6 +10,7 @@ import { SafeAuthService, SafeSnackBarService, Form, SafeConfirmModalComponent }
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SafeStatusModalComponent, NOTIFICATIONS } from '@safe/builder';
+import { REFRESH } from '../../../app.module';
 
 @Component({
   selector: 'app-form-builder',
@@ -134,6 +135,7 @@ export class FormBuilderComponent implements OnInit {
     if (!this.form?.id) {
       alert('not valid');
     } else {
+      REFRESH.next(false);
       const statusModal = this.dialog.open(SafeStatusModalComponent, {
         disableClose: true,
         data: {
@@ -150,15 +152,20 @@ export class FormBuilderComponent implements OnInit {
       }).subscribe(res => {
         if (res.errors) {
           this.snackBar.openSnackBar(res.errors[0].message, { error: true });
+          statusModal.close();
         } else {
-          this.snackBar.openSnackBar(NOTIFICATIONS.objectEdited('form', this.form?.name));
-          this.form = res.data?.editForm;
-          this.structure = structure;
-          localStorage.removeItem(`form:${this.id}`);
-          this.hasChanges = false;
-          this.authService.canLogout.next(true);
+          REFRESH.asObservable().subscribe(r => {
+            if (r) {
+              statusModal.close();
+              this.snackBar.openSnackBar(NOTIFICATIONS.objectEdited('form', this.form?.name));
+              this.form = res.data?.editForm;
+              this.structure = structure;
+              localStorage.removeItem(`form:${this.id}`);
+              this.hasChanges = false;
+              this.authService.canLogout.next(true);
+            }
+          });
         }
-        statusModal.close();
       }, (err) => {
         this.snackBar.openSnackBar(err.message, { error: true });
         statusModal.close();
