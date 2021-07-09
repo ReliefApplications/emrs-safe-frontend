@@ -45,6 +45,7 @@
                     <mat-label>Label</mat-label>
                     <input matInput formControlName="label" type="text"/>
                 </mat-form-field>
+                <mat-slide-toggle *ngIf="isChild" formControlName="openOnClick">Open record details on click</mat-slide-toggle>
             </form>
         </ng-container>
         <ng-container *ngIf="fieldForm.value.kind !== 'SCALAR'" [ngTemplateOutlet]="childTemplate"></ng-container>

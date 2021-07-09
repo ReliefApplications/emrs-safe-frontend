@@ -14,6 +14,7 @@ export class SafeTabFieldsComponent implements OnInit, OnChanges {
   @Input() fields: any[] = [];
   // === TEMPLATE REFERENCE ===
   @Input() factory?: ComponentFactory<any>;
+  @Input() isChild = false;
   @ViewChild('childTemplate', { read: ViewContainerRef }) childTemplate?: ViewContainerRef;
 
   public availableFields: any[] = [];
@@ -67,6 +68,7 @@ export class SafeTabFieldsComponent implements OnInit, OnChanges {
     if (this.fieldForm.value.kind !== 'SCALAR') {
       if (this.childTemplate && this.factory) {
         const componentRef = this.childTemplate.createComponent(this.factory);
+        componentRef.instance.isChild = true;
         componentRef.instance.form = this.fieldForm;
         componentRef.instance.canExpand = this.fieldForm.value.kind === 'LIST';
         componentRef.instance.closeField.subscribe(() => {

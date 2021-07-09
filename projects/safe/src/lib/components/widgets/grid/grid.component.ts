@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
   CONVERT_RECORD,
-  ConvertRecordMutationResponse, DELETE_RECORD, DeleteRecordMutationResponse, EDIT_RECORD, EditRecordMutationResponse,
+  ConvertRecordMutationResponse, EDIT_RECORD, EditRecordMutationResponse,
   PUBLISH, PUBLISH_NOTIFICATION, PublishMutationResponse, PublishNotificationMutationResponse, DELETE_RECORDS
 } from '../../../graphql/mutations';
 import { SafeFormModalComponent } from '../../form-modal/form-modal.component';
@@ -213,6 +213,7 @@ export class SafeGridComponent implements OnInit, OnChanges, OnDestroy {
         default: {
           return {
             name: prefix ? `${prefix}.${f.name}` : f.name,
+            openOnClick: f.openOnClick,
             title: f.label ? f.label : f.name,
             type: f.type,
             format: this.getFormat(f.type),
@@ -968,6 +969,23 @@ export class SafeGridComponent implements OnInit, OnChanges, OnDestroy {
     this.showFilter = !this.showFilter;
   }
 
+  /**
+   * Open a modal for record display corresponding to the clicked field
+   */
+  openOnClick(item: any, field: any): void {
+    const path: string[] = field.name.split('.').slice(0, -1).concat('id');
+    const recordId = path.reduce((o: any, key: string) => o[key], item);
+    this.onShowDetails(recordId);
+  }
+
+  /**
+   * Access nested element from an object using a key with dots.
+   */
+  accessNested(item: any, keys: string): string {
+    const path: string[] = keys.split('.');
+    return path.reduce((o: any, key: string) => o[key] ? o[key] : keys, item);
+  }
+
   /*
    * Build email body in plain text from selected rows
    */
@@ -979,7 +997,7 @@ export class SafeGridComponent implements OnInit, OnChanges, OnDestroy {
       const item = this.gridData.data[index];
       body += this.buildBodyRow(item, fields);
       body += '______________________\n';
-      i ++;
+      i++;
     }
     return body;
   }

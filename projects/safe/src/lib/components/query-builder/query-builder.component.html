@@ -25,7 +25,7 @@
       <mat-tab label="Fields">
         <ng-template matTabContent>
           <safe-tab-fields *ngIf="availableFields.length > 0" [form]="$any(form.controls.fields)" [fields]="availableFields"
-                           [factory]="factory"></safe-tab-fields>
+                           [factory]="factory" [isChild]="isChild"></safe-tab-fields>
         </ng-template>
       </mat-tab>
       <mat-tab label="Sort" *ngIf="form.get('sort')">

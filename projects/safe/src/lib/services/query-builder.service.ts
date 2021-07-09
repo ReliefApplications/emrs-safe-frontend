@@ -259,7 +259,8 @@ export class QueryBuilderService {
           name: [{ value: field.name, disabled: true }],
           type: [{ value: newField ? field.type.name : field.type, disabled: true }],
           kind: [newField ? field.type.kind : field.kind],
-          label: [field.label ? field.label : field.name, Validators.required]
+          label: [field.label ? field.label : field.name, Validators.required],
+          openOnClick: [field.openOnClick ? field.openOnClick : false]
         });
       }
     }

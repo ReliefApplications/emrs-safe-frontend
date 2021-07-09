@@ -51,12 +51,12 @@
             <!-- FIELDS -->
             <ng-container *ngFor="let field of fields">
                 <!-- SIMPLE QUESTIONS TYPES ( text / comment - resource - dropdown - radiogroup - boolean - numeric - date / datetime / datetime-local / time ) -->
-                <kendo-grid-column *ngIf="field.type !== 'JSON'" [field]="field.name" [title]="field.title"
-                    [format]="field.format" [editor]="field.editor" [editable]="field.editor && !field.disabled"
-                    [filter]="field.filter" [filterable]="field.filter" [width]="field.title.length * 7 + 50"
-                    [minResizableWidth]="50">
-                    <!-- DISPLAY -->
-                    <ng-container *ngIf="field.meta">
+                <kendo-grid-column *ngIf="field.type !== 'JSON'" [field]="field.name"
+                    [title]="field.linkedRecord ? field.linkedRecord : field.title" [format]="field.format"
+                    [editor]="field.editor" [editable]="field.editor && !field.disabled" [filter]="field.filter"
+                    [filterable]="field.filter" [width]="field.title.length * 7 + 50" [minResizableWidth]="50">
+                    <!-- DISPLAY ( scalar without openOnClick ) -->
+                    <ng-container *ngIf="field.meta && !field.openOnClick">
                         <!-- DISPLAY ( text / comment ) -->
                         <ng-template #refSpan kendoGridCellTemplate let-dataItem="dataItem"
                             *ngIf="field.meta.type === 'text'">
@@ -74,23 +74,20 @@
                             </div>
                         </ng-template>
                         <!-- DISPLAY ( boolean ) -->
-                        <ng-template kendoGridCellTemplate let-dataItem="dataItem" *ngIf="field.meta.type === 'boolean'">
-                            <input type="checkbox" kendoCheckBox [(ngModel)]="dataItem[field.name]" disabled/>
+                        <ng-template kendoGridCellTemplate let-dataItem="dataItem"
+                            *ngIf="field.meta.type === 'boolean'">
+                            <input type="checkbox" kendoCheckBox [(ngModel)]="dataItem[field.name]" disabled />
                         </ng-template>
                         <!-- DISPLAY ( color ) -->
                         <ng-template kendoGridCellTemplate let-dataItem="dataItem" *ngIf="field.meta.type === 'color'">
                             <!-- In order to display the div -->
                             <div [style.background-color]="dataItem[field.name]">&nbsp;</div>
                         </ng-template>
-                        <!-- DISPLAY ( resource ) -->
-                        <!-- <ng-template kendoGridCellTemplate let-dataItem="dataItem" *ngIf="field.meta.type === 'resource'">
-                            <div *ngIf="dataItem[field.name]" class="textbox-container">
-                                <div #refSpan class="textbox">
-                                    {{dataItem[field.name]}}
-                                    <span class="record-link" matTooltip="Open the record details" (click)="onShowDetails(dataItem[field.name])">{{dataItem[field.name]}}</span>
-                                </div>
-                            </div>
-                        </ng-template> -->
+                    </ng-container>
+                    <!-- DISPLAY ( scalar with openOnClick ) -->
+                    <ng-container *ngIf="field.openOnClick">
+                        <ng-template kendoGridCellTemplate let-dataItem="dataItem"><span class="record-link" (click)="openOnClick(dataItem, field)">{{accessNested(dataItem, field.name)}}</span>
+                        </ng-template>
                     </ng-container>
                     <!-- EDITION ( text / color / comment - resource - dropdown ) -->
                     <ng-template kendoGridEditTemplate let-dataItem="dataItem" let-formGroup="formGroup"
