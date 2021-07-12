@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +30,8 @@ export class SafeDownloadService {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`
     });
-    this.http.get(url, { ...options, responseType: 'blob', headers }).subscribe((res) => {
-      const blob = new Blob([res], { type });
+    this.http.get(url, {...options, responseType: 'blob', headers}).subscribe((res) => {
+      const blob = new Blob([res], {type});
       this.saveFile(fileName, blob);
     });
   }
@@ -42,5 +43,23 @@ export class SafeDownloadService {
     document.body.append(link);
     link.click();
     setTimeout(() => link.remove(), 0);
+  }
+
+  uploadFile(path: string, file: any): Observable<any> {
+    const url = this.buildURL(path);
+    const token = localStorage.getItem('msal.idtoken');
+    const headers = new HttpHeaders({
+      Accept: 'application/json',
+      Authorization: `Bearer ${token}`
+    });
+    const formData = new FormData();
+
+    formData.append('excelFile', file, file.name);
+
+    return this.http.post(url, formData, {headers});
+  }
+
+  private buildURL(path: string): string {
+    return path.startsWith('http') ? path : `${this.baseUrl}/${path}`;
   }
 }
